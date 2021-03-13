@@ -1,0 +1,1 @@
+.PHONY: clean all, clean, fclean
