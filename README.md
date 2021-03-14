@@ -1,7 +1,7 @@
-# Printf implementation.
+# Printf implementation
 
 
-## Special characters.
+## Special characters
 
 | Escape Sequence | Represents |
 | ------------- |:-------------|
@@ -9,12 +9,12 @@
 | `\b` | Backspace |
 | `\c` | Form feed |
 | `\e` | New line |
-| `\f` |  |
-| `\n` |  |
+| `\f` | Form feed |
+| `\n` | New line |
 | `\r` | Carriage return |
 | `\t` | Horizontal tab |
 | `\v` | Vertical tab |
-| `\\` |  |
+| `\\` | Print a backslash |
 | `\'` | Single quotation mark |
 | `\"` | Double quotation mark |
 | `\?` | Literal question mark |
@@ -23,7 +23,7 @@
 | `\xHH` | ASCII character in hexadecimal notation |
 | `\uHHHH` | Unicode (ISO/IEC 10646) character with hex value HHHH (4 digits) |
 
-## Convertions.
+## Convertions
 
 | Type character | Output |
 | ------------- |:-------------|
@@ -39,16 +39,31 @@
 
 | **Bonus** |  |
 | ------------- |:-------------|
-| `n` |  |
-| `f` |  |
-| `g` |  |
-| `e` |  |
+| `%n` | Is a special format specifier which load the variable pointed with a value equal to the number of characters before the occurrence of %n|
+| `%f` | Print afloating-point number |
+| `%g` | Print ageneral-format floating-point number |
+| `%e` | Print anexponential floating-point number |
 
-# Flags.
+# Flags
 
 | Flag | Meaning |
 | ------------- |:-------------|
-| `-` | Left align the result within the given field width |
-| `0` | Shorter numbers are padded out with leading zeros |
-| `.` | How many placesshould be shown after the decimal point |
-| `*` | `an int width argument must precede the value that's being formatted in the argument list, exemple printf("%0*d", 5, 3); /* 00003 is output */` |
+| `%-` | Left align the result within the given field width |
+| `%0` | Shorter numbers are padded out with leading zeros |
+| `%.` | How many placesshould be shown after the decimal point |
+| `%*` | `an int width argument must precede the value that's being formatted in the argument list, exemple printf("%0*d", 5, 3); /* 00003 is output */` |
+
+| **Bonus** |  |
+| ------------- |:-------------|
+| `#` | When it's used with the `o`, `x`, or `X` format, the `#` flag uses `0`, `0x`, or `0X`, respectively, to prefix any nonzero output value |
+| ` ` | Use a blank to prefix the output value if it's signed and positive. The blank is ignored if both the blank and + flags appear |
+| `+` | Use a sign (`+` or `-`) to prefix the output value if it's of a signed type. |
+
+### Sources
+
+Secrets of “printf” Professor Don Colton
+  https://www.cypress.com/file/54441/download
+
+https://docs.microsoft.com/en-us/cpp/c-runtime-library/format-specification-syntax-printf-and-wprintf-functions?view=msvc-160
+
+https://en.wikipedia.org/wiki/Escape_sequences_in_C
