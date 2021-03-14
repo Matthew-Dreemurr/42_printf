@@ -51,7 +51,7 @@
 | `%-` | Left align the result within the given field width |
 | `%0` | Shorter numbers are padded out with leading zeros |
 | `%.` | How many placesshould be shown after the decimal point |
-| `%*` | `an int width argument must precede the value that's being formatted in the argument list, exemple printf("%0*d", 5, 3); /* 00003 is output */` |
+| `%*` | an int width argument must precede the value that's being formatted in the argument list, exemple `printf("%0*d", 5, 3);` /* 00003 is output */ |
 
 | **Bonus** |  |
 | ------------- |:-------------|
