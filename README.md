@@ -18,7 +18,7 @@
 | `\'` | Single quotation mark |
 | `\"` | Double quotation mark |
 | `\?` | Literal question mark |
-| `%%` | Printf `%` |
+| `%%` | Print `%` |
 | `\NNN` | ASCII character in octal notation |
 | `\xHH` | ASCII character in hexadecimal notation |
 | `\uHHHH` | Unicode (ISO/IEC 10646) character with hex value HHHH (4 digits) |
@@ -35,7 +35,7 @@
 | `%u` | print anunsigned decimal (base 10) number |
 | `%x` | Unsigned hexadecimal integer; uses `abcdef` |
 | `%X` | Unsigned hexadecimal integer; uses `ABCDEF` |
-| `%%` | Printf `%` |
+| `%%` | Print `%` |
 
 | **Bonus** |  |
 | ------------- |:-------------|
