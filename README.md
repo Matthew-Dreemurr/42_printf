@@ -1,28 +1,6 @@
 # Printf implementation
 
 
-## Special characters
-
-| Escape Sequence | Represents |
-| ------------- |:-------------|
-| `\a` | Bell (alert) |
-| `\b` | Backspace |
-| `\c` | Form feed |
-| `\e` | New line |
-| `\f` | Form feed |
-| `\n` | New line |
-| `\r` | Carriage return |
-| `\t` | Horizontal tab |
-| `\v` | Vertical tab |
-| `\\` | Print a backslash |
-| `\'` | Single quotation mark |
-| `\"` | Double quotation mark |
-| `\?` | Literal question mark |
-| `%%` | Print `%` |
-| `\NNN` | ASCII character in octal notation |
-| `\xHH` | ASCII character in hexadecimal notation |
-| `\uHHHH` | Unicode (ISO/IEC 10646) character with hex value HHHH (4 digits) |
-
 ## Convertions
 
 | Type character | Output |
