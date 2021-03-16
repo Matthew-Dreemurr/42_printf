@@ -33,9 +33,9 @@
 
 | **Bonus** |  |
 | ------------- |:-------------|
-| `#` | When it's used with the `o`, `x`, or `X` format, the `#` flag uses `0`, `0x`, or `0X`, respectively, to prefix any nonzero output value |
-| ` ` | Use a blank to prefix the output value if it's signed and positive. The blank is ignored if both the blank and + flags appear |
-| `+` | Use a sign (`+` or `-`) to prefix the output value if it's of a signed type. |
+| `%#` | When it's used with the `o`, `x`, or `X` format, the `#` flag uses `0`, `0x`, or `0X`, respectively, to prefix any nonzero output value |
+| `% ` | Use a blank to prefix the output value if it's signed and positive. The blank is ignored if both the blank and + flags appear |
+| `%+` | Use a sign (`+` or `-`) to prefix the output value if it's of a signed type. |
 
 ### Sources
 
