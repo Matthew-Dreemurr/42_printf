@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 13:50:46 by mhadad            #+#    #+#             */
-/*   Updated: 2020/12/15 13:39:38 by mhadad           ###   ########.fr       */
+/*   Created: 2021/03/16 18:40:39 by mhadad            #+#    #+#             */
+/*   Updated: 2021/03/16 19:05:32 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/ft_printf.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_printf(const char *str, ...)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
-	size_t				i;
+	va_list	args;
 
-	i = 0;
-	s = src;
-	d = dst;
-	if (src == dst)
-		return (dst);
-	if (src > dst)
-	{
-		while (i < len)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	else
-		while (--len + 1)
-			d[len] = s[len];
-	return (dst);
+	va_start(args, str);
+	va_arg(args, int);
+	va_end(args);
 }

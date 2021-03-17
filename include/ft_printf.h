@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 10:39:56 by mhadad            #+#    #+#             */
-/*   Updated: 2020/12/15 13:39:38 by mhadad           ###   ########.fr       */
+/*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
+/*   Updated: 2021/03/17 13:26:45 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef __FT_PRINTF__
+# define __FT_PRINTF__
 
-int	ft_isascii(int c)
-{
-	return (c >= 0 && c <= 127);
-}
+/* ======  Include  ======= */
+
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdarg.h>
+
+
+/* ======  Macros  ======= */
+
+
+
+/* ======  Prototype  ======= */
+
+/* --- ft_printf.c --- */
+
+int	ft_printf(const char *, ...);
+
+#endif
