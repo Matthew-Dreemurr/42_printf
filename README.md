@@ -3,33 +3,33 @@
 
 ## Convertions
 
-| Type character | Output | |
-| ------------- |:-------------|:--------|
-| `%c` | Print a singlecharacter | |
-| `%s` | Print astring of characters | |
-| `%p` | Print the argument as an address in hexadecimal digits. | |
-| `%d` | Print adecimal (base 10) number | |
-| `%i` | print aninteger in base 10 | |
-| `%u` | print anunsigned decimal (base 10) number | |
-| `%x` | Unsigned hexadecimal integer; uses `abcdef` | |
-| `%X` | Unsigned hexadecimal integer; uses `ABCDEF` | |
-| `%%` | Print `%` | |
+| Type character | Output | s_data |
+|-|:-|:-|
+| `%c` | Print a singlecharacter | `c` |
+| `%s` | Print astring of characters | `s` |
+| `%p` | Print the argument as an address in hexadecimal digits. | `p` |
+| `%d` | Print adecimal (base 10) number | `d` |
+| `%i` | print aninteger in base 10 | `i` |
+| `%u` | print anunsigned decimal (base 10) number | `u` |
+| `%x` | Unsigned hexadecimal integer; uses `abcdef` | `x` |
+| `%X` | Unsigned hexadecimal integer; uses `ABCDEF` | `x_up` |
+| `%%` | Print `%` | `mod` |
 
-| **Bonus** |  |
-| ------------- |:-------------|
-| `%n` | Is a special format specifier which load the variable pointed with a value equal to the number of characters before the occurrence of %n|
-| `%f` | Print afloating-point number |
-| `%g` | Print ageneral-format floating-point number |
-| `%e` | Print anexponential floating-point number |
+| **Bonus** |  | |
+|-|:-|:-|
+| `%n` | Is a special format specifier which load the variable pointed with a value equal to the number of characters before the occurrence of %n| |
+| `%f` | Print afloating-point number | |
+| `%g` | Print ageneral-format floating-point number | |
+| `%e` | Print anexponential floating-point number | |
 
 # Flags
 
-| Flag | Meaning |
-| ------------- |:-------------|
-| `%-` | Left align the result within the given field width |
-| `%0` | Shorter numbers are padded out with leading zeros |
-| `%.` | How many placesshould be shown after the decimal point |
-| `%*` | an int width argument must precede the value that's being formatted in the argument list, exemple `printf("%0*d", 5, 3);` /* 00003 is output */ |
+| Flag | Meaning |  |
+|-|:-|:-|
+| `%-` | Left align the result within the given field width | `min` |
+| `%0` | Shorter numbers are padded out with leading zeros | `zero` |
+| `%.` | How many placesshould be shown after the decimal point | `prec` |
+| `%*` | an int width argument must precede the value that's being formatted in the argument list, exemple `printf("%0*d", 5, 3);` /* 00003 is output */ | `arg` |
 
 | **Bonus** |  |
 | ------------- |:-------------|
