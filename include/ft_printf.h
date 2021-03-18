@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/18 16:19:14 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/18 17:22:45 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,24 @@
 
 /* --- struct --- */
 
+/*
+**  `%c` | `int c`    | Print a singlecharacter
+**  `%s` | `int s`    | Print astring of characters
+**  `%p` | `int p`    | Print the argument as an address in hexadecimal digits
+**  `%d` | `int d`    | Print adecimal (base 10) number
+**  `%i` | `int i`    | print aninteger in base 10
+**  `%u` | `int u`    | print anunsigned decimal (base 10) number
+**  `%x` | `int x`    | Unsigned hexadecimal integer; uses `abcdef`
+**  `%X` | `int x_up` | Unsigned hexadecimal integer; uses `ABCDEF`
+**  `%%` | `int mod`  | Print `%`
+**  `%-` | `int min`  | Left align the result within the given field width
+**  `%0` | `int zero` | Shorter numbers are padded out with leading zeros
+**  `%.` | `int prec` | How many placesshould be shown after the decimal point
+**  `%*` | `int arg`  | an int width argument must precede the value that's being
+**   formatted in the argument list, exemple 
+**   `printf("%0*d", 5, 3); ` 00003 is output`
+*/
+
 typedef struct s_data
 {
 	int	ret;
@@ -62,6 +80,7 @@ typedef struct s_data
 	int	zero;
 	int	prec;
 	int	arg;
+	int	skip;
 }				t_data;
 
 /* --- ft_printf.c --- */
