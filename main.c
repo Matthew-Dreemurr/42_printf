@@ -1,43 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils1.c                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/18 15:40:46 by mhadad           ###   ########.fr       */
+/*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
+/*   Updated: 2021/03/18 15:08:28 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "include/ft_printf.h"
+#include "include/debug_utils.h"
+#include "include/wraloc.h"
+#define ARG1 "test%%123\n"
 
-/*
-**
-*/
-
-void	ft_putchar(char c)
+int	main(void)
 {
-	write(1, &c, 1);
-}
-
-/*
-**
-*/
-
-int	check_arg(const char *str, t_data *data)
-{
-	BR;
-	
-	return (TRUE);
-}
-
-/*
-**
-*/
-
-void	data_init(t_data *data)
-{
-	BR;
-	data->ret = 0;
+	printf("pritf ret: [%d]\n", printf(ARG1));
+	puts("\n");
+	printf("ft_pritf ret: [%d]\n", ft_printf(ARG1));
+	return (0);
 }

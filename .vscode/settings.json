@@ -3,5 +3,7 @@
 		"cstdarg": "cpp",
 		"ft_printf.h": "c",
 		"stdarg.h": "c"
-	}
+	},
+	"autoHide.autoHideSideBar": false,
+	"autoHide.autoHidePanel": false
 }

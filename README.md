@@ -3,17 +3,17 @@
 
 ## Convertions
 
-| Type character | Output |
-| ------------- |:-------------|
-| `%c` | Print a singlecharacter |
-| `%s` | Print astring of characters |
-| `%p` | Print the argument as an address in hexadecimal digits. |
-| `%d` | Print adecimal (base 10) number |
-| `%i` | print aninteger in base 10 |
-| `%u` | print anunsigned decimal (base 10) number |
-| `%x` | Unsigned hexadecimal integer; uses `abcdef` |
-| `%X` | Unsigned hexadecimal integer; uses `ABCDEF` |
-| `%%` | Print `%` |
+| Type character | Output | |
+| ------------- |:-------------|:--------|
+| `%c` | Print a singlecharacter | |
+| `%s` | Print astring of characters | |
+| `%p` | Print the argument as an address in hexadecimal digits. | |
+| `%d` | Print adecimal (base 10) number | |
+| `%i` | print aninteger in base 10 | |
+| `%u` | print anunsigned decimal (base 10) number | |
+| `%x` | Unsigned hexadecimal integer; uses `abcdef` | |
+| `%X` | Unsigned hexadecimal integer; uses `ABCDEF` | |
+| `%%` | Print `%` | |
 
 | **Bonus** |  |
 | ------------- |:-------------|
