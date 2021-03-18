@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/18 16:03:32 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/18 16:19:14 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ typedef struct s_data
 	int	i;
 	int	u;
 	int	x;
-	int	x_maj;
+	int	x_up;
 	int	mod;
-	int	minus;
+	int	min;
 	int	zero;
 	int	prec;
 	int	arg;
