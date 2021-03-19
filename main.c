@@ -6,10 +6,11 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/18 17:15:53 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/19 13:24:58 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "include/ft_printf.h"
 #include "include/debug_utils.h"
 #include "include/wraloc.h"

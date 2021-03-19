@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/03/18 17:14:45 by mhadad           ###   ########.fr        #
+#    Updated: 2021/03/19 13:24:25 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,14 @@
 NAME = libftprintf.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-DEF = -D _BREAK_PAUSE=0
+CFLAGS = -g3 -Wall -Wextra -Werror
+DEF = $(SANI) -D BREAK_PAUSE=0 $(DEBUG) $(WRA)
+DEBUG = -D DEBUG_UTILS_H
+WRA = -D WRALOC_H
+SANI = -fsanitize=address
+
+# --- files --- #
+
 SRC= \
 src/ft_printf.c \
 src/utils1.c
@@ -37,7 +43,7 @@ $(NAME): $(OBJ)
 re: fclean all
 
 exe: re
-	@gcc main.c libftprintf.a
+	@$(CC) $(CFLAGS) $(DEF) main.c libftprintf.a
 	@echo "\n"
 	@./a.out
 
