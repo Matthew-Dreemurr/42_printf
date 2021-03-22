@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/03/19 13:24:25 by mhadad           ###   ########.fr        #
+#    Updated: 2021/03/22 15:20:06 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ NAME = libftprintf.a
 
 CC = gcc
 CFLAGS = -g3 -Wall -Wextra -Werror
-DEF = $(SANI) -D BREAK_PAUSE=0 $(DEBUG) $(WRA)
+DEF = $(SANI) $(BRP) $(DEBUG) $(WRA)
+BRP = -D BREAK_PAUSE=0
 DEBUG = -D DEBUG_UTILS_H
 WRA = -D WRALOC_H
 SANI = -fsanitize=address

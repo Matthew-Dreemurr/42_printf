@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/19 12:45:20 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/22 16:02:24 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 /* ======  //TODO REMOVE  ======= */
 
+# include "../include/wraloc.h"
 # include "../include/debug_utils.h"
 
 /* ======  Include  ======= */
@@ -25,17 +26,13 @@
 
 /* ======  Macros  ======= */
 
-/*
-**   Bool macro.
-*/
+/* --- Bool macro --- */
 
 # define TRUE		1
 # define FALSE		0
 # define ERR		-1
 
-/*
-**   Max & min
-*/
+/* --- Max & min --- */
 
 # define MAX_INT	2147483647
 # define MIN_INT	-2147483648
@@ -47,19 +44,19 @@
 /* --- Struct --- */
 
 /*
-**  `%c` | `int c`    | Print a singlecharacter
-**  `%s` | `int s`    | Print astring of characters
-**  `%p` | `int p`    | Print the argument as an address in hexadecimal digits
-**  `%d` | `int d`    | Print adecimal (base 10) number
-**  `%i` | `int i`    | print aninteger in base 10
-**  `%u` | `int u`    | print anunsigned decimal (base 10) number
-**  `%x` | `int x`    | Unsigned hexadecimal integer; uses `abcdef`
-**  `%X` | `int x_up` | Unsigned hexadecimal integer; uses `ABCDEF`
-**  `%%` | `int mod`  | Print `%`
-**  `%-` | `int min`  | Left align the result within the given field width
-**  `%0` | `int zero` | Shorter numbers are padded out with leading zeros
-**  `%.` | `int prec` | How many placesshould be shown after the decimal point
-**  `%*` | `int arg`  | an int width argument must precede the value that's being
+**  `%c` | `c`    | Print a singlecharacter
+**  `%s` | `s`    | Print astring of characters
+**  `%p` | `p`    | Print the argument as an address in hexadecimal digits
+**  `%d` | `d`    | Print adecimal (base 10) number
+**  `%i` | `i`    | print aninteger in base 10
+**  `%u` | `u`    | print anunsigned decimal (base 10) number
+**  `%x` | `x`    | Unsigned hexadecimal integer; uses `abcdef`
+**  `%X` | `x_up` | Unsigned hexadecimal integer; uses `ABCDEF`
+**  `%%` | `mod`  | Print `%`
+**  `%-` | `min`  | Left align the result within the given field width
+**  `%0` | `zero` | Shorter numbers are padded out with leading zeros
+**  `%.` | `prec` | How many placesshould be shown after the decimal point
+**  `%*` | `arg`  | an int width argument must precede the value that's being
 **   formatted in the argument list, exemple 
 **   `printf("%0*d", 5, 3); ` 00003 is output`
 */
@@ -89,7 +86,7 @@ int		ft_printf(const char *str, ...);
 
 /* --- utils1.c --- */
 
-void	ft_putchar(char c);
+void	ft_putchar(char c, t_data *data);
 int		check_arg(const char *str, t_data *data);
 void	data_init(t_data *data);
 

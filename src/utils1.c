@@ -6,19 +6,26 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/19 12:06:44 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/22 16:04:22 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
 /*
-**
+**   Will print the carater `c`
 */
 
-void	ft_putchar(char c)
+void	ft_putchar(char c, t_data *data)
 {
-	write(1, &c, 1);
+#ifdef DEBUG_TRUE
+	write(1, "[\0", 2);
+#endif
+	data->skip += write(1, &c, 1);
+	data->ret += data->skip;
+#ifdef DEBUG_TRUE
+	puts("]\n");
+#endif
 }
 
 /*
@@ -27,7 +34,6 @@ void	ft_putchar(char c)
 
 void	data_init(t_data *data)
 {
-	data->ret = 0;
 	data->c = 0;
 	data->s = 0;
 	data->p = 0;
@@ -52,7 +58,7 @@ int	check_arg(const char *str, t_data *data)
 {
 	if (*str == '%')
 	{
-		data->ret += write(1, &(*str), 1);
+		ft_putchar(*str, &(*data));
 		data->skip++;
 	}
 	return (TRUE);
