@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   convert.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/22 16:35:38 by mhadad           ###   ########.fr       */
+/*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
+/*   Updated: 2021/03/22 16:16:03 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "include/ft_printf.h"
-#include "include/debug_utils.h"
-#include "include/wraloc.h"
-#define ARG1 "test%%123"
+#include "../include/ft_printf.h"
 
-int	main(void)
+void	decimal()
 {
-	int	ret;
 
-	write(1, "[\0", 2);
-	ret = printf(ARG1);
-	puts("]\n");
-	printf(" [%d]\n", ret);
-	puts("\n");
-	ret = 0;
-	write(1, "[\0", 2);
-	ret = ft_printf(ARG1);
-	puts("]\n");
-	printf(" [%d]\n", ret);
-	return (0);
 }

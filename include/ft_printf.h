@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/22 16:02:24 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/22 16:36:04 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,40 +44,22 @@
 /* --- Struct --- */
 
 /*
-**  `%c` | `c`    | Print a singlecharacter
-**  `%s` | `s`    | Print astring of characters
-**  `%p` | `p`    | Print the argument as an address in hexadecimal digits
-**  `%d` | `d`    | Print adecimal (base 10) number
-**  `%i` | `i`    | print aninteger in base 10
-**  `%u` | `u`    | print anunsigned decimal (base 10) number
-**  `%x` | `x`    | Unsigned hexadecimal integer; uses `abcdef`
-**  `%X` | `x_up` | Unsigned hexadecimal integer; uses `ABCDEF`
-**  `%%` | `mod`  | Print `%`
 **  `%-` | `min`  | Left align the result within the given field width
 **  `%0` | `zero` | Shorter numbers are padded out with leading zeros
 **  `%.` | `prec` | How many placesshould be shown after the decimal point
 **  `%*` | `arg`  | an int width argument must precede the value that's being
-**   formatted in the argument list, exemple 
-**   `printf("%0*d", 5, 3); ` 00003 is output`
+**                   formatted in the argument list, exemple 
+**                   `printf("%0*d", 5, 3); ` 00003 is output`
 */
 
 typedef struct s_data
 {
-	int	ret;
-	int	c;
-	int	s;
-	int	p;
-	int	d;
-	int	i;
-	int	u;
-	int	x;
-	int	x_up;
-	int	mod;
 	int	min;
 	int	zero;
 	int	prec;
 	int	arg;
 	int	skip;
+	int	ret;
 }				t_data;
 
 /* --- ft_printf.c --- */
@@ -87,7 +69,11 @@ int		ft_printf(const char *str, ...);
 /* --- utils1.c --- */
 
 void	ft_putchar(char c, t_data *data);
-int		check_arg(const char *str, t_data *data);
+int		check_flag(const char *str, t_data *data, va_list *args);
 void	data_init(t_data *data);
+
+/* --- convert.c --- */
+
+void	decimal();
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:40:39 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/22 15:52:36 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/22 16:36:04 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_printf(const char *str, ...)
 		if (*str != '%')
 			ft_putchar(*str, &d);
 		else
-			if (!(check_arg(str, &d)))
+			if (!(check_flag(str, &d, &args)))
 				return (ERR);
 #ifdef DEBUG_TRUE
 	D_INT(d.skip);

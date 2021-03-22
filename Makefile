@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/03/22 15:20:06 by mhadad           ###   ########.fr        #
+#    Updated: 2021/03/22 16:15:51 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SANI = -fsanitize=address
 
 SRC= \
 src/ft_printf.c \
-src/utils1.c
+src/utils1.c \
+src/convert.c
 
 OBJ = $(SRC:c=o)
 
