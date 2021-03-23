@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 18:21:34 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/22 15:07:59 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/23 16:12:01 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@
 	char*	: printf("[l %d] %s:%s() | " #var " = \"%s\"" _DE_NL , __LINE__, __FILE__, __FUNCTION__, var),	\
 	default	: printf("[l %d] %s:%s() | " #var " = %p" _DE_NL , __LINE__, __FILE__, __FUNCTION__, var))
 
-# define D_INT(var) printf("[%d] %-15s | " #var " : %d" _DE_NL, __LINE__, __FUNCTION__, var);
-# define D_LINT(var) printf("[%d] %-15s | " #var " : %ld" _DE_NL, __LINE__, __FUNCTION__, var);
-# define D_DOUB(var) printf("[%d] %-15s | " #var " : %f" _DE_NL, __LINE__, __FUNCTION__, var);
-# define D_STR(var) printf("[%d] %-15s | " #var " : \"%s\"" _DE_NL, __LINE__, __FUNCTION__, var);
-# define D_PTR(var) printf"[%d] %-15s | " #var " : <%p>" _DE_NL, __LINE__, __FUNCTION__, var);
+# define D_INT(var) printf("[%d] %-15s | " #var " : %5d" _DE_NL, __LINE__, __FUNCTION__, var);
+# define D_LINT(var) printf("[%d] %-15s | " #var " : %5ld" _DE_NL, __LINE__, __FUNCTION__, var);
+# define D_DOUB(var) printf("[%d] %-15s | " #var " : %5f" _DE_NL, __LINE__, __FUNCTION__, var);
+# define D_STR(var) printf("[%d] %-15s | " #var " : \"%5s\"" _DE_NL, __LINE__, __FUNCTION__, var);
+# define D_PTR(var) printf"[%d] %-15s | " #var " : <%5p>" _DE_NL, __LINE__, __FUNCTION__, var);
 
 # define D_STR_DETAILS(str) print_str_details(strlen(str), str, #str)
 

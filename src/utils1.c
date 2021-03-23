@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/22 16:38:12 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/23 16:05:38 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,15 @@ int	check_flag(const char *str, t_data *data, va_list *args)
 	{
 		ft_putchar(*str, &(*data));
 		data->skip++;                                     //To skip the `%` flag
+		return (TRUE);
 	}
-	if (*str == '')
-		;
+	if (*str == '-')
+		data->min++;
+	if (*str == '0')
+		data->zero++;
+	if (*str == '*')
+		data->arg++;
+	if (*str == '.')
+		data->prec++;
 	return (TRUE);
 }
