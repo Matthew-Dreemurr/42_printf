@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/22 16:36:04 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/24 12:27:21 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct s_data
 	int	min;
 	int	zero;
 	int	prec;
+	int	min_width;
 	int	arg;
 	int	skip;
 	int	ret;
@@ -68,6 +69,7 @@ int		ft_printf(const char *str, ...);
 
 /* --- utils1.c --- */
 
+int	ft_isdigit(int c);
 void	ft_putchar(char c, t_data *data);
 int		check_flag(const char *str, t_data *data, va_list *args);
 void	data_init(t_data *data);

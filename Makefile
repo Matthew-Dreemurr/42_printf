@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/03/22 16:15:51 by mhadad           ###   ########.fr        #
+#    Updated: 2021/03/24 15:59:09 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,4 +59,8 @@ c:
 	@clear
 nrm:
 	norminette src/*.c include/ft_printf.h
-.PHONY: clean all, clean, fclean, re
+git:
+	-git add *
+	git commit -am "auto"
+	git push
+.PHONY: clean all, clean, fclean, re, git

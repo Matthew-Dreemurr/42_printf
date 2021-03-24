@@ -6,23 +6,33 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/23 16:05:38 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/24 12:44:56 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
 /*
-**   Will print the carater `c`
+**   Will print the carater `c` and increment `data->skip/ret`
+*/
+
+int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
+
+/*
+**   Will print the carater `c` and increment `data->skip/ret`
 */
 
 void	ft_putchar(char c, t_data *data)
 {
 #ifdef DEBUG_TRUE
-	write(1, "[\0", 2);
+	write(1, "\n[\0", 4);
 #endif
-	data->skip += write(1, &c, 1);
-	data->ret += data->skip;
+	write(1, &c, 1);
+	data->skip++;
+	data->ret++;
 #ifdef DEBUG_TRUE
 	puts("]\n");
 #endif
@@ -59,13 +69,16 @@ int	check_flag(const char *str, t_data *data, va_list *args)
 		data->skip++;                                     //To skip the `%` flag
 		return (TRUE);
 	}
-	if (*str == '-')
-		data->min++;
-	if (*str == '0')
-		data->zero++;
-	if (*str == '*')
-		data->arg++;
-	if (*str == '.')
-		data->prec++;
+	
+#ifdef DEBUG_TRUE
+	D_INT(data->min);
+	D_INT(data->zero);
+	D_INT(data->prec);
+	D_INT(data->arg);
+	D_INT(data->skip);
+	D_INT(data->ret);
+	D_STR(str);
+	BR;
+#endif
 	return (TRUE);
 }
