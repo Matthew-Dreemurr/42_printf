@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/24 12:45:46 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/24 16:09:02 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,22 @@
 #include "include/ft_printf.h"
 #include "include/debug_utils.h"
 #include "include/wraloc.h"
-#define ARG1 "%0-5d", 12
+
+#define ARG1 "%0d", 3
 
 int	main(void)
 {
 	int	ret;
 
-	write(1, "[\0", 2);
-	ret = printf("%0-5d", 12);
-	puts("]\n");
-	printf(" [%d]\n", ret);
+	write(1, "{\0", 2);
+	ret = printf(ARG1);
+	puts("}\n");
+	printf("ret [%d]\n", ret);
 	puts("\n");
 	ret = 0;
-	write(1, "[\0", 2);
+	write(1, "{\0", 2);
 	ret = ft_printf(ARG1);
-	puts("]\n");
-	printf(" [%d]\n", ret);
+	puts("}\n");
+	printf("ret [%d]\n", ret);
 	return (0);
 }
