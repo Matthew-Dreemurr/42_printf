@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/03/24 15:59:32 by mhadad           ###   ########.fr        #
+#    Updated: 2021/03/24 16:03:33 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ c:
 nrm:
 	norminette src/*.c include/ft_printf.h
 git:
+	@-git pull
 	@-git add *
 	@git commit -am "auto"
 	@git push
