@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/03/24 16:03:33 by mhadad           ###   ########.fr        #
+#    Updated: 2021/03/24 16:04:05 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,6 @@ nrm:
 git:
 	@-git pull
 	@-git add *
-	@git commit -am "auto"
-	@git push
+	@-git commit -am "auto"
+	@-git push
 .PHONY: clean all, clean, fclean, re, git
