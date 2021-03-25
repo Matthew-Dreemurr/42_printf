@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/25 17:10:29 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/25 18:42:24 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int		check_flag(const char *str, t_data *data, va_list *args);
 int		index_flag(const char c, t_data *data, va_list *args);
 void	data_init(t_data *data);
 int		dummy(t_data *data, va_list *args);
-void	ft_putstr(const char *s);
+void	ft_putstr(const char *s, t_data *data);
 
 /* --- convert.c --- */
 int	arg_c(t_data *data, va_list *args);

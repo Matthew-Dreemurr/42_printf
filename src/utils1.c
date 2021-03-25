@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/25 17:10:24 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/25 18:44:56 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ int	ft_isdigit(int c)
 **
 */
 
-void	ft_putstr(const char *s)
+void	ft_putstr(const char *s, t_data *data)
 {
+	//data->ret len_str(s, '\0', 1); //TODO
 	while (s && *s)
 		write(1, s++, 1);
 }
