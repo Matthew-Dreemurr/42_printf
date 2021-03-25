@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/03/24 16:05:09 by mhadad           ###   ########.fr        #
+#    Updated: 2021/03/25 16:14:07 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ NAME = libftprintf.a
 
 CC = gcc
 CFLAGS = -g3 -Wall -Wextra -Werror
-DEF = $(SANI) $(BRP) $(DEBUG) $(WRA)
-BRP = -D BREAK_PAUSE=0
+DEF = $(SANI) $(BRK) $(DEBUG) $(WRA)
+BRK = -D BREAK_PAUSE=0
 DEBUG = -D DEBUG_UTILS_H
 WRA = -D WRALOC_H
 SANI = -fsanitize=address
@@ -44,10 +44,13 @@ $(NAME): $(OBJ)
 
 re: fclean all
 
-exe: re
-	@$(CC) $(CFLAGS) $(DEF) main.c libftprintf.a
+exe: main
 	@echo "\n"
 	@./a.out
+	
+main: re
+	@$(CC) $(CFLAGS) $(DEF) main.c libftprintf.a
+
 
 fclean: clean
 	rm -rf $(NAME)
