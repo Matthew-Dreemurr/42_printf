@@ -25,11 +25,20 @@ int	ft_isdigit(int c)
 **
 */
 
+int	len_str(char *str)
+{
+
+}
+
+/*
+**
+*/
+
 void	ft_putstr(const char *s, t_data *data)
 {
-	//data->ret len_str(s, '\0', 1); //TODO
 	while (s && *s)
 		write(1, s++, 1);
+	data->ret += len_str(s);
 }
 
 /*
@@ -42,7 +51,6 @@ void	ft_putchar(char c, t_data *data)
 	write(1, "\n[\0", 4);
 #endif
 	write(1, &c, 1);
-	data->skip++;
 	data->ret++;
 #ifdef DEBUG_TRUE
 	puts("]\n");
@@ -80,6 +88,18 @@ int	dummy(t_data *data, va_list *args)
 
 /*
 **
+**   index | func
+**   ------|------
+**   [0]   | dummy
+**   [1]   | dummy
+**   [2]   | dummy
+**   [3]   | dummy
+**   [4]   | dummy
+**   [5]   | arg_s
+**   [6]   | dummy
+**   [7]   | dummy
+**   [8]   | dummy
+**      
 */
 
 int	index_flag(const char c, t_data *data, va_list *args)
