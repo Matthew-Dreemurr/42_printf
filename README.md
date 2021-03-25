@@ -4,7 +4,7 @@
 ## Convertions
 
 | Type character | Output |
-|-|:-|:-|
+|-|:-|
 | `%c` | Print a singlecharacter |
 | `%s` | Print astring of characters |
 | `%p` | Print the argument as an address in hexadecimal digits. |
