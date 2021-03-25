@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/24 12:44:56 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/25 14:59:25 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,39 @@ void	data_init(t_data *data)
 **
 */
 
+int	index_flag(const char c, t_data *data, va_list *args)
+{
+	static t_func_arr	(*f)[FUNC] = {
+		arg_s,
+		arg_c
+	};
+	char *index;
+	int i;
+
+
+	i = -1;
+	index = "-0.*cspdiuxX%";
+	while (index && index[++i] && index[i] != c )
+		;
+	
+	
+}
+
+/*
+**
+*/
+
 int	check_flag(const char *str, t_data *data, va_list *args)
 {
-	(void)args;
 	if (*str == '%')
 	{
+		(void)args;
 		ft_putchar(*str, &(*data));
 		data->skip++;                                     //To skip the `%` flag
 		return (TRUE);
 	}
-	
+	else if ((index_flag(str, &data, &args)) == ERR)
+		return (ERR);
 #ifdef DEBUG_TRUE
 	D_INT(data->min);
 	D_INT(data->zero);

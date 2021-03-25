@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/24 12:27:21 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/25 14:57:45 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,19 @@
 # define LONG_MAX	9223372036854775807
 # define LONG_MIN	-9223372036854775808
 
+/* --- number of function in the arrays of function pointers --- */
+
+# define FUNC 2
+
 /* ======  Prototype  ======= */
 
-/* --- Struct --- */
+/* --- typedef --- */
+
+/*
+**
+*/
+
+typedef int	(**t_func_arr)();
 
 /*
 **  `%-` | `min`  | Left align the result within the given field width
@@ -69,13 +79,14 @@ int		ft_printf(const char *str, ...);
 
 /* --- utils1.c --- */
 
-int	ft_isdigit(int c);
+int		ft_isdigit(int c);
 void	ft_putchar(char c, t_data *data);
 int		check_flag(const char *str, t_data *data, va_list *args);
+int	index_flag(const char c, t_data *data, va_list *args);
 void	data_init(t_data *data);
 
 /* --- convert.c --- */
-
-void	decimal();
+int	arg_c(const char *str, t_data *data, va_list *args);
+int	arg_s(const char *str, t_data *data, va_list *args);
 
 #endif
