@@ -25,9 +25,16 @@ int	ft_isdigit(int c)
 **
 */
 
-int	len_str(char *str)
+int	len_str(const char *str)
 {
+	int	i;
 
+	i = -1;
+	if(!str && !*str)
+		return (0);
+	while (str[++i])
+		;
+	return (i);
 }
 
 /*
@@ -88,17 +95,21 @@ int	dummy(t_data *data, va_list *args)
 
 /*
 **
-**   index | func
-**   ------|------
-**   [0]   | dummy
-**   [1]   | dummy
-**   [2]   | dummy
-**   [3]   | dummy
-**   [4]   | dummy
-**   [5]   | arg_s
-**   [6]   | dummy
-**   [7]   | dummy
-**   [8]   | dummy
+**   index | flag | func
+**   ------|------|------
+**   [0]   | `-`  | dummy
+**   [1]   | `0`  | dummy
+**   [2]   | `.`  | dummy
+**   [3]   | `*`  | dummy
+**   [4]   | `c`  | dummy
+**   [5]   | `s`  | arg_s
+**   [6]   | `p`  | dummy
+**   [7]   | `d`  | dummy
+**   [8]   | `i`  | dummy
+**   [9]   | `u`  | dummy
+**   [10]  | `x`  | dummy
+**   [11]  | `X`  | dummy
+**   [12]  | `%`  | dummy
 **      
 */
 
