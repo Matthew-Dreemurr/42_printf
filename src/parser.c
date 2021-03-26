@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/26 19:39:46 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/26 20:16:57 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	check_flag(const char *str, t_data *data, va_list *args)
 	}
 	else if (*str != '0')
 	{
-		if (as)
+		if (ascii_range)
 	}
 	else
 		ret = index_flag(str, &(*data), &(*args));
