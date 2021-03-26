@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/03/26 15:28:51 by mhadad           ###   ########.fr        #
+#    Updated: 2021/03/26 16:55:46 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,10 +40,10 @@ OBJ = $(SRC:c=o)
 	$(CC) $(CFLAGS) $(DEF) -I include -c $^ -o $@
 
 all: $(NAME)
-	@cat _src/compile_ok
 
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
+	@cat _src/compile_ok
 
 re: fclean all
 
