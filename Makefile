@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/03/26 16:55:46 by mhadad           ###   ########.fr        #
+#    Updated: 2021/03/26 17:07:25 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ exe: main
 	@./a.out
 	
 main: re
-	@$(CC) $(CFLAGS) $(DEF) main.c libftprintf.a
+	$(CC) $(CFLAGS) $(DEF) main.c libftprintf.a
 
 fclean: clean
 	rm -rf $(NAME)
