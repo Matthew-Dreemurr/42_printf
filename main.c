@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/25 16:14:59 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/26 16:50:05 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "include/debug_utils.h"
 #include "include/wraloc.h"
 
-#define ARG1 "[%s] {%s}\n", "test", "yollow"
+#define ARG1 "|%s|", NULL
 int	main(void)
 {
 	int	ret;

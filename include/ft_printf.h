@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/25 18:42:24 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/26 16:27:01 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 
 /* --- number of function in the arrays of function pointers --- */
 
-# define FUNC 8
+# define FUNC 13
 
 /* ======  Prototype  ======= */
 
@@ -79,17 +79,18 @@ typedef int	(*t_func_arr)(t_data *data, va_list *args);
 
 int		ft_printf(const char *str, ...);
 
-/* --- utils1.c --- */
+/* --- parser.c --- */
 
-int		ft_isdigit(int c);
-void	ft_putchar(char c, t_data *data);
-int		check_flag(const char *str, t_data *data, va_list *args);
-int		index_flag(const char c, t_data *data, va_list *args);
 void	data_init(t_data *data);
 int		dummy(t_data *data, va_list *args);
-void	ft_putstr(const char *s, t_data *data);
+int		index_flag(const char c, t_data *data, va_list *args);
+int		check_flag(const char *str, t_data *data, va_list *args);
 
-/* --- convert.c --- */
+/* --- str_utils.c --- */
+int		len_str(const char *str);
+void	ft_putstr(const char *s, t_data *data);
+void	ft_putchar(char c, t_data *data);
+
 int	arg_c(t_data *data, va_list *args);
 int	arg_s(t_data *data, va_list *args);
 

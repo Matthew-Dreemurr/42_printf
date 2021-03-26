@@ -1,97 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils1.c                                           :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/25 18:44:56 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/26 16:38:22 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-
-/*
-**
-*/
-
-int	ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
-
-/*
-**
-*/
-
-int	len_str(const char *str)
-{
-	int	i;
-
-	i = -1;
-	if(!str && !*str)
-		return (0);
-	while (str[++i])
-		;
-	return (i);
-}
-
-/*
-**
-*/
-
-void	ft_putstr(const char *s, t_data *data)
-{
-	while (s && *s)
-		write(1, s++, 1);
-	data->ret += len_str(s);
-}
-
-/*
-**   Will print the carater `c` and increment `data->skip/ret`
-*/
-
-void	ft_putchar(char c, t_data *data)
-{
-#ifdef DEBUG_TRUE
-	write(1, "\n[\0", 4);
-#endif
-	write(1, &c, 1);
-	data->ret++;
-#ifdef DEBUG_TRUE
-	puts("]\n");
-#endif
-}
-
-/*
-**  `%-` | `min`  | Left align the result within the given field width
-**  `%0` | `zero` | Shorter numbers are padded out with leading zeros
-**  `%.` | `prec` | How many placesshould be shown after the decimal point
-**  `%*` | `arg`  | an int width argument must precede the value that's being
-**                   formatted in the argument list, exemple 
-**                   `printf("%0*d", 5, 3); ` 00003 is output`
-*/
-
-void	data_init(t_data *data)
-{
-	data->min = 0;
-	data->zero = 0;
-	data->prec = 0;
-	data->arg = 0;
-	data->skip = 0;
-}
-
-/*
-**
-*/
-
-int	dummy(t_data *data, va_list *args)
-{
-	(void)data;
-	(void)args;
-	return (TRUE);
-}
 
 /*
 **
@@ -110,20 +29,25 @@ int	dummy(t_data *data, va_list *args)
 **   [10]  | `x`  | dummy
 **   [11]  | `X`  | dummy
 **   [12]  | `%`  | dummy
-**      
+**
 */
 
 int	index_flag(const char c, t_data *data, va_list *args)
 {
 	static t_func_arr	f[FUNC] = {
-		dummy,
-		dummy,
-		dummy,
-		dummy,
-		dummy,
-		arg_s,
-		dummy,
-		dummy
+		dummy,//  [0]  | `-`
+		dummy,//  [1]  | `0`
+		dummy,//  [2]  | `.`
+		dummy,//  [3]  | `*`
+		arg_c,//  [4]  | `c`
+		arg_s,//  [5]  | `s`
+		dummy,//  [6]  | `p`
+		dummy,//  [7]  | `d`
+		dummy,//  [8]  | `i`
+		dummy,//  [9]  | `u`
+		dummy,//  [10] | `x`
+		dummy,//  [11] | `X`
+		dummy //  [12] | `%`
 	};
 	char *flag;
 	int index;
@@ -135,8 +59,8 @@ int	index_flag(const char c, t_data *data, va_list *args)
 	{
 		index++;
 # ifdef DEBUG_TRUE
-		D_INT(index);
-		D_CHAR(flag[index]);
+		// D_INT(index);
+		// D_CHAR(flag[index]);
 		BR;
 # endif
 	}
@@ -146,7 +70,7 @@ int	index_flag(const char c, t_data *data, va_list *args)
 			return (ERR);
 		return (TRUE);
 	}
-	return (FALSE);
+	return (TRUE);
 }
 
 /*
@@ -161,20 +85,9 @@ int	check_flag(const char *str, t_data *data, va_list *args)
 	{
 		(void)args;
 		ft_putchar(*str, &(*data));
-		data->skip++;                                     //To skip the `%` flag
 		ret = 1;
 	}
 	else
 		ret = index_flag(*str, &(*data), &(*args));
-#ifdef DEBUG_TRUE
-	D_STR(str);
-	D_INT(data->min);
-	D_INT(data->zero);
-	D_INT(data->prec);
-	D_INT(data->arg);
-	D_INT(data->skip);
-	D_INT(data->ret);
-	BR;
-#endif
 	return (ret);
 }
