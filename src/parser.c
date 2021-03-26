@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/26 16:38:22 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/26 19:39:46 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 **
 */
 
-int	index_flag(const char c, t_data *data, va_list *args)
+int	index_flag(const char *str, t_data *data, va_list *args)
 {
 	static t_func_arr	f[FUNC] = {
 		dummy,//  [0]  | `-`
@@ -55,7 +55,7 @@ int	index_flag(const char c, t_data *data, va_list *args)
 
 	index = 0;
 	flag = "-0.*cspdiuxX%";
-	while (flag && flag[index] && flag[index] != c)
+	while (flag && flag[index] && flag[index] != *str)
 	{
 		index++;
 # ifdef DEBUG_TRUE
@@ -64,7 +64,7 @@ int	index_flag(const char c, t_data *data, va_list *args)
 		BR;
 # endif
 	}
-	if (flag[index] == c)
+	if (flag[index] == *str)
 	{
 		if (!(f[index](&(*data), &(*args))))
 			return (ERR);
@@ -87,7 +87,11 @@ int	check_flag(const char *str, t_data *data, va_list *args)
 		ft_putchar(*str, &(*data));
 		ret = 1;
 	}
+	else if (*str != '0')
+	{
+		if (as)
+	}
 	else
-		ret = index_flag(*str, &(*data), &(*args));
+		ret = index_flag(str, &(*data), &(*args));
 	return (ret);
 }

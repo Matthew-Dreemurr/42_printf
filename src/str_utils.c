@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/26 16:43:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/26 19:50:43 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,29 @@ void	ft_putchar(char c, t_data *data)
 #ifdef DEBUG_TRUE
 	puts("|\n");
 #endif
+}
+
+/*
+**
+*/
+
+int	ascii_range(char *str, char start, char end)
+{
+	int	i;
+	int	j;
+
+	if (start < end || !str)
+		return (FALSE);
+	while (start <= end)
+	{
+		i = 0;
+		while (str[i])
+		{
+			if (str[i] == start)
+				return (FALSE);
+			i++;
+		}
+		start++;
+	}
+	
 }
