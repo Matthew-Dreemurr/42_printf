@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/29 17:54:43 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/29 22:44:52 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "include/debug_utils.h"
 #include "include/wraloc.h"
 
-#define ARG1 "|%12s|", "UwU be OwO"
+#define ARG1 "%9s, %-32s", "UwU be OwO", "OwO be UwU"
 int	main(void)
 {
 	int	ret;

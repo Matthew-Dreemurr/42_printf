@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/29 17:57:30 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/29 22:51:11 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,12 @@ int		ft_printf(const char *str, ...);
 
 void	data_init(t_data *data);
 int		dummy(t_data *data, va_list *args);
+int		left_justify(t_data *data, va_list *args);
 int		index_flag(const char *str, t_data *d, va_list *args);
 int		check_flag(const char *str, t_data *data, va_list *args);
 
 /* --- str_utils.c --- */
-int		len_str(const char *str);
+size_t	len_str(const char *str);
 int		len_int(int nbr);
 void	ft_putstr(const char *s, t_data *data);
 void	ft_putchar(char c, t_data *data);
@@ -97,6 +98,5 @@ int		arg_c(t_data *data, va_list *args);
 int		arg_s(t_data *data, va_list *args);
 
 int		min_width(const char *str, t_data *data);
-
-
+void	width_print(int len, size_t s_len, t_data *data);
 #endif

@@ -6,11 +6,23 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/29 16:56:12 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/29 22:53:25 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+
+/* //TODO
+** //TODO Need to remove the flags form the index and check before 
+*/ //TODO  call index_flag.
+
+int	left_justify(t_data *data, va_list *args)
+{
+	(void)args;
+	data->minus++;
+	data->skip++;
+	return (TRUE);
+}
 
 /*
 **
@@ -35,19 +47,19 @@
 int	index_flag(const char *str, t_data *d, va_list *args)
 {
 	static t_func_arr	f[FUNC] = {
-		dummy,//  [0]  | `-`
-		dummy,//  [1]  | `0`
-		dummy,//  [2]  | `.`
-		dummy,//  [3]  | `*`
-		arg_c,//  [4]  | `c`
-		arg_s,//  [5]  | `s`
-		dummy,//  [6]  | `p`
-		dummy,//  [7]  | `d`
-		dummy,//  [8]  | `i`
-		dummy,//  [9]  | `u`
-		dummy,//  [10] | `x`
-		dummy,//  [11] | `X`
-		dummy //  [12] | `%`
+		left_justify,  //  [0]  | `-`
+		dummy,         //  [1]  | `0`
+		dummy,         //  [2]  | `.`
+		dummy,         //  [3]  | `*`
+		arg_c,         //  [4]  | `c`
+		arg_s,         //  [5]  | `s`
+		dummy,         //  [6]  | `p`
+		dummy,         //  [7]  | `d`
+		dummy,         //  [8]  | `i`
+		dummy,         //  [9]  | `u`
+		dummy,         //  [10] | `x`
+		dummy,         //  [11] | `X`
+		dummy          //  [12] | `%`
 	};
 	char *flag;
 	int index;
@@ -73,6 +85,7 @@ int	index_flag(const char *str, t_data *d, va_list *args)
 	}
 	return (TRUE);
 }
+
 
 /*
 **

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/29 17:31:54 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/29 22:43:46 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 **
 */
 
-int	len_str(const char *str)
+size_t	len_str(const char *str)
 {
 	int	i;
 
@@ -126,4 +126,27 @@ int		min_width(const char *str, t_data *data)
 	data->min_width = len;
 	data->skip = len_int(len);
 	return (TRUE);
+}
+
+/*
+**
+*/
+
+void	width_print(int len, size_t s_len, t_data *data)
+{
+	int	wdt_len;
+
+	wdt_len = len - s_len;
+#ifdef DEBUG_TRUE
+	D_INT(len);
+	D_LINT(s_len);
+	D_INT(wdt_len);
+	BR;
+#endif
+	if (wdt_len > 0)
+	{
+		data->ret += wdt_len;
+		while (0 <= wdt_len--)
+			write(1, " ", 1);
+	}
 }
