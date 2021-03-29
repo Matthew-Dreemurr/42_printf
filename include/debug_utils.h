@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 18:21:34 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/25 16:22:58 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/29 16:47:38 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define DEBUG_TRUE
 # include <stdio.h>
 # include <stdint.h>
+# include <string.h>
 
 # ifndef BREAK_PAUSE
 #  define BREAK_PAUSE 1

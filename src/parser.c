@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/29 16:31:28 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/29 16:56:12 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 **
 */
 
-int	index_flag(const char *str, t_data *data, va_list *args)
+int	index_flag(const char *str, t_data *d, va_list *args)
 {
 	static t_func_arr	f[FUNC] = {
 		dummy,//  [0]  | `-`
@@ -59,14 +59,15 @@ int	index_flag(const char *str, t_data *data, va_list *args)
 	{
 		index++;
 # ifdef DEBUG_TRUE
-		// D_INT(index);
-		// D_CHAR(flag[index]);
+		D_STR((char *)str);
+		D_INT(index);
+		D_CHAR(flag[index]);
 		BR;
 # endif
 	}
 	if (flag[index] == *str)
 	{
-		if (!(f[index](&(*data), &(*args))))
+		if (!(f[index](&(*d), &(*args))))
 			return (ERR);
 		return (TRUE);
 	}
@@ -90,11 +91,12 @@ int	check_flag(const char *str, t_data *data, va_list *args)
 	else if (*str != '0')
 	{
 		if (*str >= '1' && *str <= '9')
-		ret = min_width(str, &(*data));
+			ret = min_width(str, &(*data));
+#ifdef DEBUG_TRUE
 		D_INT(data->min_width);
 		D_INT(data->skip);
+#endif
 	}
-	else
-		ret = index_flag(str, &(*data), &(*args));
+	ret = index_flag(&str[data->skip], &(*data), &(*args));
 	return (ret);
 }
