@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/29 15:41:39 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/29 16:31:07 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	len_str(const char *str)
 }
 
 /*
-**   //TODO WIP
+**
 */
 
 int	len_int(int nbr)
@@ -41,7 +41,7 @@ int	len_int(int nbr)
 	if (nbr == 0)
 		return (0);
 	len = 0;
-	while (nbr < 0)
+	while (nbr > 0)
 	{
 		nbr /= 10;
 		len ++;
@@ -118,6 +118,6 @@ int		min_width(const char *str, t_data *data)
 	if (len > MAX_INT)
 		return (-1);
 	data->min_width = len;
-	D_INT(data->min_width);
+	data->skip = len_int(len);
 	return (TRUE);
 }
