@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/29 16:49:43 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/29 17:57:30 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@
 
 typedef struct s_data
 {
-	int	min;
+	int	minus;
 	int	zero;
 	int	prec;
 	int	min_width;

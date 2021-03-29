@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/29 16:57:41 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/29 18:15:14 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ int	arg_s(t_data *data, va_list *args)
 	D_STR_DETAILS((char *)str);
 	BR;
 #endif
+	if (data->min_width)
+	{
+		// TODO check the whidth and the L/R justify
+	}
 	if (!str || !*str)
 		ft_putstr("(null)", &(*data));
 	else
