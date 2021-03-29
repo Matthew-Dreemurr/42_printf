@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/29 16:56:59 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/29 17:31:54 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,13 @@ int	len_int(int nbr)
 void	ft_putstr(const char *s, t_data *data)
 {
 #ifdef DEBUG_TRUE
-	D_STR_DETAILS((char *)s);
-	BR;
+	write(1, "\n\n|", 4);
 #endif
 	data->ret += len_str(s);
 	while (s && *s)
 		write(1, s++, 1);
 #ifdef DEBUG_TRUE
-	D_STR_DETAILS((char *)s);
-	BR;
+	write(1, "|\n\n", 4);
 #endif
 }
 
