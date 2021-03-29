@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/26 19:40:00 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/29 15:37:30 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,15 @@ int		check_flag(const char *str, t_data *data, va_list *args);
 
 /* --- str_utils.c --- */
 int		len_str(const char *str);
+int	len_int(int nbr);
 void	ft_putstr(const char *s, t_data *data);
 void	ft_putchar(char c, t_data *data);
 int		ascii_range(char *str, char start, char end);
 
 int		arg_c(t_data *data, va_list *args);
 int		arg_s(t_data *data, va_list *args);
+
+int		min_width(const char *str, t_data *data);
+
 
 #endif
