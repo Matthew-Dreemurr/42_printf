@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/30 17:34:35 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/30 18:10:42 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int	left_justify(t_data *data, va_list *args)
 **   [3]   | `d`  | dummy
 **   [4]   | `i`  | dummy
 **   [5]   | `u`  | dummy
-**   [6]  | `x`  | dummy
-**   [7]  | `X`  | dummy
-**   [8]  | `%`  | dummy
+**   [6]   | `x`  | dummy
+**   [7]   | `X`  | dummy
+**   [8]   | `%`  | dummy
 **
 */
 
