@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/30 21:51:10 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/30 22:45:41 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,16 +86,46 @@ void	ft_putchar(char c, t_data *data)
 **
 */
 
-void	print_int(int nbr, t_data *data)
+void	putstr_rev(const char *s, t_data *data)
 {
+	size_t	len;
 
+	len = len_str(s);
+	data->ret += len;
+	while (s && len > 0 && s[--len])
+		putchar(s[len]);
+}
+
+/*
+** //XXX Malloc !
+*/
+
+int	print_int(int nbr, t_data *data)
+{
+	int i;
+	char *str;
+
+	i = 0;
+	str = malloc(len_int(nbr) + 1);
+	if (!str)
+		return (-1);
+	while (nbr > 0)
+	{
+		str[i] = (nbr % 10) + '0';
+		nbr /= 10;
+		i++;
+		str[i] = '\0';
+	}
+	putstr_rev(str, &(*data));
+	free (str);
+	return (TRUE);
 }
 
 /*
 **
 */
 
-int		min_width(const char *str, t_data *data)
+int	min_width(const char *str, t_data *data)
 {
 	long	len;
 	int		i;
