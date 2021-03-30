@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/29 22:51:11 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/30 16:22:26 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 
 /* --- number of function in the arrays of function pointers --- */
 
-# define FUNC 13
+# define FUNC 9
 
 /* ======  Prototype  ======= */
 

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/29 22:43:46 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/30 17:12:05 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,9 +122,14 @@ int		min_width(const char *str, t_data *data)
 		i++;
 	}
 	if (len > MAX_INT)
-		return (-1);
+		return (ERR);
 	data->min_width = len;
-	data->skip = len_int(len);
+	data->skip += len_int(len);
+#ifdef DEBUG_TRUE
+	D_INT(data->min_width);
+	D_INT(data->skip);
+	BR;
+#endif
 	return (TRUE);
 }
 
@@ -145,8 +150,14 @@ void	width_print(int len, size_t s_len, t_data *data)
 #endif
 	if (wdt_len > 0)
 	{
+#ifdef DEBUG_TRUE
+	write(1, "\n\n|", 4);
+#endif
 		data->ret += wdt_len;
-		while (0 <= wdt_len--)
+		while (0 <= --wdt_len)
 			write(1, " ", 1);
+#ifdef DEBUG_TRUE
+	write(1, "|\n\n", 4);
+#endif
 	}
 }

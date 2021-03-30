@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/29 22:53:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/30 17:12:09 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,45 +28,37 @@ int	left_justify(t_data *data, va_list *args)
 **
 **   index | flag | func
 **   ------|------|------
-**   [0]   | `-`  | dummy
-**   [1]   | `0`  | dummy
-**   [2]   | `.`  | dummy
-**   [3]   | `*`  | dummy
-**   [4]   | `c`  | dummy
-**   [5]   | `s`  | arg_s
-**   [6]   | `p`  | dummy
-**   [7]   | `d`  | dummy
-**   [8]   | `i`  | dummy
-**   [9]   | `u`  | dummy
-**   [10]  | `x`  | dummy
-**   [11]  | `X`  | dummy
-**   [12]  | `%`  | dummy
+**   [0]   | `c`  | arg_c
+**   [1]   | `s`  | arg_s
+**   [2]   | `p`  | dummy
+**   [3]   | `d`  | dummy
+**   [4]   | `i`  | dummy
+**   [5]   | `u`  | dummy
+**   [6]  | `x`  | dummy
+**   [7]  | `X`  | dummy
+**   [8]  | `%`  | dummy
 **
 */
 
 int	index_flag(const char *str, t_data *d, va_list *args)
 {
 	static t_func_arr	f[FUNC] = {
-		left_justify,  //  [0]  | `-`
-		dummy,         //  [1]  | `0`
-		dummy,         //  [2]  | `.`
-		dummy,         //  [3]  | `*`
-		arg_c,         //  [4]  | `c`
-		arg_s,         //  [5]  | `s`
-		dummy,         //  [6]  | `p`
-		dummy,         //  [7]  | `d`
-		dummy,         //  [8]  | `i`
-		dummy,         //  [9]  | `u`
-		dummy,         //  [10] | `x`
-		dummy,         //  [11] | `X`
-		dummy          //  [12] | `%`
+		arg_c,         //  [0]  | `c`
+		arg_s,         //  [1]  | `s`
+		dummy,         //  [2]  | `p`
+		dummy,         //  [3]  | `d`
+		dummy,         //  [4]  | `i`
+		dummy,         //  [5]  | `u`
+		dummy,         //  [6]  | `x`
+		dummy,         //  [7]  | `X`
+		dummy          //  [8]  | `%`
 	};
 	char *flag;
 	int index;
 
 
 	index = 0;
-	flag = "-0.*cspdiuxX%";
+	flag = "cspdiuxX%";
 	while (flag && flag[index] && flag[index] != *str)
 	{
 		index++;
@@ -95,21 +87,50 @@ int	check_flag(const char *str, t_data *data, va_list *args)
 {
 	int ret;
 
+	ret = 0;
 	if (*str == '%')
 	{
 		// (void)args;
 		ft_putchar(*str, &(*data));
 		ret = 1;
 	}
-	else if (*str != '0')
+	else
 	{
-		if (*str >= '1' && *str <= '9')
-			ret = min_width(str, &(*data));
+		if (str[data->skip] == '-')
+		{
+			data->minus++;
+			data->skip++;
+		}
+		if (str[data->skip] == '0')
+		{
+			data->zero++;
+			data->skip++;
+		}
+		if (str[data->skip] == '.')
+		{
+			data->prec++;
+			data->skip++;
+		}
+		if (str[data->skip] == '*')
+		{
+			data->arg++;
+			data->skip++;
+		}
+		if (str[data->skip] != '0')
+		{
+			if (str[data->skip] >= '1' && str[data->skip] <= '9')
+				ret = min_width(&str[data->skip], &(*data));
+		}
+	}
 #ifdef DEBUG_TRUE
+		D_INT(data->minus);
+		D_INT(data->zero);
+		D_INT(data->arg);
 		D_INT(data->min_width);
 		D_INT(data->skip);
+		D_INT(ret);
+		BR;
 #endif
-	}
 	ret = index_flag(&str[data->skip], &(*data), &(*args));
 	return (ret);
 }
