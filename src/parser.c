@@ -6,15 +6,15 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/30 17:12:09 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/30 17:34:35 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-/* //TODO
-** //TODO Need to remove the flags form the index and check before 
-*/ //TODO  call index_flag.
+/*
+**
+*/
 
 int	left_justify(t_data *data, va_list *args)
 {
