@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/30 17:12:05 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/30 21:51:10 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,25 +86,14 @@ void	ft_putchar(char c, t_data *data)
 **
 */
 
-// int	ascii_range(char *str, char start, char end)
-// {
-// 	int	i;
-// 	int	j;
-// 	if (start < end || !str)
-// 		return (FALSE);
-// 	while (start <= end)
-// 	{
-// 		i = 0;
-// 		while (str[i])
-// 		{
-// 			if (str[i] == start)
-// 				return (FALSE);
-// 			i++;
-// 		}
-// 		start++;
-// 	}
-// 	return (FALSE);
-// }
+void	print_int(int nbr, t_data *data)
+{
+
+}
+
+/*
+**
+*/
 
 int		min_width(const char *str, t_data *data)
 {

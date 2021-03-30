@@ -1,11 +1,3 @@
 {
-	"files.associations": {
-		"cstdarg": "cpp",
-		"ft_printf.h": "c",
-		"stdarg.h": "c",
-		"stdio.h": "c",
-		"debug_utils.h": "c"
-	},
-	"autoHide.autoHideSideBar": false,
-	"autoHide.autoHidePanel": false
+	"C_Cpp.errorSquiggles": "Disabled"
 }

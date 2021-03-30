@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/30 16:22:26 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/30 21:23:17 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,10 @@ void	ft_putstr(const char *s, t_data *data);
 void	ft_putchar(char c, t_data *data);
 int		ascii_range(char *str, char start, char end);
 
+/* --- convert.c --- */
 int		arg_c(t_data *data, va_list *args);
 int		arg_s(t_data *data, va_list *args);
+int		arg_d(t_data *data, va_list *args);
 
 int		min_width(const char *str, t_data *data);
 void	width_print(int len, size_t s_len, t_data *data);

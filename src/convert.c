@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/30 17:33:35 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/30 21:46:23 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,22 @@ int	arg_s(t_data *data, va_list *args)
 	}
 	data->skip++;
 	return (TRUE);
+}
+
+/*
+**
+*/
+
+int	arg_d(t_data *data, va_list *args)
+{
+	int len;
+	int nbr;
+
+	nbr = (int)va_arg(*args, int);
+	len = len_int();
+	if (data->min_width && !data->minus)
+		width_print(data->min_width, len, &(*data));
+	
+	if (data->min_width && !data->minus)
+		width_print(data->min_width, len, &(*data));
 }
