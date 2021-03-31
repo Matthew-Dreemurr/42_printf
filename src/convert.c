@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/30 22:59:42 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/31 09:49:46 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,18 +69,18 @@ int	arg_d(t_data *data, va_list *args)
 
 	nbr = (int)va_arg(*args, int);
 	len = len_int(nbr);
+	if (data->min_width && !data->minus)
+		width_print(data->min_width, len, &(*data));
+	if (!(print_int(nbr, &(*data))))
+		return (ERR);
+	if (data->min_width && data->minus)
+		width_print(data->min_width, len, &(*data));
+		data->skip++;
 #ifdef DEBUG_TRUE
 	D_INT(data->minus);
 	D_INT(nbr);
 	D_INT(len);
 	BR;
 #endif
-	if (data->min_width && data->minus)
-		width_print(data->min_width, len, &(*data));
-	if (!(print_int(nbr, &(*data))))
-		return (ERR);
-	if (data->min_width && !data->minus)
-		width_print(data->min_width, len, &(*data));
-		data->skip++;
 	return (TRUE);
 }

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/30 22:45:41 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/31 11:05:08 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,22 @@ size_t	len_str(const char *str)
 
 int	len_int(int nbr)
 {
-	int len;
+	int		len;
+	long	nbr_c;
 
-	if(nbr < 0)
-		return (ERR);
-	if (nbr == 0)
-		return (0);
 	len = 0;
-	while (nbr > 0)
+	if (nbr < 0)
 	{
-		nbr /= 10;
+		nbr_c = nbr * -1;
+		len++;
+	}
+	else
+		nbr_c = nbr;
+	if (nbr_c == 0)
+		return (0);
+	while (nbr_c > 0)
+	{
+		nbr_c /= 10;
 		len ++;
 	}
 	return (len);
@@ -102,20 +108,35 @@ void	putstr_rev(const char *s, t_data *data)
 
 int	print_int(int nbr, t_data *data)
 {
-	int i;
-	char *str;
+	int		i;
+	char	*str;
+	int		neg;
+	long	nbr_c;
 
+	neg = 0;
 	i = 0;
-	str = malloc(len_int(nbr) + 1);
+	if (nbr < 0)
+	{
+		nbr_c = nbr * -1;
+		neg++;
+	}
+	else
+		nbr_c = nbr;
+	str = malloc(len_int(nbr_c) + 1 + neg);
 	if (!str)
 		return (-1);
-	while (nbr > 0)
+	while (nbr_c > 0)
 	{
-		str[i] = (nbr % 10) + '0';
-		nbr /= 10;
+		str[i] = (nbr_c % 10) + '0';
+		nbr_c /= 10;
 		i++;
-		str[i] = '\0';
 	}
+	if (neg)
+	{
+		str[i] = '-';
+		i++;
+	}
+	str[i] = '\0';
 	putstr_rev(str, &(*data));
 	free (str);
 	return (TRUE);
