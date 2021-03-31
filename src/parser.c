@@ -6,23 +6,11 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/30 21:23:06 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/31 11:25:01 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-
-/*
-**
-*/
-
-int	left_justify(t_data *data, va_list *args)
-{
-	(void)args;
-	data->minus++;
-	data->skip++;
-	return (TRUE);
-}
 
 /*
 **
@@ -77,7 +65,6 @@ int	index_flag(const char *str, t_data *d, va_list *args)
 	}
 	return (TRUE);
 }
-
 
 /*
 **

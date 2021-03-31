@@ -1,4 +1,5 @@
 {
 	"C_Cpp.errorSquiggles": "Disabled",
-	"autoHide.autoHidePanel": false
+	"autoHide.autoHidePanel": true,
+	"autoHide.autoHideSideBar": false
 }
