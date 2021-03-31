@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/30 22:24:13 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/03/31 11:16:41 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ typedef int	(*t_func_arr)(t_data *data, va_list *args);
 
 int		ft_printf(const char *str, ...);
 
-/* --- parser.c --- */
 
 void	data_init(t_data *data);
 int		dummy(t_data *data, va_list *args);
@@ -87,7 +86,6 @@ int		left_justify(t_data *data, va_list *args);
 int		index_flag(const char *str, t_data *d, va_list *args);
 int		check_flag(const char *str, t_data *data, va_list *args);
 
-/* --- str_utils.c --- */
 size_t	len_str(const char *str);
 int		len_int(int nbr);
 void	ft_putstr(const char *s, t_data *data);
@@ -96,8 +94,6 @@ void	putstr_rev(const char *s, t_data *data);
 int		print_int(int nbr, t_data *data);
 int		ascii_range(char *str, char start, char end);
 
-
-/* --- convert.c --- */
 int		arg_c(t_data *data, va_list *args);
 int		arg_s(t_data *data, va_list *args);
 int		arg_d(t_data *data, va_list *args);
