@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/02 14:17:10 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/02 14:38:25 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,11 +108,7 @@ int	arg_p(t_data *data, va_list *args)
 	if (data->min_width && !data->minus)
 		width_print(data->min_width, len, &(*data));
 	if (ptr == NULL)
-	{
-		free(str);
 		ft_putstr(ADDR_NULL, &(*data));
-		return (TRUE);
-	}
 	else
 	{
 		data->ret += write(1, "0x", 2);
@@ -120,7 +116,6 @@ int	arg_p(t_data *data, va_list *args)
 	}
 	if (data->min_width && data->minus)
 		width_print(data->min_width, len, &(*data));
-	if (str)
-		free(str);
+	free(str);
 	return (TRUE);
 }
