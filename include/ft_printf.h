@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/02 13:13:17 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/02 14:16:30 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@
 /* --- number of function in the arrays of function pointers --- */
 
 # define FUNC 9
+
+/* --- Null case --- */
+
+# define STR_NULL "(null)"
+# define ADDR_NULL "0x0"
 
 /* ======  Prototype  ======= */
 

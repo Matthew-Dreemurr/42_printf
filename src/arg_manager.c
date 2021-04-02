@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/02 14:13:31 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/02 14:17:10 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ int	arg_s(t_data *data, va_list *args)
 	if (str && *str)
 		len = len_str(str);
 	else
-		len = 6;
+		len = len_str(STR_NULL);
 	if (data->min_width && !data->minus)
 		width_print(data->min_width, len, &(*data));
 	if (!str || !*str)
-		ft_putstr("(null)", &(*data));
+		ft_putstr(STR_NULL, &(*data));
 	else
 		ft_putstr(str, &(*data));
 	if (data->min_width && data->minus)
@@ -102,7 +102,7 @@ int	arg_p(t_data *data, va_list *args)
 		return (ERR);
 	len = len_str(str);
 	if (ptr == NULL)
-		len = 5;
+		len = len_str(ADDR_NULL);
 	else
 		len += 2;
 	if (data->min_width && !data->minus)
@@ -110,7 +110,7 @@ int	arg_p(t_data *data, va_list *args)
 	if (ptr == NULL)
 	{
 		free(str);
-		ft_putstr("(nil)", &(*data));
+		ft_putstr(ADDR_NULL, &(*data));
 		return (TRUE);
 	}
 	else
