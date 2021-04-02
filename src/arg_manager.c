@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/31 11:27:12 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/02 13:25:25 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ int	arg_s(t_data *data, va_list *args)
 	return (TRUE);
 }
 
-/*   //TODO
-**   //TODO  Check ==12653==ERROR: AddressSanitizer: heap-buffer-overflow if %d arg is > MAX_INT
-*/   //TODO
+/*
+**
+*/
 
 int	arg_d(t_data *data, va_list *args)
 {
@@ -82,5 +82,33 @@ int	arg_d(t_data *data, va_list *args)
 	D_INT(len);
 	BR;
 #endif
+	return (TRUE);
+}
+
+/*
+**
+*/
+
+int	arg_p(t_data *data, va_list *args)
+{
+	void	*ptr;
+	char	*str;
+	int		len;
+
+	ptr = (void*)va_arg(*args, void *);
+	str = addrtohex(ptr);
+	if (!str)
+		return (ERR);
+	len = len_str(str);
+	len += 2;
+	if (data->min_width && !data->minus)
+		width_print(data->min_width, len, &(*data));
+	data->ret += write(1, "0x", 2);
+	putstr_rev(str, &(*data));
+	if (data->min_width && data->minus)
+		width_print(data->min_width, len, &(*data));
+	data->skip++;
+	if (str)
+		free(str);
 	return (TRUE);
 }

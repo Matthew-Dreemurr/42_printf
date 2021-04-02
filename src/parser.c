@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/31 11:25:01 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/02 13:15:55 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	index_flag(const char *str, t_data *d, va_list *args)
 	static t_func_arr	f[FUNC] = {
 		arg_c,         //  [0]  | `c`
 		arg_s,         //  [1]  | `s`
-		dummy,         //  [2]  | `p`
+		arg_p,         //  [2]  | `p`
 		arg_d,         //  [3]  | `d`
 		dummy,         //  [4]  | `i`
 		dummy,         //  [5]  | `u`
@@ -59,7 +59,7 @@ int	index_flag(const char *str, t_data *d, va_list *args)
 	}
 	if (flag[index] == *str)
 	{
-		if (!(f[index](&(*d), &(*args))))
+		if ((f[index](&(*d), &(*args))) == ERR)
 			return (ERR);
 		return (TRUE);
 	}

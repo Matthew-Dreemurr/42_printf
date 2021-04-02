@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/31 11:09:40 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/02 13:26:11 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 #include "include/debug_utils.h"
 #include "include/wraloc.h"
 
-#define ARG1 "%12d", 2147483647
+#define ARG1 "%43p", (void *)123
 int	main(void)
 {
 	int	ret;
 
 	write(1, "{\0", 2);
 	ret = printf(ARG1);
-	puts("}\n");
+	puts("}");
 	printf("ret [%d]\n", ret);
-	puts("\n");
+	puts("");
 	ret = 0;
 	write(1, "{\0", 2);
 	ret = ft_printf(ARG1);
-	puts("}\n");
+	puts("}");
 	printf("ret [%d]\n", ret);
 	return (0);
 }

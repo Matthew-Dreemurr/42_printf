@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/31 11:23:53 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/02 13:20:11 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,31 @@ int	min_width(const char *str, t_data *data)
 	BR;
 #endif
 	return (TRUE);
+}
+
+/*
+**
+*/
+
+char*	addrtohex(void *ptr)
+{
+	unsigned long	addr;
+	char			*index;
+	char			*ret;
+	int				i;
+
+	i = 0;
+	index = "0123456789abcdef";
+	addr = (unsigned long)ptr;
+	ret = (char *)malloc(32);
+	if (!ret)
+		return (NULL);
+	while (addr > 0)
+	{
+		ret[i] = index[addr % 16];
+		addr /= 16;
+		i++;
+	}
+	ret[i] = '\0';
+	return (ret);
 }
