@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/02 13:23:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/02 16:51:13 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,8 @@ int	print_int(int nbr, t_data *data)
 
 void	width_print(int len, size_t s_len, t_data *data)
 {
-	int	wdt_len;
-
+	int		wdt_len;
+	char	c;
 	wdt_len = len - s_len;
 #ifdef DEBUG_TRUE
 	D_INT(len);
@@ -114,6 +114,9 @@ void	width_print(int len, size_t s_len, t_data *data)
 	D_INT(wdt_len);
 	BR;
 #endif
+	c = ' ';
+	if (data->zero)
+		c = '0';
 	if (wdt_len > 0)
 	{
 #ifdef DEBUG_TRUE
@@ -121,7 +124,7 @@ void	width_print(int len, size_t s_len, t_data *data)
 #endif
 		data->ret += wdt_len;
 		while (0 <= --wdt_len)
-			write(1, " ", 1);
+			write(1, &c, 1);
 #ifdef DEBUG_TRUE
 	write(1, "|\n\n", 4);
 #endif

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/02 14:16:30 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/02 16:30:22 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@
 
 /* --- Null case --- */
 
-# define STR_NULL "(null)"
-# define ADDR_NULL "0x0"
+# define STR_NULL	"(null)"
+# define ADDR_NULL	"0x0"
 
 /* ======  Prototype  ======= */
 

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/02 13:20:11 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/02 16:49:46 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	min_width(const char *str, t_data *data)
 		return (ERR);
 	i = 0;
 	len = 0;
-	while (str[i] && (str[i] >= '1' && str[i] <= '9'))
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
 		len *= 10;
 		len += (str[i] - '0');

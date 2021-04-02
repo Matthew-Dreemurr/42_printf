@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:40:39 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/31 09:29:07 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/02 16:37:33 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	ft_printf(const char *str, ...)
 	d.ret = 0;
 	while (str && *str)
 	{
+		d.skip = 0;
 		data_init(&d);
 		if (*str != '%')
 		{
@@ -42,7 +43,6 @@ int	ft_printf(const char *str, ...)
 	D_STR(str);
 	BR;
 #endif
-		d.skip = 0; // need to remember number of arg to skip
 	}
 	va_end(args);
 	return (d.ret);
