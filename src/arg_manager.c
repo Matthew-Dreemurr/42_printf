@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/02 13:25:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/02 14:13:31 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,19 +95,31 @@ int	arg_p(t_data *data, va_list *args)
 	char	*str;
 	int		len;
 
+	data->skip++;
 	ptr = (void*)va_arg(*args, void *);
 	str = addrtohex(ptr);
 	if (!str)
 		return (ERR);
 	len = len_str(str);
-	len += 2;
+	if (ptr == NULL)
+		len = 5;
+	else
+		len += 2;
 	if (data->min_width && !data->minus)
 		width_print(data->min_width, len, &(*data));
-	data->ret += write(1, "0x", 2);
-	putstr_rev(str, &(*data));
+	if (ptr == NULL)
+	{
+		free(str);
+		ft_putstr("(nil)", &(*data));
+		return (TRUE);
+	}
+	else
+	{
+		data->ret += write(1, "0x", 2);
+		putstr_rev(str, &(*data));
+	}
 	if (data->min_width && data->minus)
 		width_print(data->min_width, len, &(*data));
-	data->skip++;
 	if (str)
 		free(str);
 	return (TRUE);
