@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/02 17:02:10 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/03 16:44:54 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,9 @@
 
 void	ft_putstr(const char *s, t_data *data)
 {
-#ifdef DEBUG_TRUE
-	write(1, "\n\n|", 4);
-#endif
 	data->ret += len_str(s);
 	while (s && *s)
 		write(1, s++, 1);
-#ifdef DEBUG_TRUE
-	write(1, "|\n\n", 4);
-#endif
 }
 
 /*
@@ -35,14 +29,8 @@ void	ft_putstr(const char *s, t_data *data)
 
 void	ft_putchar(char c, t_data *data)
 {
-#ifdef DEBUG_TRUE
-	write(1, "\n|", 2);
-#endif
 	write(1, &c, 1);
 	data->ret++;
-#ifdef DEBUG_TRUE
-	puts("|\n");
-#endif
 }
 
 /*
@@ -55,14 +43,8 @@ void	putstr_rev(const char *s, t_data *data)
 
 	len = len_str(s);
 	data->ret += len;
-#ifdef DEBUG_TRUE
-	write(1, "\n|", 2);
-#endif
 	while (s && len > 0 && s[--len])
-		putchar(s[len]);
-#ifdef DEBUG_TRUE
-	puts("|\n");
-#endif
+		write(1, &(s[len]), 1);
 }
 
 /*
@@ -100,9 +82,6 @@ int	print_int(int nbr, t_data *data)
 		i++;
 	}
 	str[i] = '\0';
-#ifdef DEBUG_TRUE
-	D_STR_DETAILS(str);
-#endif
 	putstr_rev(str, &(*data));
 	free (str);
 	return (TRUE);
@@ -117,25 +96,13 @@ void	width_print(int len, size_t s_len, t_data *data)
 	int		wdt_len;
 	char	c;
 	wdt_len = len - s_len;
-#ifdef DEBUG_TRUE
-	D_INT(len);
-	D_LINT(s_len);
-	D_INT(wdt_len);
-	BR;
-#endif
 	c = ' ';
 	if (data->zero)
 		c = '0';
 	if (wdt_len > 0)
 	{
-#ifdef DEBUG_TRUE
-	write(1, "\n\n|", 4);
-#endif
 		data->ret += wdt_len;
 		while (0 <= --wdt_len)
 			write(1, &c, 1);
-#ifdef DEBUG_TRUE
-	write(1, "|\n\n", 4);
-#endif
 	}
 }

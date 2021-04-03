@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/02 16:44:39 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/03 16:33:00 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,6 @@ int	index_flag(const char *str, t_data *d, va_list *args)
 	while (flag && flag[index] && flag[index] != *str)
 	{
 		index++;
-# ifdef DEBUG_TRUE
-		D_STR((char *)str);
-		D_INT(index);
-		D_CHAR(flag[index]);
-		BR;
-# endif
 	}
 	if (flag[index] == *str)
 	{
@@ -109,15 +103,6 @@ int	check_flag(const char *str, t_data *data, va_list *args)
 				ret = min_width(&str[data->skip], &(*data));
 		}
 	}
-#ifdef DEBUG_TRUE
-		D_INT(data->minus);
-		D_INT(data->zero);
-		D_INT(data->arg);
-		D_INT(data->min_width);
-		D_INT(data->skip);
-		D_INT(ret);
-		BR;
-#endif
 	ret = index_flag(&str[data->skip], &(*data), &(*args));
 	return (ret);
 }

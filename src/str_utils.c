@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/02 16:49:46 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/03 16:33:00 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,6 @@ int	min_width(const char *str, t_data *data)
 		return (ERR);
 	data->min_width = len;
 	data->skip += len_int(len);
-#ifdef DEBUG_TRUE
-	D_INT(data->min_width);
-	D_INT(data->skip);
-	BR;
-#endif
 	return (TRUE);
 }
 

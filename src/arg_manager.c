@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/02 14:38:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/03 16:31:37 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ int	arg_c(t_data *data, va_list *args)
 	data->skip++;
 	if (data->min_width && data->minus)
 		width_print(data->min_width, 1, &(*data));
-#ifdef DEBUG_TRUE
-BR;
-#endif
 	return (TRUE);
 }
 
@@ -37,11 +34,8 @@ int	arg_s(t_data *data, va_list *args)
 {
 	const char	*str;
 	size_t		len;
+
 	str = (const char *)va_arg(*args, const char * );
-#ifdef DEBUG_TRUE
-	D_STR_DETAILS((char *)str);
-	BR;
-#endif
 	if (str && *str)
 		len = len_str(str);
 	else
@@ -76,12 +70,6 @@ int	arg_d(t_data *data, va_list *args)
 	if (data->min_width && data->minus)
 		width_print(data->min_width, len, &(*data));
 	data->skip++;
-#ifdef DEBUG_TRUE
-	D_INT(data->minus);
-	D_INT(nbr);
-	D_INT(len);
-	BR;
-#endif
 	return (TRUE);
 }
 

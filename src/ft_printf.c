@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:40:39 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/02 16:37:33 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/03 16:39:45 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,21 @@ int	ft_printf(const char *str, ...)
 	d.ret = 0;
 	while (str && *str)
 	{
+		// BM("Main");
 		d.skip = 0;
 		data_init(&d);
-		if (*str != '%')
+		if (*str == '%')
+		{
+			if ((check_flag(++str, &d, &args)) == ERR)
+				return (ERR);
+		}
+		else
 		{
 			ft_putchar(*str, &d);
 			d.skip++;
 		}
-		else
-			if ((check_flag(++str, &d, &args)) == ERR)
-				return (ERR);
 		while (str && *str && d.skip--)
 			str++;
-#ifdef DEBUG_TRUE
-	D_INT(d.minus);
-	D_INT(d.zero);
-	D_INT(d.prec);
-	D_INT(d.arg);
-	D_INT(d.skip);
-	D_INT(d.ret);
-	D_STR(str);
-	BR;
-#endif
 	}
 	va_end(args);
 	return (d.ret);

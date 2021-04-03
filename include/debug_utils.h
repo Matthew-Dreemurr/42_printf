@@ -6,16 +6,16 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 18:21:34 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/03/29 16:47:38 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/03 16:30:15 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEBUG_UTILS_H
 # define DEBUG_UTILS_H
 # define DEBUG_TRUE
+
 # include <stdio.h>
 # include <stdint.h>
-# include <string.h>
 
 # ifndef BREAK_PAUSE
 #  define BREAK_PAUSE 1
@@ -33,32 +33,41 @@
 #  define _BR_NL " "
 # endif
 
-# define _BR(NEWLINE) printf("#<[l %d] %s:%s()>#" _BR_NL, __LINE__, __FILE__, __FUNCTION__);
+# define _BR(NEWLINE) printf("< %s:%d in %s() >%s", __FILE__, __LINE__, __FUNCTION__, (NEWLINE == 1) ? ("\n") : (" "));
+# define _BR_MSG(msg) printf("{ " #msg " } - ");
 
 # if BREAK_PAUSE == 1
 #  define BR _BR(0) getchar();
 # else
-#  define BR _BR(1);
+#  define BR _BR(1);;
 # endif
 
-# define WIDTH_VAR	12
-# define WIDTH_FUNC	20
+# if _BREAK_PAUSE == 1
+#  define BM(msg) _BR_MSG(msg) _BR(0); getchar();
+# else
+#  define BM(msg) _BR_MSG(msg) _BR(1);
+# endif
 
-# define DE(var) _Generic(((var)+0),	\
-	int		: printf("[%d] %s | " #var " = %d" _DE_NL ,		__LINE__, __FUNCTION__, var),	\
-	long	: printf("[%d] %s | " #var " = %ld" _DE_NL ,	__LINE__, __FUNCTION__, var),	\
-	double	: printf("[%d] %s | " #var " = %f" _DE_NL ,		__LINE__, __FUNCTION__, var),	\
-	float	: printf("[%d] %s | " #var " = %f" _DE_NL ,		__LINE__, __FUNCTION__, var),	\
-	size_t	: printf("[%d] %s | " #var " = %lu" _DE_NL ,	__LINE__, __FUNCTION__, var),	\
-	char*	: printf("[%d] %s | " #var " = \"%s\"" _DE_NL ,	__LINE__, __FUNCTION__, var),	\
-	default	: printf("[%d] %s | " #var " = %p" _DE_NL ,		__LINE__, __FUNCTION__, var))
+#define _CONV(var)
 
-# define D_INT(var)		printf("[%d] %-*s | %-*s : %-5d" _DE_NL,		__LINE__, WIDTH_FUNC, __FUNCTION__, WIDTH_VAR, #var, var);
-# define D_LINT(var)	printf("[%d] %-*s | %-*s : %-5ld" _DE_NL,		__LINE__, WIDTH_FUNC, __FUNCTION__, WIDTH_VAR, #var, var);
-# define D_DOUB(var)	printf("[%d] %-*s | %-*s : %-5f" _DE_NL,		__LINE__, WIDTH_FUNC, __FUNCTION__, WIDTH_VAR, #var, var);
-# define D_STR(var)		printf("[%d] %-*s | %-*s : \"%-5s\"" _DE_NL,	__LINE__, WIDTH_FUNC, __FUNCTION__, WIDTH_VAR, #var, var);
-# define D_CHAR(var)	printf("[%d] %-*s | %-*s : \"%-c\"" _DE_NL,	__LINE__, WIDTH_FUNC, __FUNCTION__, WIDTH_VAR, #var, var);
-# define D_PTR(var)		printf("[%d] %-*s | %-*s : <%-5p>" _DE_NL,		__LINE__, WIDTH_FUNC, __FUNCTION__, WIDTH_VAR, #var, var);
+# define _DE_AUTO(var) _Generic(((var)+0),	\
+	int		: printf("|" #var " = " "%d" _DE_NL , var),		\
+	long	: printf("|" #var " = " "%ld" _DE_NL , var),	\
+	double	: printf("|" #var " = " "%f" _DE_NL , var),		\
+	float	: printf("|" #var " = " "%f" _DE_NL , var),		\
+	size_t	: printf("|" #var " = " "%lu" _DE_NL , var),	\
+	char*	: printf("|" #var " = " "\"%s\"" _DE_NL , var),	\
+	default	: printf("|" #var " = " "%p" _DE_NL , var));
+
+# define DE(var) _BR(0) _DE_AUTO(var);
+
+# define DM(msg, var) _BR(0) _BR_MSG(msg) _DE_AUTO(var);
+
+# define D_INT(var) printf("< %s:%d in %s() > " #var " : %d" _DE_NL, __FILE__, __LINE__, __FUNCTION__, var);
+# define D_LINT(var) printf("< %s:%d in %s() > " #var " : %ld" _DE_NL, __FILE__, __LINE__, __FUNCTION__, var);
+# define D_DOUB(var) printf("< %s:%d in %s() > " #var " : %f" _DE_NL, __FILE__, __LINE__, __FUNCTION__, var);
+# define D_STR(var) printf("< %s:%d in %s() > " #var " : \"%s\"" _DE_NL, __FILE__, __LINE__, __FUNCTION__, var);
+# define D_PTR(var) printf("< %s:%d in %s() > " #var " : <%p>" _DE_NL, __FILE__, __LINE__, __FUNCTION__, var);
 
 # define D_STR_DETAILS(str) print_str_details(strlen(str), str, #str)
 
