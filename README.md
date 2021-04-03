@@ -3,7 +3,7 @@
 
 ## Convertions
 
-| Type character | | Output |
+| Type character | WIP | Output |
 |:-|:-|:-|
 | `%c` | ✅ | Print a singlecharacter |
 | `%s` | ✅ | Print astring of characters |
@@ -24,12 +24,12 @@
 
 # Flags
 
-| Flag | s_data |  | Meaning |
+| Flag | s_data | WIP | Meaning |
 |-|:-|:-|-|
 | `%-` | `min`  | ✅ | Left align the result within the given field width |
 | `%0` | `zero` | ✅ | Shorter numbers are padded out with leading zeros |
 | `%.` | `prec` | ❌ | How many placesshould be shown after the decimal point |
-| `%*` | `arg`  | ❌ | an int width argument must precede the value that's being formatted in the argument list, exemple `printf("%0*d", 5, 3);` `00003 is output` |
+| `%*` | `arg`  | 🔧 | an int width argument must precede the value that's being formatted in the argument list, exemple `printf("%0*d", 5, 3);` `00003 is output` |
 
 | **Bonus** |  |
 | ------------- |:-------------|
