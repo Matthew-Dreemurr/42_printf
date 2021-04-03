@@ -9,7 +9,7 @@
 | `%s` | ✅ | Print astring of characters |
 | `%p` | ✅ | Print the argument as an address in hexadecimal digits. |
 | `%d` | ✅ | Print a decimal (base 10) number |
-| `%i` | ❌ | print an integer in base 10 |
+| `%i` | ✅ | print an integer in base 10 |
 | `%u` | ❌ | print an unsigned decimal (base 10) number |
 | `%x` | ❌ | Unsigned hexadecimal integer; uses `abcdef` |
 | `%X` | ❌ | Unsigned hexadecimal integer; uses `ABCDEF` |

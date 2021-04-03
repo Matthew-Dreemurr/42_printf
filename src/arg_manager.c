@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/03 16:31:37 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/03 18:28:00 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	arg_s(t_data *data, va_list *args)
 	const char	*str;
 	size_t		len;
 
+	if (data->arg)
+		data->min_width = (int)va_arg(*args, int);
 	str = (const char *)va_arg(*args, const char * );
 	if (str && *str)
 		len = len_str(str);
@@ -61,6 +63,8 @@ int	arg_d(t_data *data, va_list *args)
 	int len;
 	int nbr;
 
+	if (data->arg)
+		data->min_width = (int)va_arg(*args, int);
 	nbr = (int)va_arg(*args, int);
 	len = len_int(nbr);
 	if (data->min_width && !data->minus)
