@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/03 18:28:00 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/03 19:00:04 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	arg_p(t_data *data, va_list *args)
 
 	data->skip++;
 	ptr = (void*)va_arg(*args, void *);
-	str = addrtohex(ptr);
+	str = ulongtohex((unsigned long)ptr);
 	if (!str)
 		return (ERR);
 	len = len_str(str);
@@ -108,6 +108,23 @@ int	arg_p(t_data *data, va_list *args)
 	}
 	if (data->min_width && data->minus)
 		width_print(data->min_width, len, &(*data));
+	free(str);
+	return (TRUE);
+}
+
+/*
+**
+*/
+
+int	arg_x(t_data *data, va_list *args)
+{
+	unsigned long	nbr;
+	char			*str;
+
+	data->skip++;
+	nbr = (unsigned long)va_arg(*args, unsigned long);
+	str = ulongtohex(nbr);
+	putstr_rev(str, *(&data));
 	free(str);
 	return (TRUE);
 }

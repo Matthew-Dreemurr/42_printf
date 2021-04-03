@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/02 16:30:22 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/03 18:57:35 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,12 +97,13 @@ void	ft_putstr(const char *s, t_data *data);
 void	ft_putchar(char c, t_data *data);
 void	putstr_rev(const char *s, t_data *data);
 int		print_int(int nbr, t_data *data);
-char	*addrtohex(void *ptr);
+char*	ulongtohex(unsigned long nbr);
 
 int		arg_c(t_data *data, va_list *args);
 int		arg_s(t_data *data, va_list *args);
 int		arg_d(t_data *data, va_list *args);
 int		arg_p(t_data *data, va_list *args);
+int	arg_x(t_data *data, va_list *args);
 int		min_width(const char *str, t_data *data);
 void	width_print(int len, size_t s_len, t_data *data);
 #endif
