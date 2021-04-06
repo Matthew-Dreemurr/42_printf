@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/06 12:35:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/06 13:19:27 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,29 @@ int	arg_d(t_data *data, va_list *args)
 **
 */
 
+int	arg_u(t_data *data, va_list *args)
+{
+	size_t			len;
+	unsigned int	nbr;
+
+	if (data->arg)
+		data->min_width = (int)va_arg(*args, int);
+	nbr = (unsigned int)va_arg(*args, unsigned int);
+	len = len_uint(nbr);
+	if (data->min_width && !data->minus)
+		width_print(data->min_width, len, &(*data));
+	if (!(print_uint(nbr, &(*data))))
+		return (ERR);
+	if (data->min_width && data->minus)
+		width_print(data->min_width, len, &(*data));
+	data->skip++;
+	return (TRUE);
+}
+
+/*
+**
+*/
+
 int	arg_p(t_data *data, va_list *args)
 {
 	void	*ptr;
@@ -88,6 +111,8 @@ int	arg_p(t_data *data, va_list *args)
 	size_t	len;
 
 	data->skip++;
+	if (data->arg)
+		data->min_width = (int)va_arg(*args, int);
 	ptr = (void*)va_arg(*args, void *);
 	str = ulongtohex((unsigned long)ptr, &(*data));
 	if (!str)
@@ -123,6 +148,8 @@ int	arg_x(t_data *data, va_list *args)
 	size_t			len;
 
 	data->skip++;
+	if (data->arg)
+		data->min_width = (int)va_arg(*args, int);
 	nbr = (unsigned long)va_arg(*args, unsigned long);
 	str = ulongtohex(nbr, &(*data));
 	if (!str)

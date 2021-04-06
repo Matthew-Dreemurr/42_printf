@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/06 12:33:45 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/06 13:18:34 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ int		check_flag(const char *str, t_data *data, va_list *args);
 
 size_t	len_str(const char *str);
 int		len_int(int nbr);
+int		len_uint(unsigned int nbr);
 void	ft_putstr(const char *s, t_data *data);
 void	ft_putchar(char c, t_data *data);
 void	putstr_rev(const char *s, t_data *data);
@@ -103,9 +104,11 @@ char*	ulongtohex(unsigned long nbr, t_data *data);
 int		arg_c(t_data *data, va_list *args);
 int		arg_s(t_data *data, va_list *args);
 int		arg_d(t_data *data, va_list *args);
+int		print_uint(unsigned int nbr, t_data *data);
+int		arg_u(t_data *data, va_list *args);
 int		arg_p(t_data *data, va_list *args);
 int		arg_x(t_data *data, va_list *args);
-int	arg_x_up(t_data *data, va_list *args);
+int		arg_x_up(t_data *data, va_list *args);
 
 int		min_width(const char *str, t_data *data);
 void	width_print(int len, size_t s_len, t_data *data);

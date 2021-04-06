@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/06 12:34:21 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/06 13:19:37 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,25 @@ int	len_int(int nbr)
 	while (nbr_c > 0)
 	{
 		nbr_c /= 10;
+		len ++;
+	}
+	return (len);
+}
+
+/*
+**
+*/
+
+int	len_uint(unsigned int nbr)
+{
+	int		len;
+
+	len = 0;
+	if (nbr == 0)
+		return (0);
+	while (nbr > 0)
+	{
+		nbr /= 10;
 		len ++;
 	}
 	return (len);
