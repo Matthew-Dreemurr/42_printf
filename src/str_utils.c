@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/03 18:57:35 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/06 12:34:21 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,20 +85,21 @@ int	min_width(const char *str, t_data *data)
 **
 */
 
-char*	ulongtohex(unsigned long nbr)
+char*	ulongtohex(unsigned long nbr, t_data *data)
 {
-	char			*index;
+	char			*index[2];
 	char			*ret;
 	int				i;
 
 	i = 0;
-	index = "0123456789abcdef";
+	index[0] = "0123456789abcdef";
+	index[1] = "0123456789ABCDEF";
 	ret = (char *)malloc(32);
 	if (!ret)
 		return (NULL);
 	while (nbr > 0)
 	{
-		ret[i] = index[nbr % 16];
+		ret[i] = index[data->x_up][nbr % 16];
 		nbr /= 16;
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:28:19 by mhadad            #+#    #+#             */
-/*   Updated: 2021/03/29 17:58:02 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/06 12:36:03 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	data_init(t_data *data)
 	data->arg = 0;
 	data->skip = 0;
 	data->min_width = 0;
+	data->x_up = 0;
 }
 
 /*

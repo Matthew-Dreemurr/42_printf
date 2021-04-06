@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/03 18:56:20 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/06 12:24:07 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	index_flag(const char *str, t_data *d, va_list *args)
 		arg_d,         //  [4]  | `i`
 		dummy,         //  [5]  | `u`
 		arg_x,         //  [6]  | `x`
-		arg_x,         //  [7]  | `X`
+		arg_x_up,      //  [7]  | `X`
 		dummy          //  [8]  | `%`
 	};
 	char *flag;

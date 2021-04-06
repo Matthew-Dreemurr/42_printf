@@ -1,5 +1,8 @@
-# Printf implementation
+# Printf implementation `V0`
 
+| Todo |
+|-|
+| Better error handling ( chose between `ERR` or `FALSE` )|
 
 ## Convertions
 
