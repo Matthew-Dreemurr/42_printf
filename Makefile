@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/03 18:44:38 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/06 16:07:35 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,4 +74,6 @@ git:
 	@-git commit -am "Makefile push"
 	@-git push
 
+test:
+	bash test_exe.sh
 .PHONY: clean all, clean, fclean, re, git
