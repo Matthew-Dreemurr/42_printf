@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/07 14:37:45 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/07 14:51:27 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,7 @@ git:
 
 gitf:
 	@printf "\033[31;1m ======== /!\\ Hard reset Git /!\\ ======== \033[0m\n"
-	@read -n 1
+	@while true; do read -p "continue [y/N] ? " resp; if [[ $$resp =~ ^[Yy]$$ ]]; then exit 0; else exit 1; fi; done
 	@git reset --hard origin/ft_printf_V0
 
 test:
