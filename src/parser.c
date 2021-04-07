@@ -105,14 +105,14 @@ int	check_flag(const char *str, t_data *data, va_list *args)
 		}
 	}
 #ifdef DEBUG_TRUE
-	D_INT(data->minus);
-	D_INT(data->zero);
-	D_INT(data->prec);
-	D_INT(data->width);
-	D_INT(data->arg);
-	D_INT(data->skip);
-	D_INT(data->ret);
-	D_INT(data->x_up);
+	DE(data->minus);
+	DE(data->zero);
+	DE(data->prec);
+	DE(data->width);
+	DE(data->arg);
+	DE(data->skip);
+	DE(data->ret);
+	DE(data->x_up);
 	BR;
 #endif
 	ret = index_flag(&str[data->skip], &(*data), &(*args));
