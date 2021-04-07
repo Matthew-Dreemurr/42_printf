@@ -54,6 +54,5 @@ dkms.conf
 # Custom
 *.db*
 *.log
-*.ini
 .vscode/settings.json
 *test/*.c
