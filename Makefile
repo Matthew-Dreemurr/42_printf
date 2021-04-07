@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/07 12:12:41 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/07 14:37:45 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ NAME = libftprintf.a
 
 CC = gcc
 CFLAGS = -g3 -Wall -Wextra -Werror
+
+SHELL=/bin/bash
 
 DEF = $(SANI) $(BR) $(DEBUG) $(WRA)
 
@@ -73,6 +75,11 @@ git:
 	@-git add .
 	@-git commit -am "Makefile push"
 	@-git push
+
+gitf:
+	@printf "\033[31;1m ======== /!\\ Hard reset Git /!\\ ======== \033[0m\n"
+	@read -n 1
+	@git reset --hard origin/ft_printf_V0
 
 test:
 	$(MAKE) re -C test
