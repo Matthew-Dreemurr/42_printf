@@ -43,6 +43,7 @@ main: re
 fclean: clean
 	rm -rf $(NAME)
 	rm -rf a.out
+	rm -rf $(SRC)
 
 clean:
 	rm -rf $(OBJ)

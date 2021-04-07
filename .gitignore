@@ -57,9 +57,3 @@ dkms.conf
 *.ini
 .vscode/settings.json
 test/*.c
-test/ft_printf.c
-test/arg_manager.c
-test/parser_utils.c
-test/parser.c
-test/print.c
-test/str_utils.c

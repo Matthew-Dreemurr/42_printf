@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/07 12:05:47 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/07 12:12:41 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,4 +76,7 @@ git:
 
 test:
 	$(MAKE) re -C test
+
+testc:
+	$(MAKE) fclean -C test
 .PHONY: clean all, clean, fclean, re, git, test
