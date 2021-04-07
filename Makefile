@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/07 15:22:22 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/07 15:25:12 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,6 +82,7 @@ gitf:
 	@while true; do read -p "continue [y/N] ? " resp; if [[ $$resp =~ ^[Yy]$$ ]]; then exit 0; else exit 1; fi; done
 	@git fetch --all
 	@git reset --hard $(BRANCH)
+	@git clean -f
 
 test:
 	$(MAKE) re -C test
