@@ -21,7 +21,7 @@ OBJ = $(SRC:c=o)
 %.o: %.c
 	$(CC) $(CFLAGS) -I include -c $^ -o $@
 
-all: $(NAME)
+all: re
 
 refresh:
 	cp ../src/*c .
@@ -32,16 +32,9 @@ $(NAME): $(OBJ)
 re: fclean
 	make fclean
 	make refresh
-	make
+	make $(NAME)
 	make clean
 	make -C pft
-
-exe: main
-	@echo "\n"
-	@./a.out
-	
-main: re
-	$(CC) $(CFLAGS) $(DEF) main.c libftprintf.a
 
 fclean: clean
 	rm -rf $(NAME)
