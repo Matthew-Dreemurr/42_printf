@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/07 14:51:27 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/07 15:01:38 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ nrm:
 	norminette src/*.c include/ft_printf.h
 
 git:
-	@-git pull
+	@git pull
 	@-git add .
 	@-git commit -am "Makefile push"
 	@-git push
