@@ -56,3 +56,4 @@ dkms.conf
 *.log
 .vscode/settings.json
 *test/*.c
+*test/pft
