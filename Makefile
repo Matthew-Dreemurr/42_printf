@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/07 15:01:38 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/07 15:08:13 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ CC = gcc
 CFLAGS = -g3 -Wall -Wextra -Werror
 
 SHELL=/bin/bash
+BRANCH=origin/ft_printf_V0
 
 DEF = $(SANI) $(BR) $(DEBUG) $(WRA)
 
@@ -79,7 +80,7 @@ git:
 gitf:
 	@printf "\033[31;1m ======== /!\\ Hard reset Git /!\\ ======== \033[0m\n"
 	@while true; do read -p "continue [y/N] ? " resp; if [[ $$resp =~ ^[Yy]$$ ]]; then exit 0; else exit 1; fi; done
-	@git reset --hard origin/ft_printf_V0
+	@git pull --force --rebase -autostash $(BRANCH)
 
 test:
 	$(MAKE) re -C test
