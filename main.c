@@ -15,7 +15,7 @@
 #include "include/debug_utils.h"
 #include "include/wraloc.h"
 
-#define ARG1 "%-10.8s", NULL
+#define ARG1 "%.s", "hello"
 int	main(void)
 {
 	int	ret;
