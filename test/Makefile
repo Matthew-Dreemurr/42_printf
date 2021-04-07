@@ -26,11 +26,13 @@ all: $(NAME)
 refresh:
 	cp ../src/*c .
 
-$(NAME): refresh $(OBJ)
+$(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
-
-re: fclean all
+re: fclean
+	make fclean
+	make refresh
+	make
 	make clean
 
 exe: main
