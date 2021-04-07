@@ -23,11 +23,15 @@ OBJ = $(SRC:c=o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+refresh:
+	cp ../src/*c .
+
+$(NAME): refresh $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
 
 re: fclean all
+	make clean
 
 exe: main
 	@echo "\n"
