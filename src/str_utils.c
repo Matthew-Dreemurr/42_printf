@@ -78,7 +78,7 @@ int	len_uint(unsigned int nbr)
 **
 */
 
-int	min_width(const char *str, t_data *data)
+int	width(const char *str, t_data *data)
 {
 	long	len;
 	int		i;
@@ -95,7 +95,7 @@ int	min_width(const char *str, t_data *data)
 	}
 	if (len > MAX_INT)
 		return (ERR);
-	data->min_width = len;
+	data->width = len;
 	data->skip += len_int(len);
 	return (TRUE);
 }

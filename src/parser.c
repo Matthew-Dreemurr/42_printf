@@ -60,9 +60,9 @@ int	index_flag(const char *str, t_data *d, va_list *args)
 	return (TRUE);
 }
 
-/*
-**
-*/
+/*  //TODO
+**  //TODO   Pars only when a flag is occured, check if isnum && while !flag
+*/  //TODO
 
 int	check_flag(const char *str, t_data *data, va_list *args)
 {
@@ -101,9 +101,20 @@ int	check_flag(const char *str, t_data *data, va_list *args)
 		if (str[data->skip] != '0')
 		{
 			if (str[data->skip] >= '1' && str[data->skip] <= '9')
-				ret = min_width(&str[data->skip], &(*data));
+				ret = width(&str[data->skip], &(*data));
 		}
 	}
+#ifdef DEBUG_TRUE
+	D_INT(data->minus);
+	D_INT(data->zero);
+	D_INT(data->prec);
+	D_INT(data->width);
+	D_INT(data->arg);
+	D_INT(data->skip);
+	D_INT(data->ret);
+	D_INT(data->x_up);
+	BR;
+#endif
 	ret = index_flag(&str[data->skip], &(*data), &(*args));
 	return (ret);
 }

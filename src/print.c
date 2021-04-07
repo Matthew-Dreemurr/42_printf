@@ -18,18 +18,9 @@
 
 void	ft_putstr(const char *s, t_data *data)
 {
-	ssize_t	len;
-
-	len = 0;
-	if (!data->prec)
-		len = len_str(s);
-	else
-		len = data->min_width;
-	data->ret += len;
-	while (s && *s && len--)
-	{
+	data->ret += len_str(s);
+	while (s && *s)
 		write(1, s++, 1);
-	}
 }
 
 /*

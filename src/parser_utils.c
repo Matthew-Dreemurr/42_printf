@@ -28,7 +28,7 @@ void	data_init(t_data *data)
 	data->prec = 0;
 	data->arg = 0;
 	data->skip = 0;
-	data->min_width = 0;
+	data->width = 0;
 	data->x_up = 0;
 }
 

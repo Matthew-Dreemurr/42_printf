@@ -15,9 +15,9 @@
 
 /* ======  //TODO REMOVE  ======= */
 
-// # include "../include/wraloc.h"
-// # include "../include/debug_utils.h"
-// #include <stdio.h>
+# include "../include/wraloc.h"
+# include "../include/debug_utils.h"
+# include <stdio.h>
 
 /* ======  Include  ======= */
 
@@ -67,7 +67,7 @@ typedef struct s_data
 	int	minus;
 	int	zero;
 	int	prec;
-	int	min_width;
+	int	width;
 	int	arg;
 	int	skip;
 	int	ret;
@@ -110,6 +110,6 @@ int		arg_p(t_data *data, va_list *args);
 int		arg_x(t_data *data, va_list *args);
 int		arg_x_up(t_data *data, va_list *args);
 
-int		min_width(const char *str, t_data *data);
+int		width(const char *str, t_data *data);
 void	width_print(int len, size_t s_len, t_data *data);
 #endif

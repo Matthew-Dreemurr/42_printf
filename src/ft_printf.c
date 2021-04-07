@@ -19,6 +19,10 @@ int	ft_printf(const char *str, ...)
 
 	va_start(args, str);
 	d.ret = 0;
+#ifdef DEBUG_TRUE
+	D_STR(str);
+	BR;
+#endif
 	while (str && *str)
 	{
 		// BM("Main");
@@ -36,6 +40,10 @@ int	ft_printf(const char *str, ...)
 		}
 		while (str && *str && d.skip--)
 			str++;
+#ifdef DEBUG_TRUE
+	D_STR(str);
+	BR;
+#endif
 	}
 	va_end(args);
 	return (d.ret);
