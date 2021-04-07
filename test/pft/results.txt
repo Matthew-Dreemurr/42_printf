@@ -1,24 +1,3 @@
-Test  32 (s_empty_string_expansion) : FAILED.
-    First line of code: {return test("this %s is empty", "");}
-      expected output : "this  is empty"
-      your output     : "this (null) is empty"
-      expected (nonprintable as hex) : "this  is empty"
-      actual   (nonprintable as hex) : "this (null) is empty"
-
-Test  33 (s_full_then_empty_string) : FAILED.
-    First line of code: {return test("this %s is %s", "hello", "");}
-      expected output : "this hello is "
-      your output     : "this hello is (null)"
-      expected (nonprintable as hex) : "this hello is "
-      actual   (nonprintable as hex) : "this hello is (null)"
-
-Test  34 (s_empty_then_full_string) : FAILED.
-    First line of code: {return test("this %s is %s", "", "hello");}
-      expected output : "this  is hello"
-      your output     : "this (null) is hello"
-      expected (nonprintable as hex) : "this  is hello"
-      actual   (nonprintable as hex) : "this (null) is hello"
-
 Test  43 (s_string_prec_trunc) : FAILED.
     First line of code: {return test("%.3s", "hello");}
       expected output : "hel"
