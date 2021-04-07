@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/07 11:55:47 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/07 13:17:47 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	arg_s(t_data *data, va_list *args)
 	if (data->arg)
 		data->min_width = (int)va_arg(*args, int);
 	str = (const char *)va_arg(*args, const char * );
-	if (str && *str)
+	if (str && len_str(str))
 		len = len_str(str);
 	else
 		len = len_str(STR_NULL);

@@ -34,6 +34,8 @@ re: fclean
 	make refresh
 	make
 	make clean
+	make -C pft
+	cd pft && ./test
 
 exe: main
 	@echo "\n"
