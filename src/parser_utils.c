@@ -42,3 +42,12 @@ int	dummy(t_data *data, va_list *args)
 	(void)args;
 	return (TRUE);
 }
+
+/*
+**
+*/
+
+int		flag_min(const char *str, t_data *data, va_list *args)
+{
+	
+}

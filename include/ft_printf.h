@@ -89,9 +89,11 @@ int		ft_printf(const char *str, ...);
 
 void	data_init(t_data *data);
 int		dummy(t_data *data, va_list *args);
+int		flag_min(const char *str, t_data *data, va_list *args);
 int		left_justify(t_data *data, va_list *args);
 int		pars_arg(const char *str, t_data *d, va_list *args);
 int		pars_flag(const char *str, t_data *data, va_list *args);
+int		flag_check(const char *str, t_data *data, va_list *args)
 
 size_t	len_str(const char *str);
 int		len_int(int nbr);

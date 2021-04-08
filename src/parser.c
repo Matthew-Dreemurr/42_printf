@@ -52,7 +52,7 @@ int	pars_arg(const char *str, t_data *d, va_list *args)
 	}
 	if (list[index] == *str)
 	{
-		if ((f[index](&(*d), &(*args))) == ERR)
+		if ((f[index](&(*d), &(*args))) == ERR)  //XXX WIP Need to check if no flag find
 			return (ERR);
 		return (TRUE);
 	}
@@ -64,7 +64,7 @@ int	pars_arg(const char *str, t_data *d, va_list *args)
 **   Flag `-0.*`
 **   index | flag | func
 **   ------|------|------
-**   [0]   | `-`  | arg_c
+**   [0]   | `-`  | flag_min
 **   [1]   | `0`  | arg_s
 **   [2]   | `.`  | dummy
 **   [3]   | `*`  | dummy
@@ -75,7 +75,7 @@ int	flag_check(const char *str, t_data *data, va_list *args)
 	int					index;
 	char				list;
 	static t_func_arr	f[FLAG_FUNC] = {
-		dummy,
+		flag_min,
 		dummy,
 		dummy,
 		dummy
@@ -85,7 +85,8 @@ int	flag_check(const char *str, t_data *data, va_list *args)
 	list = "-0.*";
 	while (str[data->skip] != list[index])
 		index++;
-	if ((f[index]) == ERR)
+	if ((f[index](str, &(*data), &(*args))) == ERR)  //XXX WIP Need to check if no flag find
+		return (ERR);
 	return (FALSE);
 }
 
@@ -96,6 +97,9 @@ int	flag_check(const char *str, t_data *data, va_list *args)
 
 int	pars_flag(const char *str, t_data *data, va_list *args)
 {
+	int	ret;
+
+	ret = 0;
 	if (*str == '%')
 	{
 		ft_putchar(*str, &(*data));
@@ -106,8 +110,11 @@ int	pars_flag(const char *str, t_data *data, va_list *args)
 	{
 		wihle (str[data->skip])
 		{
-			if (!flag_check(str, &(*data), &(*args)))
+			ret = flag_check(str, &(*data), &(*args);
+			if (ret == TRUE))
 				break;
+			if (ret == ERR))
+				return (ERR);
 		}
 	}
 	return (pars_arg(&str[data->skip], &(*data), &(*args)));
