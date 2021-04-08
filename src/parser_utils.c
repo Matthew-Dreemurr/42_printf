@@ -15,7 +15,7 @@
 /*
 **  `%-` | `min`  | Left align the result within the given field width
 **  `%0` | `zero` | Shorter numbers are padded out with leading zeros
-**  `%.` | `prec` | How many placesshould be shown after the decimal point
+**  `%.` | `dot` | How many placesshould be shown after the decimal point
 **  `%*` | `arg`  | an int width argument must precede the value that's being
 **                   formatted in the argument list, exemple 
 **                   `printf("%0*d", 5, 3); ` 00003 is output`
@@ -25,7 +25,7 @@ void	data_init(t_data *data)
 {
 	data->minus = 0;
 	data->zero = 0;
-	data->prec = 0;
+	data->dot = 0;
 	data->arg = 0;
 	data->skip = 0;
 	data->width = 0;

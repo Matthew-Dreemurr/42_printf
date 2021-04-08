@@ -30,8 +30,19 @@ int	ft_printf(const char *str, ...)
 		data_init(&d);
 		if (*str == '%')
 		{
-			if ((check_flag(++str, &d, &args)) == ERR)
+			if ((pars_flag(++str, &d, &args)) == ERR)
 				return (ERR);
+#ifdef DEBUG_TRUE
+	D_INT(data->minus);
+	D_INT(data->zero);
+	D_INT(data->dot);
+	D_INT(data->width);
+	D_INT(data->arg);
+	D_INT(data->skip);
+	D_INT(data->ret);
+	D_INT(data->x_up);
+	BR;
+#endif
 		}
 		else
 		{

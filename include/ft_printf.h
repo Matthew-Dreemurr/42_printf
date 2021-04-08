@@ -42,7 +42,8 @@
 
 /* --- number of function in the arrays of function pointers --- */
 
-# define FUNC 9
+# define FLAG_FUNC 4
+# define ARG_FUNC 9
 
 /* --- Null case --- */
 
@@ -56,7 +57,7 @@
 /*
 **  `%-` | `min`  | Left align the result within the given field width
 **  `%0` | `zero` | Shorter numbers are padded out with leading zeros
-**  `%.` | `prec` | How many placesshould be shown after the decimal point
+**  `%.` | `dot` | How many placesshould be shown after the decimal point
 **  `%*` | `arg`  | an int width argument must precede the value that's being
 **                   formatted in the argument list, exemple 
 **                   `printf("%0*d", 5, 3); ` 00003 is output`
@@ -66,7 +67,7 @@ typedef struct s_data
 {
 	int	minus;
 	int	zero;
-	int	prec;
+	int	dot;
 	int	width;
 	int	arg;
 	int	skip;
@@ -89,8 +90,8 @@ int		ft_printf(const char *str, ...);
 void	data_init(t_data *data);
 int		dummy(t_data *data, va_list *args);
 int		left_justify(t_data *data, va_list *args);
-int		index_flag(const char *str, t_data *d, va_list *args);
-int		check_flag(const char *str, t_data *data, va_list *args);
+int		pars_arg(const char *str, t_data *d, va_list *args);
+int		pars_flag(const char *str, t_data *data, va_list *args);
 
 size_t	len_str(const char *str);
 int		len_int(int nbr);

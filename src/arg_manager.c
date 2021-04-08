@@ -17,11 +17,11 @@ int	arg_c(t_data *data, va_list *args)
 	char	c;
 
 	c = (char)va_arg(*args, int);
-	if (data->width && !data->minus && !data->prec)
+	if (data->width && !data->minus && !data->dot)
 		width_print(data->width, 1, &(*data));
 	ft_putchar(c, &(*data));
 	data->skip++;
-	if (data->width && data->minus && !data->prec)
+	if (data->width && data->minus && !data->dot)
 		width_print(data->width, 1, &(*data));
 	return (TRUE);
 }
@@ -42,13 +42,13 @@ int	arg_s(t_data *data, va_list *args)
 		len = len_str(str);
 	else
 		len = len_str(STR_NULL);
-	if (data->width && !data->minus && !data->prec)
+	if (data->width && !data->minus && !data->dot)
 		width_print(data->width, len, &(*data));
 	if (!str)
 		ft_putstr(STR_NULL, &(*data));
 	else
 		ft_putstr(str, &(*data));
-	if (data->width && data->minus && !data->prec)
+	if (data->width && data->minus && !data->dot)
 		width_print(data->width, len, &(*data));
 	data->skip++;
 	return (TRUE);
