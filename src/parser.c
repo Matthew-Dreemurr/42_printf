@@ -43,9 +43,7 @@ int	pars_arg(const char *str, t_data *d, va_list *args)
 	};
 	char				*list;
 	int					index;
-#ifdef DEBUG_TRUE
-	BR;
-#endif
+
 	index = 0;
 	list = "cspdiuxX%";
 	while (list && list[index] && list[index] != *str)
