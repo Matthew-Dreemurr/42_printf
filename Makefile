@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/07 15:25:12 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/10 16:53:37 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,12 +29,12 @@ SANI = -fsanitize=address
 
 # ====================== FILES ====================== #
 
-SRC= src/ft_printf.c
+SRC =  src/arg_manager.c
+SRC += src/flag_parser.c
+SRC += src/ft_printf.c
 SRC += src/parser.c
-SRC += src/parser_utils.c
-SRC += src/str_utils.c
-SRC += src/arg_manager.c
 SRC += src/print.c
+SRC += src/str_utils.c
 
 OBJ = $(SRC:c=o)
 
