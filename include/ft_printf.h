@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/10 16:31:03 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/10 17:18:57 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,7 @@ typedef struct s_data
 **
 */
 
-typedef int	(*t_func_arg)(t_data *data, va_list *args);
-typedef int	(*t_func_flag)(const char *str, t_data *data, va_list *args);
+typedef int	(*t_func_arr)(const char *str, t_data *data, va_list *args);
 
 
 /* --- ft_printf.c --- */
@@ -90,14 +89,14 @@ int		ft_printf(const char *str, ...);
 
 /* --- arg_manager.c --- */
 
-int		dummy_arg(t_data *data, va_list *args);
-int		arg_c(t_data *data, va_list *args);
-int		arg_s(t_data *data, va_list *args);
-int		arg_d(t_data *data, va_list *args);
-int		arg_u(t_data *data, va_list *args);
-int		arg_p(t_data *data, va_list *args);
-int		arg_x(t_data *data, va_list *args);
-int		arg_x_up(t_data *data, va_list *args);
+int		dummy_arg(const char *str, t_data *data, va_list *args);
+int		arg_c(const char *str, t_data *data, va_list *args);
+int		arg_s(const char *str, t_data *data, va_list *args);
+int		arg_d(const char *str, t_data *data, va_list *args);
+int		arg_u(const char *str, t_data *data, va_list *args);
+int		arg_p(const char *str, t_data *data, va_list *args);
+int		arg_x(const char *str, t_data *data, va_list *args);
+int		arg_x_up(const char *str, t_data *data, va_list *args);
 
 /* --- flag_parser.c --- */
 

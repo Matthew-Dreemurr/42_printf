@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/10 16:23:30 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/10 17:10:19 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	data_init(t_data *data)
 
 int	pars_arg(const char *str, t_data *d, va_list *args)
 {
-	static t_func_arg	f[ARG_FUNC] = {
+	static t_func_arr	f[ARG_FUNC] = {
 		arg_c,
 		arg_s,
 		arg_p,
@@ -106,7 +106,7 @@ int	flag_check(const char *str, t_data *data, va_list *args)
 {
 	int					index;
 	char				*list;
-	static t_func_flag	f[FLAG_FUNC] = {
+	static t_func_arr	f[FLAG_FUNC] = {
 		flag_min,
 		flag_zero,
 		flag_dot,
