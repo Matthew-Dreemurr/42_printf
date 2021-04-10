@@ -82,7 +82,6 @@ int	width(const char *str, t_data *data)
 {
 	long	len;
 	int		i;
-
 	if (!str)
 		return (ERR);
 	i = 0;
@@ -97,6 +96,12 @@ int	width(const char *str, t_data *data)
 		return (ERR);
 	data->width = len;
 	data->skip += len_int(len);
+#ifdef DEBUG_TRUE
+	D_LINT(len);
+	D_INT(data->width);
+	D_INT(data->skip);
+	BR;
+#endif
 	return (TRUE);
 }
 

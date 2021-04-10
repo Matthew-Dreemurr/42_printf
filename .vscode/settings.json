@@ -1,8 +1,10 @@
 {
-	"C_Cpp.errorSquiggles": "Disabled",
 	"autoHide.autoHidePanel": false,
 	"autoHide.autoHideSideBar": false,
 	"files.associations": {
-		"sstream": "c"
+		"sstream": "c",
+		"array": "c",
+		"string": "c",
+		"string_view": "c"
 	}
 }

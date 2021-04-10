@@ -18,19 +18,19 @@
 **   ------|------|------
 **   [0]   | `c`  | arg_c
 **   [1]   | `s`  | arg_s
-**   [2]   | `p`  | dummy
-**   [3]   | `d`  | dummy
-**   [4]   | `i`  | dummy
-**   [5]   | `u`  | dummy
-**   [6]   | `x`  | dummy
-**   [7]   | `X`  | dummy
-**   [8]   | `%`  | dummy
+**   [2]   | `p`  | dummy_arg
+**   [3]   | `d`  | dummy_arg
+**   [4]   | `i`  | dummy_arg
+**   [5]   | `u`  | dummy_arg
+**   [6]   | `x`  | dummy_arg
+**   [7]   | `X`  | dummy_arg
+**   [8]   | `%`  | dummy_arg
 **
 */
 
 int	pars_arg(const char *str, t_data *d, va_list *args)
 {
-	static t_func_arr	f[ARG_FUNC] = {
+	static t_func_arg	f[ARG_FUNC] = {
 		arg_c,
 		arg_s,
 		arg_p,
@@ -39,15 +39,28 @@ int	pars_arg(const char *str, t_data *d, va_list *args)
 		arg_u,
 		arg_x,
 		arg_x_up,
-		dummy
+		dummy_arg
 	};
 	char				*list;
 	int					index;
-
+#ifdef DEBUG_TRUE
+	BR;
+#endif
 	index = 0;
 	list = "cspdiuxX%";
 	while (list && list[index] && list[index] != *str)
 	{
+#ifdef DEBUG_TRUE
+		D_STR_DETAILS(str);
+		D_INT(d->minus);
+		D_INT(d->zero);
+		D_INT(d->dot);
+		D_INT(d->width);
+		D_INT(d->arg);
+		D_INT(d->skip);
+		D_INT(d->ret);
+		BR;
+#endif
 		index++;
 	}
 	if (list[index] == *str)
@@ -65,28 +78,52 @@ int	pars_arg(const char *str, t_data *d, va_list *args)
 **   index | flag | func
 **   ------|------|------
 **   [0]   | `-`  | flag_min
-**   [1]   | `0`  | arg_s
-**   [2]   | `.`  | dummy
-**   [3]   | `*`  | dummy
+**   [1]   | `0`  | dummy_arg
+**   [2]   | `.`  | dummy_arg
+**   [3]   | `*`  | dummy_arg
 */
 
 int	flag_check(const char *str, t_data *data, va_list *args)
 {
 	int					index;
-	char				list;
-	static t_func_arr	f[FLAG_FUNC] = {
+	char				*list;
+	static t_func_flag	f[FLAG_FUNC] = {
 		flag_min,
-		dummy,
-		dummy,
-		dummy
+		flag_zero,
+		flag_dot,
+		flag_arg,
+		dummy_flag
 	};
 
 	index = 0;
 	list = "-0.*";
-	while (str[data->skip] != list[index])
-		index++;
-	if ((f[index](str, &(*data), &(*args))) == ERR)  //XXX WIP Need to check if no flag find
-		return (ERR);
+	
+	if (str[data->skip] >= '1' && str[data->skip] <= '9')
+		width(str, &(*data));
+	else
+	{
+		while (list[index] && str[data->skip] != list[index])
+		{
+#ifdef DEBUG_TRUE
+			D_STR_DETAILS(&str[data->skip]);
+			D_INT(data->minus);
+			D_INT(data->zero);
+			D_INT(data->dot);
+			D_INT(data->width);
+			D_INT(data->arg);
+			D_INT(data->skip);
+			D_INT(data->ret);
+			D_INT(index);
+			D_STR(&list[index]);
+			BR;
+#endif
+			index++;
+		}
+		if ((f[index](str, &(*data), &(*args)) == ERR))  //XXX WIP Need to check if no flag find
+			return (ERR);
+	}
+	if (index == (FLAG_FUNC - 1))
+		return (TRUE);
 	return (FALSE);
 }
 
@@ -108,14 +145,26 @@ int	pars_flag(const char *str, t_data *data, va_list *args)
 	}
 	else
 	{
-		wihle (str[data->skip])
+		while (str[data->skip])
 		{
-			ret = flag_check(str, &(*data), &(*args);
-			if (ret == TRUE))
+#ifdef DEBUG_TRUE
+			D_STR_DETAILS(&str[data->skip]);
+			D_INT(data->minus);
+			D_INT(data->zero);
+			D_INT(data->dot);
+			D_INT(data->width);
+			D_INT(data->arg);
+			D_INT(data->skip);
+			D_INT(data->ret);
+			BR;
+#endif
+			ret = flag_check(str, &(*data), &(*args));
+			if (ret == TRUE)
 				break;
-			if (ret == ERR))
+			if (ret == ERR)
 				return (ERR);
 		}
 	}
 	return (pars_arg(&str[data->skip], &(*data), &(*args)));
 }
+

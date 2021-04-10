@@ -36,10 +36,28 @@ void	data_init(t_data *data)
 **
 */
 
-int	dummy(t_data *data, va_list *args)
+int	dummy_arg(t_data *data, va_list *args)
 {
 	(void)data;
 	(void)args;
+#ifdef DEBUG_TRUE
+	BR;
+#endif
+	return (TRUE);
+}
+
+/*
+**
+*/
+
+int	dummy_flag(const char *str, t_data *data, va_list *args)
+{
+	(void)str;
+	(void)data;
+	(void)args;
+#ifdef DEBUG_TRUE
+	BR;
+#endif
 	return (TRUE);
 }
 
@@ -49,5 +67,56 @@ int	dummy(t_data *data, va_list *args)
 
 int		flag_min(const char *str, t_data *data, va_list *args)
 {
-	
+	(void)str;
+	data->skip++;
+	(void)args;
+#ifdef DEBUG_TRUE
+	BR;
+#endif
+	return (TRUE);
+}
+
+/*
+**
+*/
+
+int		flag_zero(const char *str, t_data *data, va_list *args)
+{
+	(void)str;
+	data->skip++;
+	(void)args;
+#ifdef DEBUG_TRUE
+	BR;
+#endif
+	return (TRUE);
+}
+
+/*
+**
+*/
+
+int		flag_dot(const char *str, t_data *data, va_list *args)
+{
+	(void)str;
+	data->skip++;
+	(void)args;
+#ifdef DEBUG_TRUE
+	BR;
+#endif
+	return (TRUE);
+}
+
+/*
+**
+*/
+
+int		flag_arg(const char *str, t_data *data, va_list *args)
+{
+	(void)str;
+	data->skip++;
+	(void)args;
+#ifdef DEBUG_TRUE
+	BR;
+#endif
+	return (TRUE);
 }

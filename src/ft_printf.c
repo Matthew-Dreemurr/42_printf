@@ -33,14 +33,14 @@ int	ft_printf(const char *str, ...)
 			if ((pars_flag(++str, &d, &args)) == ERR)
 				return (ERR);
 #ifdef DEBUG_TRUE
-	D_INT(data->minus);
-	D_INT(data->zero);
-	D_INT(data->dot);
-	D_INT(data->width);
-	D_INT(data->arg);
-	D_INT(data->skip);
-	D_INT(data->ret);
-	D_INT(data->x_up);
+	D_INT(d.minus);
+	D_INT(d.zero);
+	D_INT(d.dot);
+	D_INT(d.width);
+	D_INT(d.arg);
+	D_INT(d.skip);
+	D_INT(d.ret);
+	D_INT(d.x_up);
 	BR;
 #endif
 		}

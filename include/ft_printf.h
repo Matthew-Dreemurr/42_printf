@@ -42,7 +42,7 @@
 
 /* --- number of function in the arrays of function pointers --- */
 
-# define FLAG_FUNC 4
+# define FLAG_FUNC 5
 # define ARG_FUNC 9
 
 /* --- Null case --- */
@@ -79,7 +79,8 @@ typedef struct s_data
 **
 */
 
-typedef int	(*t_func_arr)(t_data *data, va_list *args);
+typedef int	(*t_func_arg)(t_data *data, va_list *args);
+typedef int	(*t_func_flag)(const char *str, t_data *data, va_list *args);
 
 
 /* --- ft_printf.c --- */
@@ -88,12 +89,18 @@ int		ft_printf(const char *str, ...);
 
 
 void	data_init(t_data *data);
-int		dummy(t_data *data, va_list *args);
+int		dummy_arg(t_data *data, va_list *args);
+int		dummy_flag(const char *str, t_data *data, va_list *args);
+
 int		flag_min(const char *str, t_data *data, va_list *args);
+int		flag_zero(const char *str, t_data *data, va_list *args);
+int		flag_dot(const char *str, t_data *data, va_list *args);
+int		flag_arg(const char *str, t_data *data, va_list *args);
+
 int		left_justify(t_data *data, va_list *args);
 int		pars_arg(const char *str, t_data *d, va_list *args);
 int		pars_flag(const char *str, t_data *data, va_list *args);
-int		flag_check(const char *str, t_data *data, va_list *args)
+int		flag_check(const char *str, t_data *data, va_list *args);
 
 size_t	len_str(const char *str);
 int		len_int(int nbr);
