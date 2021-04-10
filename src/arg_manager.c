@@ -6,11 +6,29 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/07 13:32:49 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/10 16:30:40 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+
+/*
+**
+*/
+
+int	dummy_arg(t_data *data, va_list *args)
+{
+	(void)data;
+	(void)args;
+#ifdef DEBUG_TRUE
+	BR;
+#endif
+	return (TRUE);
+}
+
+/*
+**
+*/
 
 int	arg_c(t_data *data, va_list *args)
 {

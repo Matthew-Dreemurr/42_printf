@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/06 14:11:34 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/10 16:31:03 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,39 +88,46 @@ typedef int	(*t_func_flag)(const char *str, t_data *data, va_list *args);
 
 int		ft_printf(const char *str, ...);
 
+/* --- arg_manager.c --- */
 
-void	data_init(t_data *data);
 int		dummy_arg(t_data *data, va_list *args);
-int		dummy_flag(const char *str, t_data *data, va_list *args);
-
-int		flag_min(const char *str, t_data *data, va_list *args);
-int		flag_zero(const char *str, t_data *data, va_list *args);
-int		flag_dot(const char *str, t_data *data, va_list *args);
-int		flag_arg(const char *str, t_data *data, va_list *args);
-
-int		left_justify(t_data *data, va_list *args);
-int		pars_arg(const char *str, t_data *d, va_list *args);
-int		pars_flag(const char *str, t_data *data, va_list *args);
-int		flag_check(const char *str, t_data *data, va_list *args);
-
-size_t	len_str(const char *str);
-int		len_int(int nbr);
-int		len_uint(unsigned int nbr);
-void	ft_putstr(const char *s, t_data *data);
-void	ft_putchar(char c, t_data *data);
-void	putstr_rev(const char *s, t_data *data);
-int		print_int(int nbr, t_data *data);
-char*	ulongtohex(unsigned long nbr, t_data *data);
-
 int		arg_c(t_data *data, va_list *args);
 int		arg_s(t_data *data, va_list *args);
 int		arg_d(t_data *data, va_list *args);
-int		print_uint(unsigned int nbr, t_data *data);
 int		arg_u(t_data *data, va_list *args);
 int		arg_p(t_data *data, va_list *args);
 int		arg_x(t_data *data, va_list *args);
 int		arg_x_up(t_data *data, va_list *args);
 
-int		width(const char *str, t_data *data);
+/* --- flag_parser.c --- */
+
+int		dummy_flag(const char *str, t_data *data, va_list *args);
+int		flag_min(const char *str, t_data *data, va_list *args);
+int		flag_zero(const char *str, t_data *data, va_list *args);
+int		flag_dot(const char *str, t_data *data, va_list *args);
+int		flag_arg(const char *str, t_data *data, va_list *args);
+
+/* --- parser.c --- */
+
+void	data_init(t_data *data);
+int		pars_arg(const char *str, t_data *d, va_list *args);
+int		flag_check(const char *str, t_data *data, va_list *args);
+int		pars_flag(const char *str, t_data *data, va_list *args);
+
+/* --- print.c --- */
+
+void	ft_putstr(const char *s, t_data *data);
+void	ft_putchar(char c, t_data *data);
+void	putstr_rev(const char *s, t_data *data);
+int		print_int(int nbr, t_data *data);
+int		len_uint(unsigned int nbr);
 void	width_print(int len, size_t s_len, t_data *data);
+
+/* --- str_utils.c --- */
+
+size_t	len_str(const char *str);
+int		len_int(int nbr);
+int		print_uint(unsigned int nbr, t_data *data);
+int		width(const char *str, t_data *data);
+char*	ulongtohex(unsigned long nbr, t_data *data);
 #endif

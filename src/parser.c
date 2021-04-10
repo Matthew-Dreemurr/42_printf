@@ -6,11 +6,32 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/07 13:15:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/10 16:23:30 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+
+/*
+**  `%-` | `min`  | Left align the result within the given field width
+**  `%0` | `zero` | Shorter numbers are padded out with leading zeros
+**  `%.` | `dot` | How many placesshould be shown after the decimal point
+**  `%*` | `arg`  | an int width argument must precede the value that's being
+**                   formatted in the argument list, exemple 
+**                   `printf("%0*d", 5, 3); ` 00003 is output`
+*/
+
+void	data_init(t_data *data)
+{
+	data->minus = 0;
+	data->zero = 0;
+	data->dot = 0;
+	data->arg = 0;
+	data->skip = 0;
+	data->width = 0;
+	data->x_up = 0;
+}
+
 
 /*
 **
