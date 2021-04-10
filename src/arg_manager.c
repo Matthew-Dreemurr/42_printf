@@ -17,12 +17,7 @@ int	arg_c(t_data *data, va_list *args)
 	char	c;
 
 	c = (char)va_arg(*args, int);
-	if (data->width && !data->minus && !data->dot)
-		width_print(data->width, 1, &(*data));
-	ft_putchar(c, &(*data));
-	data->skip++;
-	if (data->width && data->minus && !data->dot)
-		width_print(data->width, 1, &(*data));
+
 	return (TRUE);
 }
 
@@ -38,22 +33,7 @@ int	arg_s(t_data *data, va_list *args)
 	if (data->arg)
 		data->width = (int)va_arg(*args, int);
 	str = (const char *)va_arg(*args, const char * );
-	if (str)
-		len = len_str(str);
-	else
-		len = len_str(STR_NULL);
-	if (data->width && !data->minus && !data->dot)
-		width_print(data->width, len, &(*data));
-	if (!str)
-	{
-		if (len <= (size_t)data->max_print)
-			ft_putstr(STR_NULL, &(*data));
-	}
-	else
-		ft_putstr(str, &(*data));
-	if (data->width && data->minus && !data->dot)
-		width_print(data->width, len, &(*data));
-	data->skip++;
+
 	return (TRUE);
 }
 
@@ -69,14 +49,7 @@ int	arg_d(t_data *data, va_list *args)
 	if (data->arg)
 		data->width = (int)va_arg(*args, int);
 	nbr = (int)va_arg(*args, int);
-	len = len_int(nbr);
-	if (data->width && !data->minus)
-		width_print(data->width, len, &(*data));
-	if (!(print_int(nbr, &(*data))))
-		return (ERR);
-	if (data->width && data->minus)
-		width_print(data->width, len, &(*data));
-	data->skip++;
+
 	return (TRUE);
 }
 
@@ -92,14 +65,7 @@ int	arg_u(t_data *data, va_list *args)
 	if (data->arg)
 		data->width = (int)va_arg(*args, int);
 	nbr = (unsigned int)va_arg(*args, unsigned int);
-	len = len_uint(nbr);
-	if (data->width && !data->minus)
-		width_print(data->width, len, &(*data));
-	if (!(print_uint(nbr, &(*data))))
-		return (ERR);
-	if (data->width && data->minus)
-		width_print(data->width, len, &(*data));
-	data->skip++;
+
 	return (TRUE);
 }
 
@@ -120,22 +86,6 @@ int	arg_p(t_data *data, va_list *args)
 	str = ulongtohex((unsigned long)ptr, &(*data));
 	if (!str)
 		return (ERR);
-	len = len_str(str);
-	if (ptr == NULL)
-		len = len_str(ADDR_NULL);
-	else
-		len += 2;
-	if (data->width && !data->minus)
-		width_print(data->width, len, &(*data));
-	if (ptr == NULL)
-		ft_putstr(ADDR_NULL, &(*data));
-	else
-	{
-		data->ret += write(1, "0x", 2);
-		putstr_rev(str, &(*data));
-	}
-	if (data->width && data->minus)
-		width_print(data->width, len, &(*data));
 	free(str);
 	return (TRUE);
 }
@@ -157,12 +107,7 @@ int	arg_x(t_data *data, va_list *args)
 	str = ulongtohex(nbr, &(*data));
 	if (!str)
 		return (ERR);
-	len = len_str(str);
-	if (data->width && !data->minus)
-		width_print(data->width, len, &(*data));
-	putstr_rev(str, *(&data));
-	if (data->width && data->minus)
-		width_print(data->width, len, &(*data));
+
 	free(str);
 	return (TRUE);
 }
