@@ -69,6 +69,7 @@ typedef struct s_data
 	int	zero;
 	int	dot;
 	int	width;
+	int	max_print;
 	int	arg;
 	int	skip;
 	int	ret;
