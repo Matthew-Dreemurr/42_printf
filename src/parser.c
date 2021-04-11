@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/10 17:10:19 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/11 13:29:12 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,21 +70,14 @@ int	pars_arg(const char *str, t_data *d, va_list *args)
 	while (list && list[index] && list[index] != *str)
 	{
 #ifdef DEBUG_TRUE
-		D_STR_DETAILS(str);
-		D_INT(d->minus);
-		D_INT(d->zero);
-		D_INT(d->dot);
-		D_INT(d->width);
-		D_INT(d->arg);
-		D_INT(d->skip);
-		D_INT(d->ret);
-		BR;
+data_debug(&(*d));
+BR;
 #endif
 		index++;
 	}
 	if (list[index] == *str)
 	{
-		if ((f[index](&(*d), &(*args))) == ERR)  //XXX WIP Need to check if no flag find
+		if ((f[index](NULL, &(*d), &(*args))) == ERR)  //XXX WIP Need to check if no flag find
 			return (ERR);
 		return (TRUE);
 	}
@@ -124,17 +117,8 @@ int	flag_check(const char *str, t_data *data, va_list *args)
 		while (list[index] && str[data->skip] != list[index])
 		{
 #ifdef DEBUG_TRUE
-			D_STR_DETAILS(&str[data->skip]);
-			D_INT(data->minus);
-			D_INT(data->zero);
-			D_INT(data->dot);
-			D_INT(data->width);
-			D_INT(data->arg);
-			D_INT(data->skip);
-			D_INT(data->ret);
-			D_INT(index);
-			D_STR(&list[index]);
-			BR;
+data_debug(&(*data));
+BR;
 #endif
 			index++;
 		}
@@ -153,37 +137,6 @@ int	flag_check(const char *str, t_data *data, va_list *args)
 
 int	pars_flag(const char *str, t_data *data, va_list *args)
 {
-	int	ret;
-
-	ret = 0;
-	if (*str == '%')
-	{
-		ft_putchar(*str, &(*data));
-		data->skip += 1;
-		return (TRUE);
-	}
-	else
-	{
-		while (str[data->skip])
-		{
-#ifdef DEBUG_TRUE
-			D_STR_DETAILS(&str[data->skip]);
-			D_INT(data->minus);
-			D_INT(data->zero);
-			D_INT(data->dot);
-			D_INT(data->width);
-			D_INT(data->arg);
-			D_INT(data->skip);
-			D_INT(data->ret);
-			BR;
-#endif
-			ret = flag_check(str, &(*data), &(*args));
-			if (ret == TRUE)
-				break;
-			if (ret == ERR)
-				return (ERR);
-		}
-	}
-	return (pars_arg(&str[data->skip], &(*data), &(*args)));
+/* TODO */
 }
 

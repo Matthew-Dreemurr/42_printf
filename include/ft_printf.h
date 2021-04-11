@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/10 17:18:57 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/11 13:25:44 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,4 +129,11 @@ int		len_int(int nbr);
 int		print_uint(unsigned int nbr, t_data *data);
 int		width(const char *str, t_data *data);
 char*	ulongtohex(unsigned long nbr, t_data *data);
+
+
+
+/*========================== DEBUG */
+
+void	data_debug(t_data *data);
+
 #endif
