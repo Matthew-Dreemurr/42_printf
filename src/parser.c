@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/11 21:29:47 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/11 21:53:38 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,10 +138,9 @@ int	parser(const char *str, t_data *data, va_list *args)
 {
 	int	ret;
 
-	if (!str[++data->skip])
+	if (!str[data->skip++])
 		return (FALSE);
 	if (str[data->skip] == '%')
-		ft_putchar(str[data->skip], &(*data));
+		ft_putchar(str[data->skip++], &(*data));
 	return (TRUE);
 }
-
