@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/10 16:53:37 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/11 13:34:45 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ nrm:
 git:
 	@git pull
 	@-git add .
-	@-git commit -am "Makefile push"
+	@git commit -am "Makefile push"
 	@-git push
 
 gitf:
