@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/11 16:23:22 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/11 16:27:28 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,5 +138,7 @@ BR;
 int	parser(const char *str, t_data *data, va_list *args)
 {
 /* TODO */
+
+return (TRUE);
 }
 
