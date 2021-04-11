@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:40:39 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/11 16:16:15 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/11 16:24:28 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[d.skip] != '%')
 			ft_putchar(str[d.skip++], &d);
+		else
+			parser(str, &d, &args);
 	}
 	va_end(args);
 	return (d.ret);

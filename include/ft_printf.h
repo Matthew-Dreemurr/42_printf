@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/11 13:25:44 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/11 16:23:22 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,9 @@ int		flag_arg(const char *str, t_data *data, va_list *args);
 /* --- parser.c --- */
 
 void	data_init(t_data *data);
-int		pars_arg(const char *str, t_data *d, va_list *args);
+int		arg_check(const char *str, t_data *d, va_list *args);
 int		flag_check(const char *str, t_data *data, va_list *args);
-int		pars_flag(const char *str, t_data *data, va_list *args);
+int		parser(const char *str, t_data *data, va_list *args);
 
 /* --- print.c --- */
 
