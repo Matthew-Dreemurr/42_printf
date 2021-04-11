@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/11 16:27:28 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/11 19:10:04 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ BR;
 #endif
 			index++;
 		}
-		if ((f[index](str, &(*data), &(*args)) == ERR))  //XXX WIP Need to check if no flag find
+		if (f[index](str, &(*data), &(*args)));
 			return (ERR);
 	}
 	if (index == (FLAG_FUNC - 1))
@@ -137,8 +137,15 @@ BR;
 
 int	parser(const char *str, t_data *data, va_list *args)
 {
-/* TODO */
+	int	ret;
 
-return (TRUE);
+	if (!str[++data->skip])
+		return (FALSE);
+#ifdef DEBUG_TRUE
+	D_STR_DETAILS(&str[data->skip]);
+#endif
+	if (str[data->skip] == '%')
+		ft_putchar(str[data->skip], &(*data));
+	return (TRUE);
 }
 
