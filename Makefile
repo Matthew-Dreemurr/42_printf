@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/11 13:34:45 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/11 13:36:35 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = gcc
 CFLAGS = -g3 -Wall -Wextra -Werror
 
 SHELL=/bin/bash
-BRANCH=origin/ft_printf_V0
+BRANCH=origin/ft_printf_V1
 
 DEF = $(SANI) $(BR) $(DEBUG) $(WRA)
 
