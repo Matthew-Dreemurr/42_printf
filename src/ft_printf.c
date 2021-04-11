@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:40:39 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/11 13:31:01 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/11 13:51:20 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,13 @@ int	ft_printf(const char *str, ...)
 	va_list	args;
 	t_data	d;
 
-	
 	va_start(args, str);
 	d.ret = 0;
-	while (str)
+	d.skip = 0;
+	while (str && str[d.skip])
 	{
-		/* code */
+		if (str[d.skip] = '%')
+			ft_putchar();
 	}
 	
 	va_end(args);
