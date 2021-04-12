@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_manager.c                                     :+:      :+:    :+:   */
+/*   flag_parser.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/10 16:20:44 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/12 12:50:40 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	dummy_flag(const char *str, t_data *data, va_list *args)
 #ifdef DEBUG_TRUE
 	BR;
 #endif
-	return (TRUE);
+	return (FALSE);
 }
 
 /*

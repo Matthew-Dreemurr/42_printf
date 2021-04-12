@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/11 21:35:45 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/12 13:05:06 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ BR = -D BREAK_PAUSE=0
 DEBUG = -D DEBUG_UTILS_H
 WRA = -D WRALOC_H
 SANI = -fsanitize=address
+TIMEOUT = timeout 0.02
 
 # ====================== FILES ====================== #
 
@@ -53,7 +54,7 @@ re: fclean all
 
 exe: main
 	@echo "\n"
-	timeout 0.02 ./a.out
+	$(TIMEOUT) ./a.out
 	
 main: re
 	$(CC) $(CFLAGS) $(DEF) main.c libftprintf.a

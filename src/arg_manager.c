@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/10 17:29:00 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/12 12:55:56 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	arg_s(const char *str, t_data *data, va_list *args)
 {
 	const char	*s;
 	size_t		len;
-
+BM("UwU");
 	(void)str;
 	if (data->arg)
 		data->width = (int)va_arg(*args, int);

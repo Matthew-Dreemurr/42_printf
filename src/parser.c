@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/11 21:53:38 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/12 13:13:19 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ void	data_init(t_data *data)
 **   [7]   | `X`  | dummy_arg
 **   [8]   | `%`  | dummy_arg
 **
+**   Return | Value
+**   -------|------
+**
 */
 
 int	arg_check(const char *str, t_data *d, va_list *args)
@@ -68,14 +71,12 @@ int	arg_check(const char *str, t_data *d, va_list *args)
 	index = 0;
 	list = "cspdiuxX%";
 	while (list && list[index] && list[index] != *str)
-	{
+		index++;
 #ifdef DEBUG_TRUE
 data_debug(&(*d));
 BR;
 #endif
-		index++;
-	}
-	if (list[index] == *str)
+	if (list[index] == str[d->skip])
 	{
 		if ((f[index](NULL, &(*d), &(*args))) == ERR)  //XXX WIP Need to check if no flag find
 			return (ERR);
@@ -93,11 +94,17 @@ BR;
 **   [1]   | `0`  | dummy_arg
 **   [2]   | `.`  | dummy_arg
 **   [3]   | `*`  | dummy_arg
+**
+**   Return | Value
+**   -------|------
+**   TRUE   |  1
+**   FALSE  |  0
 */
 
 int	flag_check(const char *str, t_data *data, va_list *args)
 {
 	int					index;
+	int					ret;
 	char				*list;
 	static t_func_arr	f[FLAG_FUNC] = {
 		flag_min,
@@ -107,27 +114,39 @@ int	flag_check(const char *str, t_data *data, va_list *args)
 		dummy_flag
 	};
 
+#ifdef DEBUG_TRUE
+BR;
+#endif
+
 	index = 0;
+	ret = 0;
 	list = "-0.*";
-	
-	if (str[data->skip] >= '1' && str[data->skip] <= '9')
-		width(str, &(*data));
-	else
+	while(!str && str[data->skip])
 	{
-		while (list[index] && str[data->skip] != list[index])
+		if (str[data->skip] >= '1' && str[data->skip] <= '9')
+			if (!(width(str, &(*data))))
+				return (FALSE);
+		else
 		{
+			while (list[index] && str[data->skip] != list[index])
+			{
+#ifdef DEBUG_TRUE
+D_INT(index);
+#endif
+				index++;
+			}
+			ret = f[index](str, &(*data), &(*args));
+			if (ret == ERR)
+				return (FALSE);
+			if (!ret)
+				break;
+		}
+	}
 #ifdef DEBUG_TRUE
 data_debug(&(*data));
 BR;
 #endif
-			index++;
-		}
-		if (f[index](str, &(*data), &(*args)));
-			return (ERR);
-	}
-	if (index == (FLAG_FUNC - 1))
-		return (TRUE);
-	return (FALSE);
+	return (arg_check(str, &(*data), &(*args)));
 }
 
 /*
@@ -136,11 +155,21 @@ BR;
 
 int	parser(const char *str, t_data *data, va_list *args)
 {
-	int	ret;
-
-	if (!str[data->skip++])
+	if (!str[++data->skip])
 		return (FALSE);
+#ifdef DEBUG_TRUE
+BM("str++ ok");
+D_STR_DETAILS(&str[data->skip]);
+#endif
 	if (str[data->skip] == '%')
 		ft_putchar(str[data->skip++], &(*data));
+	else
+	{
+#ifdef DEBUG_TRUE
+BM("else");
+#endif
+		if (!flag_check)
+			return(FALSE);
+	}
 	return (TRUE);
 }

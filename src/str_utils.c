@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/07 11:59:54 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/12 11:53:38 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	width(const char *str, t_data *data)
 	long	len;
 	int		i;
 	if (!str)
-		return (ERR);
+		return (FALSE);
 	i = 0;
 	len = 0;
 	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
@@ -93,7 +93,7 @@ int	width(const char *str, t_data *data)
 		i++;
 	}
 	if (len > MAX_INT)
-		return (ERR);
+		return (FALSE);
 	data->width = len;
 	data->skip += len_int(len);
 #ifdef DEBUG_TRUE
