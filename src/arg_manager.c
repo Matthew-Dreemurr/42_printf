@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/12 12:55:56 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/13 14:13:37 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int	dummy_arg(const char *str, t_data *data, va_list *args)
 {
 	(void)data;
 	(void)args;
+	(void)str;
 #ifdef DEBUG_TRUE
+	BM("dummy_arg");
 	BR;
 #endif
 	return (TRUE);
@@ -33,8 +35,21 @@ int	dummy_arg(const char *str, t_data *data, va_list *args)
 int	arg_c(const char *str, t_data *data, va_list *args)
 {
 	char	c;
+	char	str_c[2];
 
+#ifdef DEBUG_TRUE
+BM("arg_c");
+#endif
+
+	(void)data;
+	(void)args;
+	(void)str;
+	data->skip++;
+	str_c[1] = '\0';
 	c = (char)va_arg(*args, int);
+	str_c[0] = c;
+	if (!(print_manager(str_c, &(*data), FALSE)))
+		return (FALSE);
 	return (TRUE);
 }
 
@@ -45,12 +60,14 @@ int	arg_c(const char *str, t_data *data, va_list *args)
 int	arg_s(const char *str, t_data *data, va_list *args)
 {
 	const char	*s;
-	size_t		len;
-BM("UwU");
+#ifdef DEBUG_TRUE
+BM("arg_s");
+#endif
 	(void)str;
 	if (data->arg)
 		data->width = (int)va_arg(*args, int);
 	s = (const char *)va_arg(*args, const char *);
+	print_arg_s();//TODO
 	return (TRUE);
 }
 
@@ -60,13 +77,13 @@ BM("UwU");
 
 int	arg_d(const char *str, t_data *data, va_list *args)
 {
-	size_t len;
 	int nbr;
 
 	(void)str;
 	if (data->arg)
 		data->width = (int)va_arg(*args, int);
 	nbr = (int)va_arg(*args, int);
+	(void)nbr;
 	return (TRUE);
 }
 
@@ -76,13 +93,13 @@ int	arg_d(const char *str, t_data *data, va_list *args)
 
 int	arg_u(const char *str, t_data *data, va_list *args)
 {
-	size_t			len;
 	unsigned int	nbr;
 
 	(void)str;
 	if (data->arg)
 		data->width = (int)va_arg(*args, int);
 	nbr = (unsigned int)va_arg(*args, unsigned int);
+	(void)nbr;
 	return (TRUE);
 }
 
@@ -94,7 +111,6 @@ int	arg_p(const char *str, t_data *data, va_list *args)
 {
 	void	*ptr;
 	char	*s;
-	size_t	len;
 
 	(void)str;
 	data->skip++;
@@ -116,7 +132,6 @@ int	arg_x(const char *str, t_data *data, va_list *args)
 {
 	unsigned long	nbr;
 	char			*s;
-	size_t			len;
 
 	(void)str;
 	data->skip++;
@@ -136,6 +151,7 @@ int	arg_x(const char *str, t_data *data, va_list *args)
 
 int	arg_x_up(const char *str, t_data *data, va_list *args)
 {
+	(void)str;
 	data->x_up++;
 	if (!(arg_x(NULL, &(*data), &(*args))))
 		return (FALSE);

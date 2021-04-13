@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:40:39 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/11 21:49:12 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/13 11:59:54 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ void	data_debug(t_data *data)
 			D_INT(data->zero);
 			D_INT(data->dot);
 			D_INT(data->width);
+			D_INT(data->max_print);
 			D_INT(data->arg);
 			D_INT(data->skip);
 			D_INT(data->ret);
+			D_INT(data->x_up);
 }
 #endif
 

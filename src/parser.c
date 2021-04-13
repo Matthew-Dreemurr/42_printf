@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/12 13:13:19 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/13 12:13:14 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	data_init(t_data *data)
 	data->minus = 0;
 	data->zero = 0;
 	data->dot = 0;
-	data->arg = 0;
-	data->skip = 0;
 	data->width = 0;
+	data->max_print = 0;
+	data->arg = 0;
 	data->x_up = 0;
 }
 
@@ -68,14 +68,22 @@ int	arg_check(const char *str, t_data *d, va_list *args)
 	char				*list;
 	int					index;
 
+#ifdef DEBUG_TRUE
+BM("arg_check");
+#endif
+
 	index = 0;
 	list = "cspdiuxX%";
-	while (list && list[index] && list[index] != *str)
+	while (list && list[index] && list[index] != str[d->skip])
 		index++;
+
 #ifdef DEBUG_TRUE
 data_debug(&(*d));
+D_STR(&(list[index]))
+D_INT(index)
 BR;
 #endif
+
 	if (list[index] == str[d->skip])
 	{
 		if ((f[index](NULL, &(*d), &(*args))) == ERR)  //XXX WIP Need to check if no flag find
@@ -115,7 +123,7 @@ int	flag_check(const char *str, t_data *data, va_list *args)
 	};
 
 #ifdef DEBUG_TRUE
-BR;
+BM("Flag_check");
 #endif
 
 	index = 0;
@@ -160,16 +168,13 @@ int	parser(const char *str, t_data *data, va_list *args)
 #ifdef DEBUG_TRUE
 BM("str++ ok");
 D_STR_DETAILS(&str[data->skip]);
+D_INT(data->skip);
 #endif
+	data_init(&(*data));
 	if (str[data->skip] == '%')
 		ft_putchar(str[data->skip++], &(*data));
 	else
-	{
-#ifdef DEBUG_TRUE
-BM("else");
-#endif
-		if (!flag_check)
+		if (!flag_check(str, &(*data), &(*args)))
 			return(FALSE);
-	}
 	return (TRUE);
 }

@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/12 13:05:06 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/13 12:55:24 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRC += src/flag_parser.c
 SRC += src/ft_printf.c
 SRC += src/parser.c
 SRC += src/print.c
+SRC += src/print_utils.c
 SRC += src/str_utils.c
 
 OBJ = $(SRC:c=o)
