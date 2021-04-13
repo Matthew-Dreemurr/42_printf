@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   debug_utils.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 18:21:34 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/07 17:49:04 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/04/13 18:15:10 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@
 # define D_STR(var) _print( "< %s:%d in %s() > " #var " : \"%s\"" _DE_NL, __FILE__, __LINE__, __FUNCTION__, var);
 # define D_PTR(var) _print( "< %s:%d in %s() > " #var " : <%p>" _DE_NL, __FILE__, __LINE__, __FUNCTION__, var);
 
-# define D_STR_DETAILS(str) print_str_details(strlen(str), str, #str);
+# define D_STR_DETAILS(str) print_str_details(len_str(str), str, #str);
 
 static inline void	print_str_details(size_t len, char *str, const char *name)
 {

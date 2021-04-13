@@ -33,7 +33,7 @@ char						_PRINTED;
 # include <stdarg.h>
 # include <stdio.h>
 # include <unistd.h>
-# include <malloc.h>
+// # include <malloc.h>
 
 # define CR "\x1b[0m"
 # define CL_RD "\x1b[1;31m"

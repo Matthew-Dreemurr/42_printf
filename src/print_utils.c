@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/13 16:19:40 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/13 19:15:11 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,24 @@
 
 void	ft_putstr(const char *s, t_data *data)
 {
-	data->ret += len_str(s);
-	while (s && *s)
-		write(1, s++, 1);
+	size_t	i;
+
+
+	i = 0;
+	if (data->max_print)
+		data->ret += data->max_print;
+	else
+	{
+		data->max_print = len_str(s);
+		data->ret += data->max_print;
+	}
+#ifdef DEBUG_TRUE
+BM("ft_pustr");
+data_debug(&(*data));
+BR;
+#endif
+	while (s && s[i] && data->max_print--)
+		write(1, &s[i++], 1);
 }
 
 /*
@@ -123,7 +138,16 @@ void	width_print(int len, size_t str_len, t_data *data)
 {
 	int		wdt_len;
 	char	c;
+
+
 	wdt_len = len - str_len;
+#ifdef DEBUG_TRUE
+	BM("width_print");
+	DE(str_len);
+	DE(len);
+	DE(wdt_len);
+	BR;
+#endif
 	c = ' ';
 	if (data->zero)
 		c = '0';

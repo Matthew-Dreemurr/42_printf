@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/13 17:34:35 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/13 19:21:23 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,21 @@ int	dummy_flag(const char *str, t_data *data, va_list *args)
 **
 */
 
-int		flag_min(const char *str, t_data *data, va_list *args)
+int	flag_min(const char *str, t_data *data, va_list *args)
 {
 	(void)str;
 	(void)args;
 	data->skip++;
+	data->minus++;
+	if (str[data->skip] >= '0' && str[data->skip] <= '9')
+		data->width = chartoi(&str[data->skip], &(*data));
+	else if (str[data->skip] == '*')
+	{
+		data->width = (int)va_arg(*args, int);
+		data->skip++;
+	}
+	else
+		data->width = 0;
 #ifdef DEBUG_TRUE
 	BR;
 #endif
@@ -58,7 +68,7 @@ int		flag_zero(const char *str, t_data *data, va_list *args)
 }
 
 /*
-** Skip the '.', check if isnum //TODO
+** Skip the '.', check if isnum if !, check if '*' and take the next args if !, dot = 0
 */
 
 int		flag_dot(const char *str, t_data *data, va_list *args)
@@ -74,6 +84,7 @@ int		flag_dot(const char *str, t_data *data, va_list *args)
 	else
 		data->dot = 0;
 #ifdef DEBUG_TRUE
+	D_STR_DETAILS(&str[data->skip]);
 	BR;
 #endif
 	return (TRUE);
@@ -86,9 +97,8 @@ int		flag_dot(const char *str, t_data *data, va_list *args)
 int		flag_arg(const char *str, t_data *data, va_list *args)
 {
 	(void)str;
-	(void)args;
+	data->width = (int)va_arg(*args, int);
 	data->skip++;
-	data->arg = (int)va_arg(*args, int);
 #ifdef DEBUG_TRUE
 	BR;
 #endif

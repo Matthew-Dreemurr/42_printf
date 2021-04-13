@@ -1,11 +1,7 @@
 {
-	"autoHide.autoHidePanel": false,
-	"autoHide.autoHideSideBar": false,
 	"files.associations": {
-		"sstream": "c",
-		"array": "c",
-		"string": "c",
-		"string_view": "c",
-		"debug_utils.h": "c"
+		"ft_printf.h": "c",
+		"wraloc.h": "c",
+		"sstream": "cpp"
 	}
 }

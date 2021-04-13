@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/13 17:07:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/13 18:58:43 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,25 +55,25 @@
 /* --- typedef --- */
 
 /*
-**  `%-` | `min`  | Left align the result within the given field chartoi
+**  `%-` | `min`  | Left align the result within the given field width
 **  `%0` | `zero` | Shorter numbers are padded out with leading zeros
 **  `%.` | `dot` | How many placesshould be shown after the decimal point
-**  `%*` | `arg`  | an int chartoi argument must precede the value that's being
+**  `%*` | `arg`  | an int width argument must precede the value that's being
 **                   formatted in the argument list, exemple 
 **                   `printf("%0*d", 5, 3); ` 00003 is output`
 */
 
 typedef struct s_data
 {
-	int	minus;
-	int	zero;
-	int	dot;
-	int	chartoi;
-	int	max_print;
-	int	arg;
-	int	skip;
-	int	ret;
-	int	x_up;
+	int		minus;
+	int		zero;
+	size_t	dot;
+	int		width;
+	size_t		max_print;
+	int		arg;
+	int		skip;
+	int		ret;
+	int		x_up;
 }				t_data;
 
 /*
@@ -115,7 +115,7 @@ int		parser(const char *str, t_data *data, va_list *args);
 
 /* --- print.c --- */
 
-int		print_arg_s(char *str, t_data *data);
+int		print_arg_s(const char *str, t_data *data);
 
 /* --- print_utils.c --- */
 
@@ -124,7 +124,7 @@ void	ft_putchar(char c, t_data *data);
 void	putstr_rev(const char *s, t_data *data);
 int		print_int(int nbr, t_data *data);
 int		print_uint(unsigned int nbr, t_data *data);
-void	width_print(int len, size_t s_len, t_data *data);
+void	width_print(int len, size_t str_len, t_data *data);
 
 /* --- str_utils.c --- */
 

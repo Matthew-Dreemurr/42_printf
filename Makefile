@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/13 16:17:57 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/13 17:42:20 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,7 @@ main: re
 
 fclean: clean
 	rm -rf $(NAME)
+	$(MAKE) fclean -C test
 	rm -rf a.out
 
 clean:
