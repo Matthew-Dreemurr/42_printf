@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/13 14:13:37 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/13 17:07:25 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	dummy_arg(const char *str, t_data *data, va_list *args)
 int	arg_c(const char *str, t_data *data, va_list *args)
 {
 	char	c;
-	char	str_c[2];
 
 #ifdef DEBUG_TRUE
 BM("arg_c");
@@ -45,11 +44,9 @@ BM("arg_c");
 	(void)args;
 	(void)str;
 	data->skip++;
-	str_c[1] = '\0';
 	c = (char)va_arg(*args, int);
-	str_c[0] = c;
-	if (!(print_manager(str_c, &(*data), FALSE)))
-		return (FALSE);
+	// if (!())
+		// return (FALSE);
 	return (TRUE);
 }
 
@@ -60,14 +57,14 @@ BM("arg_c");
 int	arg_s(const char *str, t_data *data, va_list *args)
 {
 	const char	*s;
+
 #ifdef DEBUG_TRUE
 BM("arg_s");
 #endif
+
 	(void)str;
-	if (data->arg)
-		data->width = (int)va_arg(*args, int);
-	s = (const char *)va_arg(*args, const char *);
-	print_arg_s();//TODO
+	s = (char *)va_arg(*args, char *);
+	print_arg_s(s, &(*data));
 	return (TRUE);
 }
 
@@ -81,7 +78,7 @@ int	arg_d(const char *str, t_data *data, va_list *args)
 
 	(void)str;
 	if (data->arg)
-		data->width = (int)va_arg(*args, int);
+		data->chartoi = (int)va_arg(*args, int);
 	nbr = (int)va_arg(*args, int);
 	(void)nbr;
 	return (TRUE);
@@ -97,7 +94,7 @@ int	arg_u(const char *str, t_data *data, va_list *args)
 
 	(void)str;
 	if (data->arg)
-		data->width = (int)va_arg(*args, int);
+		data->chartoi = (int)va_arg(*args, int);
 	nbr = (unsigned int)va_arg(*args, unsigned int);
 	(void)nbr;
 	return (TRUE);
@@ -115,7 +112,7 @@ int	arg_p(const char *str, t_data *data, va_list *args)
 	(void)str;
 	data->skip++;
 	if (data->arg)
-		data->width = (int)va_arg(*args, int);
+		data->chartoi = (int)va_arg(*args, int);
 	ptr = (void*)va_arg(*args, void *);
 	s = ulongtohex((unsigned long)ptr, &(*data));
 	if (!s)
@@ -136,7 +133,7 @@ int	arg_x(const char *str, t_data *data, va_list *args)
 	(void)str;
 	data->skip++;
 	if (data->arg)
-		data->width = (int)va_arg(*args, int);
+		data->chartoi = (int)va_arg(*args, int);
 	nbr = (unsigned long)va_arg(*args, unsigned long);
 	s = ulongtohex(nbr, &(*data));
 	if (!s)

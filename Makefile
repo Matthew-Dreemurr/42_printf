@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/13 12:55:24 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/13 16:17:57 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ TIMEOUT = timeout 0.02
 # ====================== FILES ====================== #
 
 SRC =  src/arg_manager.c
-SRC += src/flag_parser.c
+SRC += src/flag_manager.c
 SRC += src/ft_printf.c
 SRC += src/parser.c
 SRC += src/print.c

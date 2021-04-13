@@ -6,17 +6,17 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/13 12:13:14 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/13 17:22:02 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
 /*
-**  `%-` | `min`  | Left align the result within the given field width
+**  `%-` | `min`  | Left align the result within the given field chartoi
 **  `%0` | `zero` | Shorter numbers are padded out with leading zeros
 **  `%.` | `dot` | How many placesshould be shown after the decimal point
-**  `%*` | `arg`  | an int width argument must precede the value that's being
+**  `%*` | `arg`  | an int chartoi argument must precede the value that's being
 **                   formatted in the argument list, exemple 
 **                   `printf("%0*d", 5, 3); ` 00003 is output`
 */
@@ -26,7 +26,7 @@ void	data_init(t_data *data)
 	data->minus = 0;
 	data->zero = 0;
 	data->dot = 0;
-	data->width = 0;
+	data->chartoi = 0;
 	data->max_print = 0;
 	data->arg = 0;
 	data->x_up = 0;
@@ -130,9 +130,8 @@ BM("Flag_check");
 	ret = 0;
 	list = "-0.*";
 	while(!str && str[data->skip])
-	{
 		if (str[data->skip] >= '1' && str[data->skip] <= '9')
-			if (!(width(str, &(*data))))
+			if (!(chartoi(str, &(*data))))
 				return (FALSE);
 		else
 		{
@@ -149,7 +148,6 @@ D_INT(index);
 			if (!ret)
 				break;
 		}
-	}
 #ifdef DEBUG_TRUE
 data_debug(&(*data));
 BR;

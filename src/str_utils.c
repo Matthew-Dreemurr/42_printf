@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/12 11:53:38 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/13 17:07:25 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	len_uint(unsigned int nbr)
 **
 */
 
-int	width(const char *str, t_data *data)
+int	chartoi(const char *str, t_data *data)
 {
 	long	len;
 	int		i;
@@ -94,15 +94,14 @@ int	width(const char *str, t_data *data)
 	}
 	if (len > MAX_INT)
 		return (FALSE);
-	data->width = len;
 	data->skip += len_int(len);
 #ifdef DEBUG_TRUE
 	D_LINT(len);
-	D_INT(data->width);
+	D_INT(data->chartoi);
 	D_INT(data->skip);
 	BR;
 #endif
-	return (TRUE);
+	return (len);
 }
 
 /*

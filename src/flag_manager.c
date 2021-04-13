@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_parser.c                                      :+:      :+:    :+:   */
+/*   flag_manager.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/12 12:50:40 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/13 17:34:35 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	dummy_flag(const char *str, t_data *data, va_list *args)
 int		flag_min(const char *str, t_data *data, va_list *args)
 {
 	(void)str;
-	data->skip++;
 	(void)args;
+	data->skip++;
 #ifdef DEBUG_TRUE
 	BR;
 #endif
@@ -49,8 +49,8 @@ int		flag_min(const char *str, t_data *data, va_list *args)
 int		flag_zero(const char *str, t_data *data, va_list *args)
 {
 	(void)str;
-	data->skip++;
 	(void)args;
+	data->skip++;
 #ifdef DEBUG_TRUE
 	BR;
 #endif
@@ -58,14 +58,21 @@ int		flag_zero(const char *str, t_data *data, va_list *args)
 }
 
 /*
-**
+** Skip the '.', check if isnum //TODO
 */
 
 int		flag_dot(const char *str, t_data *data, va_list *args)
 {
-	(void)str;
 	data->skip++;
-	(void)args;
+	if (str[data->skip] >= '0' && str[data->skip] <= '9')
+		data->dot = chartoi(&str[data->skip], &(*data));
+	else if (str[data->skip] == '*')
+	{
+		data->dot = (int)va_arg(*args, int);
+		data->skip++;
+	}
+	else
+		data->dot = 0;
 #ifdef DEBUG_TRUE
 	BR;
 #endif
@@ -79,8 +86,9 @@ int		flag_dot(const char *str, t_data *data, va_list *args)
 int		flag_arg(const char *str, t_data *data, va_list *args)
 {
 	(void)str;
-	data->skip++;
 	(void)args;
+	data->skip++;
+	data->arg = (int)va_arg(*args, int);
 #ifdef DEBUG_TRUE
 	BR;
 #endif

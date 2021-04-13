@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   print_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/13 12:54:10 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/13 16:19:40 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,11 +119,11 @@ int	print_uint(unsigned int nbr, t_data *data)
 **
 */
 
-void	width_print(int len, size_t s_len, t_data *data)
+void	width_print(int len, size_t str_len, t_data *data)
 {
 	int		wdt_len;
 	char	c;
-	wdt_len = len - s_len;
+	wdt_len = len - str_len;
 	c = ' ';
 	if (data->zero)
 		c = '0';
