@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 14:02:15 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 14:23:19 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,12 @@ BM("arg_s");
 
 	(void)str;
 	s = (const char *)va_arg(*args, const char *);
+	if (!s)
+	{
+		data->skip++;
+		ft_putstr(STR_NULL, &(*data));
+		return (TRUE);
+	}
 	print_arg_s(s, &(*data));
 	return (TRUE);
 }

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/13 19:15:11 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 14:19:49 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putstr(const char *s, t_data *data)
 
 
 	i = 0;
-	if (data->max_print)
+	if (data->dot)
 		data->ret += data->max_print;
 	else
 	{
