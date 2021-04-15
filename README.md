@@ -1,8 +1,9 @@
 # Printf implementation `V1`
 
-| Todo |
+| Todo for V2 |
 |-|
 | Better error handling ( chose between `ERR` or `FALSE` )|
+| Mieux gerer les `data->skip`, eviter les appel de fonctions inutilement, privilegier les `i` des boucles )|
 
 ## Convertions
 
