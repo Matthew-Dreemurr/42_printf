@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 14:11:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 16:37:05 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,8 @@ BR;
 #endif
 
 	if (list[index] == str[d->skip])
-	{
-		if ((f[index](NULL, &(*d), &(*args))) == ERR)  //XXX WIP Need to check if no flag find
+		if ((f[index](NULL, &(*d), &(*args))) == ERR)
 			return (ERR);
-		return (TRUE);
-	}
 	return (TRUE);
 }
 
@@ -156,6 +153,7 @@ BR;
 			index = 0;
 		}
 	}
+
 #ifdef DEBUG_TRUE
 data_debug(&(*data));
 BR;

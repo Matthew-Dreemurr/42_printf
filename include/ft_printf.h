@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 16:24:18 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 16:29:33 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 /* ======  //TODO REMOVE  ======= */
 
-// # include "../include/wraloc.h"
-// # include "../include/debug_utils.h"
-// # include <stdio.h>
+# include "../include/wraloc.h"
+# include "../include/debug_utils.h"
+# include <stdio.h>
 
 /* ======  Include  ======= */
 

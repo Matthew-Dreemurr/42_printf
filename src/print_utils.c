@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 16:18:24 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 16:43:31 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ BM("ft_pustr");
 data_debug(&(*data));
 BR;
 #endif
+
 	max = data->max_print;
 	i = 0;
 	if (!data->dot)
