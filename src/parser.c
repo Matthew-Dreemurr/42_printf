@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 16:37:05 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 16:49:30 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ void	data_init(t_data *data)
 **   ------|------|------
 **   [0]   | `c`  | arg_c
 **   [1]   | `s`  | arg_s
-**   [2]   | `p`  | dummy_arg
-**   [3]   | `d`  | dummy_arg
-**   [4]   | `i`  | dummy_arg
-**   [5]   | `u`  | dummy_arg
-**   [6]   | `x`  | dummy_arg
-**   [7]   | `X`  | dummy_arg
+**   [2]   | `p`  | arg_p
+**   [3]   | `d`  | arg_d
+**   [4]   | `i`  | arg_d
+**   [5]   | `u`  | arg_u
+**   [6]   | `x`  | arg_x
+**   [7]   | `X`  | arg_x_up
 **   [8]   | `%`  | dummy_arg
 **
 **   Return | Value
