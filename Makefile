@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/15 15:07:35 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/15 15:08:43 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ git:
 	@git commit -am "Makefile push `date +'%Y-%m-%d %H:%M:%S'`"
 	@-git push
 
-gitf:
+fgit:
 	@printf "\033[31;1m ======== /!\\ Hard reset Git /!\\ ======== \033[0m\n"
 	@while true; do read -p "continue [y/N] ? " resp; if [[ $$resp =~ ^[Yy]$$ ]]; then exit 0; else exit 1; fi; done
 	@git fetch --all
@@ -92,4 +92,4 @@ test:
 
 testc:
 	$(MAKE) fclean -C test
-.PHONY: clean all, clean, fclean, re, git, test
+.PHONY: clean all, clean, fclean, re, git, fgit, test
