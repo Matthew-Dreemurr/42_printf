@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:55:34 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 15:18:40 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 16:10:30 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	print_arg_s(const char *str, t_data *data)
 
 	len = len_str(str);
 #ifdef DEBUG_TRUE
+BM("print_arg_s");
 D_STR_DETAILS(str);
 DE(len);
 #endif
