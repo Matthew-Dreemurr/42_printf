@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 15:06:33 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 15:12:53 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_putstr(const char *s, t_data *data)
 {
 	size_t	i;
 
+
 #ifdef DEBUG_TRUE
 BM("ft_pustr");
 data_debug(&(*data));
@@ -27,6 +28,8 @@ BR;
 #endif
 
 	i = 0;
+	if (!data->dot)
+		data->max_print = len_str(s);
 	while (s && s[i] && data->max_print--)
 		write(1, &s[i++], 1);
 
