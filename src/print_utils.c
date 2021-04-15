@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 16:14:09 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 16:18:24 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ BR;
 	max = data->max_print;
 	i = 0;
 	if (!data->dot)
-		data->max_print = len_str(s);
+		max = len_str(s);
 	while (s && s[i] && max--)
 		write(1, &s[i++], 1);
 
