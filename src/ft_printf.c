@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:40:39 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/13 18:41:00 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 14:53:37 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 #ifdef DEBUG_TRUE
 void	data_debug(t_data *data)
 {
-			D_INT(data->minus);
-			D_INT(data->zero);
-			D_INT(data->dot);
-			D_INT(data->max_print);
-			D_INT(data->width);
-			D_INT(data->arg);
-			D_INT(data->skip);
-			D_INT(data->ret);
-			D_INT(data->x_up);
+			DE(data->minus);
+			DE(data->zero);
+			DE(data->dot);
+			DE(data->max_print);
+			DE(data->width);
+			DE(data->arg);
+			DE(data->skip);
+			DE(data->ret);
+			DE(data->x_up);
 }
 #endif
 

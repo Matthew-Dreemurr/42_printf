@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/13 17:42:20 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/15 15:07:35 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ BR = -D BREAK_PAUSE=0
 DEBUG = -D DEBUG_UTILS_H
 WRA = -D WRALOC_H
 SANI = -fsanitize=address
-TIMEOUT = timeout 0.02
+TIMEOUT = timeout 0.05
 
 # ====================== FILES ====================== #
 

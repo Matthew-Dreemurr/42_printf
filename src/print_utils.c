@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 14:19:49 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 15:06:33 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,23 @@ void	ft_putstr(const char *s, t_data *data)
 {
 	size_t	i;
 
-
-	i = 0;
-	if (data->dot)
-		data->ret += data->max_print;
-	else
-	{
-		data->max_print = len_str(s);
-		data->ret += data->max_print;
-	}
 #ifdef DEBUG_TRUE
 BM("ft_pustr");
 data_debug(&(*data));
 BR;
 #endif
+
+	i = 0;
 	while (s && s[i] && data->max_print--)
 		write(1, &s[i++], 1);
+
+#ifdef DEBUG_TRUE
+	data_debug(&(*data));
+	DE(i);
+	BR;
+#endif
+
+	data->ret += i;
 }
 
 /*
@@ -139,8 +140,13 @@ void	width_print(int len, size_t str_len, t_data *data)
 	int		wdt_len;
 	char	c;
 
-
+	if (data->dot)
+	{
+		if (str_len > data->max_print)
+			str_len = data->max_print;
+	}
 	wdt_len = len - str_len;
+
 #ifdef DEBUG_TRUE
 	BM("width_print");
 	DE(str_len);
@@ -148,6 +154,7 @@ void	width_print(int len, size_t str_len, t_data *data)
 	DE(wdt_len);
 	BR;
 #endif
+
 	c = ' ';
 	if (data->zero)
 		c = '0';
@@ -157,4 +164,8 @@ void	width_print(int len, size_t str_len, t_data *data)
 		while (0 <= --wdt_len)
 			write(1, &c, 1);
 	}
+#ifdef DEBUG_TRUE
+	data_debug(&(*data));
+	BR;
+#endif
 }
