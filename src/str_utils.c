@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/13 18:10:02 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 17:05:24 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,11 @@ int	chartoi(const char *str, t_data *data)
 	}
 	if (len > MAX_INT)
 		return (FALSE);
-	data->skip += len_int(len);
+	data->skip += i;
 #ifdef DEBUG_TRUE
+	BM("chartoi");
 	D_LINT(len);
+	DE(i);
 	D_INT(data->width);
 	D_INT(data->skip);
 	BR;

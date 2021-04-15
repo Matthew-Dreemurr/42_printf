@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 16:53:24 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 16:55:10 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ int		flag_dot(const char *str, t_data *data, va_list *args)
 	}
 	else
 		data->max_print = 0;
-	data->skip += len_uint(data->max_print);
 #ifdef DEBUG_TRUE
 	D_STR_DETAILS(&str[data->skip]);
 	BR;
