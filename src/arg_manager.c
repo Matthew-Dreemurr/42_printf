@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/13 19:22:58 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/15 14:02:15 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	dummy_arg(const char *str, t_data *data, va_list *args)
 
 int	arg_c(const char *str, t_data *data, va_list *args)
 {
-	char	c;
+	// char	c;
 
 #ifdef DEBUG_TRUE
 BM("arg_c");
@@ -44,7 +44,7 @@ BM("arg_c");
 	(void)args;
 	(void)str;
 	data->skip++;
-	c = (char)va_arg(*args, int);
+	// c = (char)va_arg(*args, int);
 	// if (!())
 		// return (FALSE);
 	return (TRUE);

@@ -7,14 +7,13 @@ CFLAGS = -g3 -Wall -Wextra -Werror
 
 # ====================== FILES ====================== #
 
-SRC = ft_printf.c
-SRC += parser.c
-SRC += parser_utils.c
-SRC += str_utils.c
-SRC += arg_manager.c
-SRC += print.c
+SRC =  arg_manager.c
 SRC += flag_manager.c
+SRC += ft_printf.c
+SRC += parser.c
+SRC += print.c
 SRC += print_utils.c
+SRC += str_utils.c
 
 OBJ = $(SRC:c=o)
 
