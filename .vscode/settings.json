@@ -3,5 +3,6 @@
 		"ft_printf.h": "c",
 		"wraloc.h": "c",
 		"sstream": "cpp"
-	}
+	},
+	"autoHide.autoHidePanel": false
 }

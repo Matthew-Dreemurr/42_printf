@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 16:55:10 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 16:14:05 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,9 @@ int		flag_zero(const char *str, t_data *data, va_list *args)
 	(void)str;
 	(void)args;
 	data->skip++;
+	data->zero++;
 #ifdef DEBUG_TRUE
+	BM("flag_zero");
 	BR;
 #endif
 	return (TRUE);

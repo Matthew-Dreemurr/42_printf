@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/16 15:32:37 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 16:04:33 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ BM("arg_c");
 	(void)str;
 	c = (char)va_arg(*args, int);
 	print_arg_c(c, &(*data));
+	data->skip++;
 	return (TRUE);
 }
 
@@ -76,6 +77,7 @@ BM("arg_s");
 		return (TRUE);
 	}
 	print_arg_s(s, &(*data));
+	data->skip++;
 	return (TRUE);
 }
 
@@ -121,14 +123,12 @@ int	arg_p(const char *str, t_data *data, va_list *args)
 	char	*s;
 
 	(void)str;
-	data->skip++;
-	if (data->arg)
-		data->width = (int)va_arg(*args, int);
 	ptr = (void*)va_arg(*args, void *);
 	s = ulongtohex((unsigned long)ptr, &(*data));
 	if (!s)
 		return (ERR);
 	free(s);
+	data->skip++;
 	return (TRUE);
 }
 
@@ -142,14 +142,13 @@ int	arg_x(const char *str, t_data *data, va_list *args)
 	char			*s;
 
 	(void)str;
-	data->skip++;
-	if (data->arg)
-		data->width = (int)va_arg(*args, int);
 	nbr = (unsigned long)va_arg(*args, unsigned long);
 	s = ulongtohex(nbr, &(*data));
 	if (!s)
 		return (ERR);
+	print_arg_x(s, &(*data));
 	free(s);
+	data->skip++;
 	return (TRUE);
 }
 

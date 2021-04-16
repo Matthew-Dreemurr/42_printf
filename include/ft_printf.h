@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/16 15:34:26 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 16:17:30 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,8 @@ int		parser(const char *str, t_data *data, va_list *args);
 
 void	print_arg_s(const char *str, t_data *data);
 void	print_arg_c(const char c, t_data *data);
+void	print_arg_x(const char *str, t_data *data);
+
 
 /* --- print_utils.c --- */
 
