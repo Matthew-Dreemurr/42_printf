@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/16 16:45:03 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 16:59:33 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 /* ======  //TODO REMOVE  ======= */
 
-// # include "../include/wraloc.h"
-// # include "../include/debug_utils.h"
-// # include <stdio.h>
+# include "../include/wraloc.h"
+# include "../include/debug_utils.h"
+# include <stdio.h>
 
 /* ======  Include  ======= */
 
@@ -68,12 +68,12 @@ typedef struct s_data
 	int		minus;
 	int		zero;
 	size_t	dot;
-	int		width;
-	size_t		max_print;
 	int		arg;
+	int		width;
+	size_t	max_print;
+	int		x_up;
 	int		skip;
 	int		ret;
-	int		x_up;
 }				t_data;
 
 /*
@@ -127,7 +127,8 @@ void	ft_putchar(char c, t_data *data);
 void	putstr_rev(const char *s, t_data *data);
 int		print_int(int nbr, t_data *data);
 int		print_uint(unsigned int nbr, t_data *data);
-void	width_print(size_t str_len, t_data *data);
+void	width_blank(size_t str_len, t_data *data);
+void	width_fill(size_t str_len, t_data *data);
 
 /* --- str_utils.c --- */
 

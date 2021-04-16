@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/16 16:18:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 16:52:41 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,15 @@ int		flag_zero(const char *str, t_data *data, va_list *args)
 	(void)str;
 	(void)args;
 	data->skip++;
-	data->zero++;
+	if (str[data->skip] >= '0' && str[data->skip] <= '9')
+		data->zero = chartoi(&str[data->skip], &(*data));
+	else if (str[data->skip] == '*')
+	{
+		data->zero = (int)va_arg(*args, int);
+		data->skip++;
+	}
+	else
+		data->zero = 0;
 #ifdef DEBUG_TRUE
 	BM("flag_zero");
 	BR;
