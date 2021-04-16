@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/16 16:22:31 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 17:46:50 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ BM("arg_s");
 	if (!s)
 	{
 		print_arg_s(STR_NULL, &(*data));
+		data->skip++;
 		return (TRUE);
 	}
 	print_arg_s(s, &(*data));
