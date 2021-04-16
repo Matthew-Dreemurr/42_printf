@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 16:43:31 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 16:44:40 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,11 +140,13 @@ int	print_uint(unsigned int nbr, t_data *data)
 **
 */
 
-void	width_print(int len, size_t str_len, t_data *data)
+void	width_print(size_t str_len, t_data *data)
 {
+	int		len;
 	int		wdt_len;
 	char	c;
 
+	len = data->width;
 #ifdef DEBUG_TRUE
 	BM("width_print");
 	DE(str_len);
@@ -158,6 +160,11 @@ void	width_print(int len, size_t str_len, t_data *data)
 	{
 		if (str_len > data->max_print)
 			str_len = data->max_print;
+		else if (str_len < data->max_print)
+		{
+			len = data->max_print;
+			data->zero = 1;
+		}
 	}
 	wdt_len = len - str_len;
 
