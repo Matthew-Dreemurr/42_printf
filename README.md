@@ -9,7 +9,7 @@
 
 | Type character | WIP | Output |
 |:-|:-|:-|
-| `%c` | ❌ | Print a singlecharacter |
+| `%c` | ✅ | Print a singlecharacter |
 | `%s` | ✅ | Print astring of characters |
 | `%p` | ❌ | Print the argument as an address in hexadecimal digits. |
 | `%d` | 🔧 | Print a decimal (base 10) number |
