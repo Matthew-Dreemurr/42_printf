@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/16 16:04:33 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 16:22:31 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,11 @@ int	arg_x(const char *str, t_data *data, va_list *args)
 	s = ulongtohex(nbr, &(*data));
 	if (!s)
 		return (ERR);
+#ifdef DEBUG_TRUE
+BM("arg_x");
+DE(nbr);
+D_STR_DETAILS(s);
+#endif
 	print_arg_x(s, &(*data));
 	free(s);
 	data->skip++;

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/16 16:11:04 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 16:26:38 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "include/debug_utils.h"
 #include "include/wraloc.h"
 
-#define ARG1 "%000222x", 56464
+#define ARG1 "%000222x", 056464
 int	main(void)
 {
 	int	ret;
