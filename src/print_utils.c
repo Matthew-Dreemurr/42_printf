@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/16 17:07:11 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 17:41:09 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,7 @@ int	print_uint(unsigned int nbr, t_data *data)
 **
 */
 
-void	width_blank(size_t str_len, t_data *data)
+void	width_str(size_t str_len, t_data *data)
 {
 	int		len;
 	int		wdt_len;
@@ -188,10 +188,10 @@ void	width_blank(size_t str_len, t_data *data)
 **
 */
 
-void	width_fill(size_t str_len, t_data *data)
-{
-	/*
-	**  TODO use this function /w `width_blank` for `width` + `data->max_print`
-	**    ex: printf("%8.5x", 123) => |   0007b|
-	*/
-}
+// void	width_nbr(size_t str_len, t_data *data)
+// {
+// 	/*
+// 	**  TODO use this function /w `width_str` for `width` + `data->max_print`
+// 	**    ex: printf("%8.5x", 123) => |   0007b|
+// 	*/
+// }
