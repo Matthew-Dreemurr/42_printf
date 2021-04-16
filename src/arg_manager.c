@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 16:43:51 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 15:32:37 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 /*
 **
+**   Return | Value
+**   -------|------
+**   TRUE   |  1
 */
 
 int	dummy_arg(const char *str, t_data *data, va_list *args)
@@ -30,28 +33,31 @@ int	dummy_arg(const char *str, t_data *data, va_list *args)
 
 /*
 **
+**   Return | Value
+**   -------|------
+**   TRUE   |  1
+**   FALSE  |  0
 */
 
 int	arg_c(const char *str, t_data *data, va_list *args)
 {
-	// char	c;
+	char	c;
 
 #ifdef DEBUG_TRUE
 BM("arg_c");
 #endif
 
-	(void)data;
-	(void)args;
 	(void)str;
-	data->skip++;
-	// c = (char)va_arg(*args, int);
-	// if (!())
-		// return (FALSE);
+	c = (char)va_arg(*args, int);
+	print_arg_c(c, &(*data));
 	return (TRUE);
 }
 
 /*
 **   if `s` is null len = 6 (len_str("(null)"))
+**   Return | Value
+**   -------|------
+**   TRUE   |  1
 */
 
 int	arg_s(const char *str, t_data *data, va_list *args)

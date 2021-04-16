@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/15 16:49:30 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 15:21:41 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,8 @@ BR;
 			{
 #ifdef DEBUG_TRUE
 				BM("check");
-				D_INT(index);
+				D_STR(&list[index]);
+				D_INT(index)
 #endif
 				index++;
 			}
@@ -169,12 +170,12 @@ int	parser(const char *str, t_data *data, va_list *args)
 {
 	if (!str[++data->skip])
 		return (FALSE);
+	data_init(&(*data));
 #ifdef DEBUG_TRUE
 BM("str++ ok");
 D_STR_DETAILS(&str[data->skip]);
-D_INT(data->skip);
+data_debug(&(*data));
 #endif
-	data_init(&(*data));
 	if (str[data->skip] == '%')
 		ft_putchar(str[data->skip++], &(*data));
 	else
