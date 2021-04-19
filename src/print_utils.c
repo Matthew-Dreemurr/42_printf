@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 14:48:38 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 15:16:50 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,26 +142,24 @@ int	print_uint(unsigned int nbr, t_data *data)
 
 void	width_str(size_t str_len, t_data *data)
 {
-	int		len;
+	int		wdt;
 	int		wdt_len;
 
-	len = data->width;
+	wdt = data->width;
 #ifdef DEBUG_TRUE
-	BM("width_print");
+	BM("width_str");
 	DE(str_len);
-	DE(len);
-	DE(wdt_len);
+	DE(wdt);
 	data_debug(&(*data));
 	BR;
 #endif
 
-	if (data->dot && str_len > data->acc)
-		str_len = data->acc;
-	wdt_len = len - str_len;
+
+	wdt_len = wdt - str_len;
 
 #ifdef DEBUG_TRUE
 	DE(str_len);
-	DE(len);
+	DE(wdt);
 	DE(wdt_len);
 	data_debug(&(*data));
 	BR;
@@ -243,9 +241,9 @@ void	width_nbr(size_t str_len, t_data *data)
 	BR;
 #endif
 
-		data->ret += acc_len;
-		while (0 <= --acc_len)
-			write(1, "0", 1);
+	data->ret += acc_len;
+	while (0 <= --acc_len)
+		write(1, "0", 1);
 #ifdef DEBUG_TRUE
 	data_debug(&(*data));
 	BR;

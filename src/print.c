@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:55:34 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 15:01:40 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 15:19:22 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,25 @@ void	print_arg_c(const char c, t_data *data)
 void	print_arg_x(const char *str, t_data *data)
 {
 	size_t	len;
-	size_t	wdt_len;
+	size_t	str_len_w;
 
 	len = len_str(str);
-	wdt_len = len;
-	if (!data->minus && data->width)
-	{
+	str_len_w = len;
+	if (data->acc && data->acc > len)
+		str_len_w = len + data->acc;
 
-		if (data->acc)
-			wdt_len = len + data->acc;
-		width_str(wdt_len, &(*data));
-	}
+#ifdef DEBUG_TRUE
+	BM("print_arg_x");
+	DE(len);
+	DE(str_len_w);
+	BR;
+#endif
+
+	if (!data->minus && data->width)
+		width_str(str_len_w, &(*data));
 	if (data->width || data->dot || data->zero)
 		width_nbr(len, &(*data));
 	putstr_rev(str, &(*data));
 	if (data->minus && data->width)
-		width_str(len - data->acc, &(*data));
+		width_str(str_len_w, &(*data));
 }
