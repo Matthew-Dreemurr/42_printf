@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:55:34 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 15:45:50 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 15:46:43 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_arg_s(const char *str, t_data *data)
 	size_t	len;
 
 	len = len_str(str);
-	if (data->dot && data->dot > len)
+	if (data->dot && data->dot < len)
 		len = data->acc;
 
 #ifdef DEBUG_TRUE
