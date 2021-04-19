@@ -3,7 +3,8 @@
 		"ft_printf.h": "c",
 		"wraloc.h": "c",
 		"sstream": "cpp",
-		"random": "c"
+		"random": "c",
+		"debug_utils.h": "c"
 	},
 	"autoHide.autoHidePanel": false
 }

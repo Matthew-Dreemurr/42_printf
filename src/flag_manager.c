@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 14:11:47 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 14:52:47 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,14 @@ int		flag_zero(const char *str, t_data *data, va_list *args)
 	data->skip++;
 	data->zero++;
 	if (str[data->skip] >= '0' && str[data->skip] <= '9')
-		data->width = chartoi(&str[data->skip], &(*data));
+		data->acc = chartoi(&str[data->skip], &(*data));
 	else if (str[data->skip] == '*')
 	{
-		data->width = (int)va_arg(*args, int);
+		data->acc = (int)va_arg(*args, int);
 		data->skip++;
 	}
 	else
-		data->width = 0;
+		data->acc = 0;
 #ifdef DEBUG_TRUE
 	BM("flag_zero");
 	BR;
