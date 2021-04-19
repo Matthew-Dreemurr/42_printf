@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/16 17:41:09 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 18:48:43 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ data_debug(&(*data));
 BR;
 #endif
 
-	max = data->max_print;
+	max = data->acc;
 	i = 0;
 	if (!data->dot)
 		max = len_str(s);
@@ -142,36 +142,30 @@ int	print_uint(unsigned int nbr, t_data *data)
 
 void	width_str(size_t str_len, t_data *data)
 {
-	int		len;
 	int		wdt_len;
 	char	c;
 
-	len = data->width;
 #ifdef DEBUG_TRUE
 	BM("width_print");
 	DE(str_len);
-	DE(len);
 	DE(wdt_len);
 	data_debug(&(*data));
 	BR;
 #endif
 
 	if (data->dot)
-		if (str_len > data->max_print)
-			str_len = data->max_print;
-	wdt_len = len - str_len;
+		if (str_len > data->acc)
+			str_len = data->acc;
+	wdt_len = data->width - str_len;
 
 #ifdef DEBUG_TRUE
 	DE(str_len);
-	DE(len);
 	DE(wdt_len);
 	data_debug(&(*data));
 	BR;
 #endif
 
 	c = ' ';
-	if (data->zero)
-		c = '0';
 	if (wdt_len > 0)
 	{
 		data->ret += wdt_len;
@@ -185,13 +179,45 @@ void	width_str(size_t str_len, t_data *data)
 }
 
 /*
-**
+**  TODO use this function /w `width_str` for `width` + `data->acc`
+**    ex: printf("%8.5x", 123) => |   0007b|
 */
 
-// void	width_nbr(size_t str_len, t_data *data)
-// {
-// 	/*
-// 	**  TODO use this function /w `width_str` for `width` + `data->max_print`
-// 	**    ex: printf("%8.5x", 123) => |   0007b|
-// 	*/
-// }
+void	width_nbr(size_t str_len, t_data *data)
+{
+	int		wdt_len;
+	int		acc_len;
+
+#ifdef DEBUG_TRUE
+	BM("width_nbr");
+	DE(str_len);
+	DE(wdt_len);
+	data_debug(&(*data));
+	BR;
+#endif
+
+	if (data->dot)
+		if (str_len > data->acc)
+			str_len = data->acc;
+	wdt_len = data->width - str_len;
+	acc_len = str_len - wdt_len;
+#ifdef DEBUG_TRUE
+	DE(str_len);
+	DE(wdt_len);
+	data_debug(&(*data));
+	BR;
+#endif
+
+	if (wdt_len > 0)
+	{
+		data->ret += wdt_len;
+		while (0 <= --wdt_len && wdt_len > (int)data->acc)
+			write(1, " ", 1);
+		while (0 <= --acc_len)
+			write(1, "0", 1);
+	}
+#ifdef DEBUG_TRUE
+	data_debug(&(*data));
+	BR;
+#endif
+}

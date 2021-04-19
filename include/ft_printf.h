@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/16 17:41:28 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/16 18:10:22 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 /* ======  //TODO REMOVE  ======= */
 
-// # include "../include/wraloc.h"
-// # include "../include/debug_utils.h"
-// # include <stdio.h>
+# include "../include/wraloc.h"
+# include "../include/debug_utils.h"
+# include <stdio.h>
 
 /* ======  Include  ======= */
 
@@ -69,8 +69,8 @@ typedef struct s_data
 	int		zero;
 	size_t	dot;
 	int		arg;
-	int		width;
-	size_t	max_print;
+	size_t	width;
+	size_t	acc;
 	int		x_up;
 	int		skip;
 	int		ret;
