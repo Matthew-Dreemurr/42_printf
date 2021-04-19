@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 13:58:45 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 14:14:55 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,6 +195,9 @@ void	width_nbr(size_t str_len, t_data *data)
 	data_debug(&(*data));
 	BR;
 #endif
+
+	if (data->zero && !data->acc)
+		data->acc = data->width;
 
 	acc_len = data->acc - str_len;
 	if (acc_len < 0)
