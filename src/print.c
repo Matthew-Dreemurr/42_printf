@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:55:34 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 15:00:08 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 15:01:40 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,10 @@ void	print_arg_x(const char *str, t_data *data)
 	size_t	wdt_len;
 
 	len = len_str(str);
-	wdt_len = 0;
+	wdt_len = len;
 	if (!data->minus && data->width)
 	{
+
 		if (data->acc)
 			wdt_len = len + data->acc;
 		width_str(wdt_len, &(*data));
