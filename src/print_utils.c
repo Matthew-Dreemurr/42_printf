@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 14:40:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 14:41:40 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,6 @@ void	width_str(size_t str_len, t_data *data)
 {
 	int		len;
 	int		wdt_len;
-	char	c;
 
 	len = data->width;
 #ifdef DEBUG_TRUE
@@ -168,14 +167,11 @@ void	width_str(size_t str_len, t_data *data)
 	BR;
 #endif
 
-	c = ' ';
-	if (data->zero)
-		c = '0';
 	if (wdt_len > 0)
 	{
 		data->ret += wdt_len;
 		while (0 <= --wdt_len)
-			write(1, &c, 1);
+			write(1, " ", 1);
 	}
 #ifdef DEBUG_TRUE
 	data_debug(&(*data));
