@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 18:33:01 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 18:44:39 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 /* ======  //TODO REMOVE  ======= */
 
-void	data_debug(t_data *data);
 // # include "../include/wraloc.h"
 // # include "../include/debug_utils.h"
 // # include <stdio.h>
@@ -82,7 +81,8 @@ typedef	int	(*t_func_arr)(const char *str, t_data *data, va_list *args);
 **
 */
 
-
+/* *TOREMOVE* */
+void	data_debug(t_data *data);
 
 
 
@@ -156,6 +156,6 @@ int		print_uint(unsigned int nbr, t_data *data);
 
 /* ---- src/width.c ---- */
 
-void	min_width(size_t str_len, t_data *data);
+void	min_width(size_t str_len, int wdt_len);
 void	zero_fill(size_t str_len, t_data *data);
 #endif

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:55:34 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 18:14:21 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 18:40:15 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ D_STR_DETAILS(str);
 DE(len);
 #endif
 	if (!data->minus && data->width)
-		min_width(len, &(*data));
+		min_width(len, data->width, &(*data));
 	ft_putstr(str, &(*data));
 	if (data->minus && data->width)
-		min_width(len, &(*data));
+		min_width(len, data->width, &(*data));
 }
 
 /*
@@ -45,10 +45,10 @@ void	print_arg_c(const char c, t_data *data)
 	data->dot = 0;
 	data->acc = 0;
 	if (!data->minus && data->width)
-		min_width(1, &(*data));
+		min_width(1, data->width, &(*data));
 	ft_putchar(c, &(*data));
 	if (data->minus && data->width)
-		min_width(1, &(*data));
+		min_width(1, data->width, &(*data));
 }
 
 /*

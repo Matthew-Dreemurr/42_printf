@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/15 15:08:43 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/19 18:43:53 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,13 +30,24 @@ TIMEOUT = timeout 0.05
 
 # ====================== FILES ====================== #
 
-SRC =  src/arg_manager.c
+SRC  = src/arg_alpha.c
+SRC += src/arg_hex.c
+SRC += src/arg_num.c
+SRC += src/convert.c
+SRC += src/dummy.c
 SRC += src/flag_manager.c
 SRC += src/ft_printf.c
+SRC += src/len_utils.c
 SRC += src/parser.c
-SRC += src/print.c
-SRC += src/print_utils.c
-SRC += src/str_utils.c
+SRC += src/print_alpha.c
+SRC += src/print_manager.c
+SRC += src/print_num.c
+SRC += src/width.c
+
+
+
+
+
 
 OBJ = $(SRC:c=o)
 

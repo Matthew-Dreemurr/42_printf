@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:02:57 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 18:14:21 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 18:39:07 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 **
 */
 
-void	min_width(size_t str_len, t_data *data)
+void	min_width(size_t str_len, int wdt_len, t_data *data)
 {
 	int		wdt_len;
 
@@ -27,9 +27,10 @@ void	min_width(size_t str_len, t_data *data)
 	BR;
 #endif
 
-	wdt_len = data->width - str_len;
+	wdt_len -= str_len;
 	if (wdt_len < 0)
 		wdt_len = 0;
+
 #ifdef DEBUG_TRUE
 	DE(str_len);
 	DE(wdt_len);
