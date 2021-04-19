@@ -6,13 +6,14 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/16 18:00:40 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 17:58:49 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
 /*
+**
 **  `%-` | `min`  | Left align the result within the given field width
 **  `%0` | `zero` | Shorter numbers are padded out with leading zeros
 **  `%.` | `dot` | How many placesshould be shown after the decimal point
@@ -32,7 +33,6 @@ void	data_init(t_data *data)
 	data->arg = 0;
 	data->x_up = 0;
 }
-
 
 /*
 **
@@ -72,22 +72,10 @@ int	arg_check(const char *str, t_data *d, va_list *args)
 	char				*list;
 	int					index;
 
-#ifdef DEBUG_TRUE
-BM("arg_check");
-#endif
-
 	index = 0;
 	list = "cspdiuxX%";
 	while (list && list[index] && list[index] != str[d->skip])
 		index++;
-
-#ifdef DEBUG_TRUE
-data_debug(&(*d));
-D_STR(&(list[index]))
-D_INT(index)
-BR;
-#endif
-
 	if (list[index] == str[d->skip])
 		if ((f[index](NULL, &(*d), &(*args))) == ERR)
 			return (ERR);
@@ -100,14 +88,16 @@ BR;
 **   index | flag | func
 **   ------|------|------
 **   [0]   | `-`  | flag_min
-**   [1]   | `0`  | dummy_arg
-**   [2]   | `.`  | dummy_arg
-**   [3]   | `*`  | dummy_arg
+**   [1]   | `0`  | flag_zero
+**   [2]   | `.`  | flag_dot
+**   [3]   | `*`  | flag_arg
+**   [4]   | ``   | dummy_flag
 **
 **   Return | Value
 **   -------|------
 **   TRUE   |  1
 **   FALSE  |  0
+**
 */
 
 int	flag_check(const char *str, t_data *data, va_list *args)
@@ -123,32 +113,16 @@ int	flag_check(const char *str, t_data *data, va_list *args)
 		dummy_flag
 	};
 
-#ifdef DEBUG_TRUE
-BM("Flag_check");
-D_STR_DETAILS(&str[data->skip]);
-BR;
-#endif
-
 	index = 0;
 	ret = 0;
 	list = "-0.*";
 	while (str && str[data->skip])
-	{
 		if (str[data->skip] >= '1' && str[data->skip] <= '9')
-		{
 			data->width = chartoi(&str[data->skip], &(*data));
-		}
 		else
 		{
 			while (list[index] && str[data->skip] != list[index])
-			{
-#ifdef DEBUG_TRUE
-				BM("check");
-				D_STR(&list[index]);
-				D_INT(index)
-#endif
 				index++;
-			}
 			ret = f[index](str, &(*data), &(*args));
 			if (ret == ERR)
 				return (FALSE);
@@ -156,12 +130,6 @@ BR;
 				break;
 			index = 0;
 		}
-	}
-
-#ifdef DEBUG_TRUE
-data_debug(&(*data));
-BR;
-#endif
 	return (arg_check(str, &(*data), &(*args)));
 }
 
@@ -174,11 +142,6 @@ int	parser(const char *str, t_data *data, va_list *args)
 	if (!str[++data->skip])
 		return (FALSE);
 	data_init(&(*data));
-#ifdef DEBUG_TRUE
-BM("str++ ok");
-D_STR_DETAILS(&str[data->skip]);
-data_debug(&(*data));
-#endif
 	if (str[data->skip] == '%')
 		ft_putchar(str[data->skip++], &(*data));
 	else

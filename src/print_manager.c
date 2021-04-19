@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   print_manager.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:55:34 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 15:59:42 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 18:14:21 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ D_STR_DETAILS(str);
 DE(len);
 #endif
 	if (!data->minus && data->width)
-		width_str(len, &(*data));
+		min_width(len, &(*data));
 	ft_putstr(str, &(*data));
 	if (data->minus && data->width)
-		width_str(len, &(*data));
+		min_width(len, &(*data));
 }
 
 /*
@@ -45,10 +45,10 @@ void	print_arg_c(const char c, t_data *data)
 	data->dot = 0;
 	data->acc = 0;
 	if (!data->minus && data->width)
-		width_str(1, &(*data));
+		min_width(1, &(*data));
 	ft_putchar(c, &(*data));
 	if (data->minus && data->width)
-		width_str(1, &(*data));
+		min_width(1, &(*data));
 }
 
 /*
@@ -73,10 +73,10 @@ void	print_arg_x(const char *str, t_data *data)
 #endif
 
 	if (!data->minus && data->width)
-		width_str(str_len_w, &(*data));
+		min_width(str_len_w, &(*data));
 	if (data->width || data->dot || data->zero)
-		width_nbr(len, &(*data));
+		zero_fill(len, &(*data));
 	putstr_rev(str, &(*data));
 	if (data->minus && data->width)
-		width_str(str_len_w, &(*data));
+		min_width(str_len_w, &(*data));
 }
