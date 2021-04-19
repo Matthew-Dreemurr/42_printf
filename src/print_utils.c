@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 13:49:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 13:58:45 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,11 +197,11 @@ void	width_nbr(size_t str_len, t_data *data)
 #endif
 
 	acc_len = data->acc - str_len;
+	if (acc_len < 0)
+		acc_len = 0;
 	wdt_len = data->width - (str_len + acc_len);
 	if (wdt_len < 0)
 		wdt_len = 0;
-	if (acc_len < 0)
-		acc_len = 0;
 
 #ifdef DEBUG_TRUE
 	DE(str_len);
