@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 14:52:47 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 16:04:46 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,15 @@ int		flag_zero(const char *str, t_data *data, va_list *args)
 	(void)str;
 	(void)args;
 	data->skip++;
-	data->zero++;
 	if (str[data->skip] >= '0' && str[data->skip] <= '9')
-		data->acc = chartoi(&str[data->skip], &(*data));
+		data->zero = chartoi(&str[data->skip], &(*data));
 	else if (str[data->skip] == '*')
-	{
-		data->acc = (int)va_arg(*args, int);
-		data->skip++;
+	{														//XXX TODO
+		data->zero = (int)va_arg(*args, int);				//XXX TODO Stop using `s_data` var as bool, only `0` or the length.
+		data->skip++;										//XXX TODO
 	}
 	else
-		data->acc = 0;
+		data->zero = 0;
 #ifdef DEBUG_TRUE
 	BM("flag_zero");
 	BR;

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:55:34 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 15:48:20 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 15:59:42 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ void	print_arg_x(const char *str, t_data *data)
 
 	len = len_str(str);
 	str_len_w = len;
-	if (data->acc && data->acc > len)
-		str_len_w = len + data->acc;
+	if (data->dot && len < data->acc)
+		str_len_w = data->width - (data->acc - len);
 
 #ifdef DEBUG_TRUE
 	BM("print_arg_x");
