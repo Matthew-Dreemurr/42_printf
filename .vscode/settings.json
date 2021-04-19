@@ -2,7 +2,8 @@
 	"files.associations": {
 		"ft_printf.h": "c",
 		"wraloc.h": "c",
-		"sstream": "cpp"
+		"sstream": "cpp",
+		"random": "c"
 	},
 	"autoHide.autoHidePanel": false
 }

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:55:34 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 14:02:22 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/19 14:34:25 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,11 @@ void	print_arg_x(const char *str, t_data *data)
 	size_t	len;
 
 	len = len_str(str);
-	if (!data->minus && (data->width || data->dot || data->zero))
+	if (!data->minus && data->width)
+		width_str(len, &(*data));
+	if (data->width || data->dot || data->zero)
 		width_nbr(len, &(*data));
 	putstr_rev(str, &(*data));
-	if (data->minus && (data->width || data->dot || data->zero))
-		width_nbr(len, &(*data));
+	if (data->minus && data->width)
+		width_str(len, &(*data));
 }
