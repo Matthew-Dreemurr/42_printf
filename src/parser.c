@@ -6,11 +6,18 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 17:58:49 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/20 15:12:34 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+
+/*
+**
+**   ['%'][flags][field width]('.' [precision])[conversion]
+**
+*/
+
 
 /*
 **
