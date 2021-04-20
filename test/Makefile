@@ -7,14 +7,22 @@ CFLAGS = -g3 -Wall -Wextra -Werror
 
 # ====================== FILES ====================== #
 
-SRC =  arg_manager.c
-SRC += flag_manager.c
-SRC += ft_printf.c
-SRC += parser.c
-SRC += print.c
-SRC += print_utils.c
-SRC += str_utils.c
+SRCS = \
+src/arg_hex.c \
+src/arg_alpha.c \
+src/convert.c \
+src/print_alpha.c \
+src/ft_printf.c \
+src/dummy.c \
+src/len_utils.c \
+src/width.c \
+src/flag_manager.c \
+src/print_num.c \
+src/print_manager.c \
+src/arg_num.c \
+src/parser.c
 
+SRC = $(notdir $(SRCS))
 OBJ = $(SRC:c=o)
 
 # ====================== RULES ====================== #
