@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/19 18:43:53 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/20 13:27:07 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,36 +30,37 @@ TIMEOUT = timeout 0.05
 
 # ====================== FILES ====================== #
 
-SRC  = src/arg_alpha.c
-SRC += src/arg_hex.c
-SRC += src/arg_num.c
-SRC += src/convert.c
-SRC += src/dummy.c
-SRC += src/flag_manager.c
-SRC += src/ft_printf.c
-SRC += src/len_utils.c
-SRC += src/parser.c
-SRC += src/print_alpha.c
-SRC += src/print_manager.c
-SRC += src/print_num.c
-SRC += src/width.c
+OBJ_DIR = bin/
+SRC_DIR = src/
 
+SRCS = \
+src/arg_hex.c \
+src/arg_alpha.c \
+src/convert.c \
+src/print_alpha.c \
+src/ft_printf.c \
+src/dummy.c \
+src/len_utils.c \
+src/width.c \
+src/flag_manager.c \
+src/print_num.c \
+src/print_manager.c \
+src/arg_num.c \
+src/parser.c 
 
-
-
-
-
-OBJ = $(SRC:c=o)
-
+OBJ = $(SRC:.c=.o)
+SRC = $(notdir $(SRCS))
+OBJS := $(addprefix $(OBJ_DIR), $(OBJ))
 # ====================== RULES ====================== #
 
-%.o: %.c
-	$(CC) $(CFLAGS) $(DEF) -I include -c $^ -o $@
+%.o: $(SRCS)
+	mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) $(DEF) -I include -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
+$(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 	@cat _src/compile_ok
 
 re: fclean all
@@ -72,12 +73,12 @@ main: re
 	$(CC) $(CFLAGS) $(DEF) main.c libftprintf.a
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(OBJS)
 	$(MAKE) fclean -C test
 	rm -rf a.out
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJS)
 
 c:
 	@clear
