@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/20 15:12:34 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/20 16:05:03 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 /*
 **
 **   ['%'][flags][field width]('.' [precision])[conversion]
+**   //TODO Check only isnum and not '0'
+**   //TODO Use minimum of s_data var
 **
 */
 
