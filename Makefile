@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/20 13:46:00 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/20 15:03:16 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,16 +48,16 @@ src/print_manager.c \
 src/arg_num.c \
 src/parser.c 
 
-OBJ = $(SRC:.c=.o)
-SRC = $(notdir $(SRCS))
-OBJS = $(addprefix $(OBJ_DIR), $(OBJ))
+SRC := $(notdir $(SRCS))
+OBJ := $(SRC:.c=.o)
+OBJS := $(addprefix $(OBJ_DIR), $(OBJ))
 # ====================== RULES ====================== #
 
-$(OBJS): $(SRCS)
+all: $(NAME)
+
+$(OBJ_DIR)%.o : $(SRC_DIR)%.c
 	mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) $(DEF) -I include -c $< -o $@
-
-all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $<
