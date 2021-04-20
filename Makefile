@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/20 13:27:07 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/20 13:46:00 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,17 +50,17 @@ src/parser.c
 
 OBJ = $(SRC:.c=.o)
 SRC = $(notdir $(SRCS))
-OBJS := $(addprefix $(OBJ_DIR), $(OBJ))
+OBJS = $(addprefix $(OBJ_DIR), $(OBJ))
 # ====================== RULES ====================== #
 
-%.o: $(SRCS)
+$(OBJS): $(SRCS)
 	mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) $(DEF) -I include -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	ar -rcs $(NAME) $<
 	@cat _src/compile_ok
 
 re: fclean all
@@ -73,7 +73,7 @@ main: re
 	$(CC) $(CFLAGS) $(DEF) main.c libftprintf.a
 
 fclean: clean
-	rm -rf $(OBJS)
+	rm -rf $(NAME)
 	$(MAKE) fclean -C test
 	rm -rf a.out
 
