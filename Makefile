@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/21 12:10:29 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/21 13:39:12 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,8 +61,11 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.c
 	$(CC) $(CFLAGS) $(DEF) -I include -c $< -o $@
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $<
+	@printf "\n\033[32;1m"
 	@cat _src/compile_ok
+	@printf "\n\033[32;0m"
+	ar -rcs $(NAME) $(OBJS)
+	@printf "\n\033[32;1m[================ Linked OK =================]\033[32;0m\n"
 
 re: fclean all
 
@@ -100,10 +103,10 @@ fgit:
 	@git reset --hard $(BRANCH)
 	@git clean -f
 
-test:
-	$(MAKE) re -C test
+test_init:
+	$(MAKE) re -C test/
 
-testc:
-	$(MAKE) fclean -C test
+test_clean:
+	$(MAKE) fclean -C test/
 
 .PHONY: clean all, clean, fclean, re, git, fgit, test, testc

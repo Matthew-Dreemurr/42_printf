@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:02:57 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 18:39:07 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/21 13:58:45 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@
 **
 */
 
-void	min_width(size_t str_len, int wdt_len, t_data *data)
+void	min_fill(size_t str_len, int wdt_len, t_data *data)
 {
-	int		wdt_len;
-
 #ifdef DEBUG_TRUE
-	BM("min_width");
+	BM("min_fill");
 	DE(str_len);
 	data_debug(&(*data));
 	BR;
@@ -53,32 +51,18 @@ void	min_width(size_t str_len, int wdt_len, t_data *data)
 **
 */
 
-void	zero_fill(size_t str_len, t_data *data)
+void	zero_fill(int prec_len, t_data *data)
 {
-	int		acc_len;
-
 #ifdef DEBUG_TRUE
 	BM("zero_fill");
 	DE(str_len);
+	DE(prec_len);
 	data_debug(&(*data));
 	BR;
 #endif
 
-	if (data->zero && !data->acc)
-		data->acc = data->width;
-	acc_len = data->acc - str_len;
-	if (acc_len < 0)
-		acc_len = 0;
-
-#ifdef DEBUG_TRUE
-	DE(str_len);
-	DE(acc_len);
-	data_debug(&(*data));
-	BR;
-#endif
-
-	data->ret += acc_len;
-	while (0 <= --acc_len)
+	data->ret += prec_len;
+	while (0 <= --prec_len)
 		write(1, "0", 1);
 #ifdef DEBUG_TRUE
 	data_debug(&(*data));

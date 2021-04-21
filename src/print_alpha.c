@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 18:12:20 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/21 12:39:10 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ data_debug(&(*data));
 BR;
 #endif
 
-	max = data->acc;
+	max = data->prec;
 	i = 0;
 	if (!data->dot)
 		max = len_str(s);

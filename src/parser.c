@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 12:01:09 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/21 12:20:29 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,13 @@
 
 void	data_init(t_data *data)
 {
-	data->minus = 0;
-	data->zero = 0;
-	data->dot = 0;
-	data->width = 0;
-	data->acc = 0;
-	data->dot = 0;
-	data->arg = 0;
-	data->x_up = 0;
+	data->minus = FALSE;
+	data->zero = FALSE;
+	data->dot = FALSE;
+	data->arg = FALSE;
+	data->fill = FALSE;
+	data->prec = FALSE;
+	data->x_up = FALSE;
 }
 
 /*
@@ -127,7 +126,7 @@ int	flag_check(const char *str, t_data *data, va_list *args)
 	list = "-0.*";
 	while (str && str[data->skip])
 		if (str[data->skip] >= '1' && str[data->skip] <= '9')
-			data->width = chartoi(&str[data->skip], &(*data));
+			data->fill = chartoi(&str[data->skip], &(*data));
 		else
 		{
 			while (list[index] && str[data->skip] != list[index])
