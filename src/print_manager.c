@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:55:34 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 15:26:04 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/21 17:42:16 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,42 +55,45 @@ void	print_arg_c(const char c, t_data *data)
 **
 */
 
+void	fill_arg_x(size_t *len, int *width, int *fill, t_data *data)
+{
+	*fill = 0;
+	*width = data->fill;
+	if (data->zero)
+		if (*len < data->fill)
+			*fill = data->fill - *len;
+	if (data->dot)
+	{
+		if (*len < data->prec)
+			*fill = data->prec - *len;
+		else
+			*fill = 0;
+	}
+	if (*fill < 0)
+		*fill = 0;
+	*width -= *fill;
+	if (*width < 0)
+		*width = 0;
+
+}
+
+/*
+**
+*/
+
 void	print_arg_x(const char *str, t_data *data)
 {
 	size_t	len;
 	int		width;
 	int		fill;
 
-	fill = 0;
 	len = len_str(str);
-	width = data->fill;
-	if (data->zero)
-		if (len < data->fill)
-			fill = data->fill - len;
-	if (data->dot)
-	{
-		if (len < data->prec)
-			fill = data->prec - len;
-		else
-			fill = 0;
-	}
-	if (fill < 0)
-		fill = 0;
-	width -= fill;
-	if (width < 0)
-		width = 0;
-	if (data->dot && !data->prec && *str == '0')
+		if (data->dot && !data->prec && *str == '0')
 	{
 		width = data->fill;
 		len = 0;
 	}
-#ifdef DEBUG_TRUE
-	BM("print_arg_x");
-	DE(len);
-	DE(str_len_w);
-	BR;
-#endif
-
+	fill_arg_x(&len, &width, &fill, &(*data));
 	if (!data->minus && data->fill)
 		min_fill(len, width, &(*data));
 	if (data->fill || data->dot || data->zero)
