@@ -1,4 +1,4 @@
-# Printf implementation `V1`
+# Printf implementation `V2`
 
 | Todo for V2 |
 |-|
