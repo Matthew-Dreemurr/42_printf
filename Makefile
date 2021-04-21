@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/20 15:03:16 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/21 12:10:29 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = gcc
 CFLAGS = -g3 -Wall -Wextra -Werror
 
 SHELL=/bin/bash
-BRANCH=origin/ft_printf_V1
+BRANCH=origin/ft_printf_V2
 
 DEF = $(SANI) $(BR) $(DEBUG) $(WRA)
 
@@ -51,6 +51,7 @@ src/parser.c
 SRC := $(notdir $(SRCS))
 OBJ := $(SRC:.c=.o)
 OBJS := $(addprefix $(OBJ_DIR), $(OBJ))
+
 # ====================== RULES ====================== #
 
 all: $(NAME)
@@ -104,4 +105,5 @@ test:
 
 testc:
 	$(MAKE) fclean -C test
-.PHONY: clean all, clean, fclean, re, git, fgit, test
+
+.PHONY: clean all, clean, fclean, re, git, fgit, test, testc
