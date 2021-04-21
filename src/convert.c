@@ -6,14 +6,14 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 12:16:15 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/21 17:46:44 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
 /*
-**
+**   .
 */
 
 char*	ulongtohex(unsigned long nbr, t_data *data)
@@ -42,7 +42,7 @@ char*	ulongtohex(unsigned long nbr, t_data *data)
 }
 
 /*
-**
+**   .
 */
 
 int	chartoi(const char *str, t_data *data)

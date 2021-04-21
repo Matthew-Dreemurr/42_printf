@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:40:39 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 12:16:15 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/21 17:46:44 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	data_debug(t_data *data)
 /*        Debug         */
 
 /*
-**
+**   .
 */
 
 int	ft_printf(const char *str, ...)

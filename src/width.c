@@ -6,14 +6,14 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:02:57 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 13:58:45 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/21 17:46:44 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
 /*
-**
+**   .
 */
 
 void	min_fill(size_t str_len, int wdt_len, t_data *data)

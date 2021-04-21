@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 12:39:10 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/21 17:46:44 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_putchar(char c, t_data *data)
 }
 
 /*
-**
+**   .
 */
 
 void	ft_putstr(const char *s, t_data *data)
@@ -58,7 +58,7 @@ BR;
 }
 
 /*
-**
+**   .
 */
 
 void	putstr_rev(const char *s, t_data *data)

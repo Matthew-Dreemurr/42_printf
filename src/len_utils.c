@@ -6,14 +6,14 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 17:52:59 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 18:00:52 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/21 17:46:44 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
 /*
-**
+**   .
 */
 
 size_t	len_str(const char *str)
@@ -29,7 +29,7 @@ size_t	len_str(const char *str)
 }
 
 /*
-**
+**   .
 */
 
 int	len_int(int nbr)
@@ -56,7 +56,7 @@ int	len_int(int nbr)
 }
 
 /*
-**
+**   .
 */
 
 int	len_uint(unsigned int nbr)

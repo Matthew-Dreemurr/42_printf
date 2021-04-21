@@ -6,14 +6,14 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:19:47 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 17:27:11 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/21 17:46:44 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
 /*
-**
+**   .
 */
 
 int	arg_p(const char *str, t_data *data, va_list *args)
@@ -32,7 +32,7 @@ int	arg_p(const char *str, t_data *data, va_list *args)
 }
 
 /*
-**
+**   .
 */
 
 int	arg_x(const char *str, t_data *data, va_list *args)
@@ -52,7 +52,7 @@ int	arg_x(const char *str, t_data *data, va_list *args)
 }
 
 /*
-**
+**   .
 */
 
 int	arg_x_up(const char *str, t_data *data, va_list *args)

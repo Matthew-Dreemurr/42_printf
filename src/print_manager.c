@@ -6,14 +6,14 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:55:34 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 17:42:16 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/21 17:46:20 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
 /*
-**
+**   .
 */
 
 void	print_arg_s(const char *str, t_data *data)
@@ -23,12 +23,6 @@ void	print_arg_s(const char *str, t_data *data)
 	len = len_str(str);
 	if (data->dot && len > data->prec)
 		len = data->prec;
-
-#ifdef DEBUG_TRUE
-BM("print_arg_s");
-D_STR_DETAILS(str);
-DE(len);
-#endif
 	if (!data->minus && data->fill)
 		min_fill(len, data->fill, &(*data));
 	ft_putstr(str, &(*data));
@@ -37,7 +31,7 @@ DE(len);
 }
 
 /*
-**
+**   .
 */
 
 void	print_arg_c(const char c, t_data *data)
@@ -52,7 +46,7 @@ void	print_arg_c(const char c, t_data *data)
 }
 
 /*
-**
+**   .
 */
 
 void	fill_arg_x(size_t *len, int *width, int *fill, t_data *data)
@@ -74,11 +68,10 @@ void	fill_arg_x(size_t *len, int *width, int *fill, t_data *data)
 	*width -= *fill;
 	if (*width < 0)
 		*width = 0;
-
 }
 
 /*
-**
+**   .
 */
 
 void	print_arg_x(const char *str, t_data *data)
@@ -88,7 +81,7 @@ void	print_arg_x(const char *str, t_data *data)
 	int		fill;
 
 	len = len_str(str);
-		if (data->dot && !data->prec && *str == '0')
+	if (data->dot && !data->prec && *str == '0')
 	{
 		width = data->fill;
 		len = 0;
