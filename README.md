@@ -3,7 +3,8 @@
 | Version | Status | Branches |
 |-|-|:-|
 | `V0` | Fail | [ft_printf_V0](https://github.com/Matthew-Dreemurr/42_printf/tree/ft_printf_V0) |
-| `V1` | WIP | [ft_printf_V1](https://github.com/Matthew-Dreemurr/42_printf/tree/ft_printf_V1) |
+| `V1` | Fail | [ft_printf_V1](https://github.com/Matthew-Dreemurr/42_printf/tree/ft_printf_V1) |
+| `V2` | WIP | [ft_printf_V2](https://github.com/Matthew-Dreemurr/42_printf/tree/ft_printf_V2) |
 
 ## Convertions
 
