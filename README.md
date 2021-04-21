@@ -1,5 +1,5 @@
 # Printf implementation `V2`
-
+# Todo, make a log for norm /w norminette src 2>&1 | grep "Error\!"
 | Todo for V2 |
 |-|
 | Better error handling ( chose between `ERR` or `FALSE` )|

@@ -6,20 +6,11 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 12:20:29 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/21 17:59:55 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-
-/*
-**
-**   ['%'][flags][field width]('.' [precision])[conversion]
-**   //TODO Check only isnum and not '0'
-**   //TODO Use minimum of s_data var
-**
-*/
-
 
 /*
 **
@@ -67,15 +58,8 @@ void	data_init(t_data *data)
 int	arg_check(const char *str, t_data *d, va_list *args)
 {
 	static t_func_arr	f[ARG_FUNC] = {
-		arg_c,
-		arg_s,
-		arg_p,
-		arg_d,
-		arg_d,
-		arg_u,
-		arg_x,
-		arg_x_up,
-		dummy_arg
+		arg_c, arg_s, arg_p, arg_d, arg_d,
+		arg_u, arg_x, arg_x_up, dummy_arg
 	};
 	char				*list;
 	int					index;
@@ -114,12 +98,7 @@ int	flag_check(const char *str, t_data *data, va_list *args)
 	int					ret;
 	char				*list;
 	static t_func_arr	f[FLAG_FUNC] = {
-		flag_min,
-		flag_zero,
-		flag_dot,
-		flag_arg,
-		dummy_flag
-	};
+		flag_min, flag_zero, flag_dot, flag_arg, dummy_flag};
 
 	index = 0;
 	ret = 0;
@@ -127,17 +106,17 @@ int	flag_check(const char *str, t_data *data, va_list *args)
 	while (str && str[data->skip])
 		if (str[data->skip] >= '1' && str[data->skip] <= '9')
 			data->fill = chartoi(&str[data->skip], &(*data));
-		else
-		{
-			while (list[index] && str[data->skip] != list[index])
-				index++;
-			ret = f[index](str, &(*data), &(*args));
-			if (ret == ERR)
-				return (FALSE);
-			if (!ret)
-				break;
-			index = 0;
-		}
+	else
+	{
+		while (list[index] && str[data->skip] != list[index])
+			index++;
+		ret = f[index](str, &(*data), &(*args));
+		if (ret == ERR)
+			return (FALSE);
+		if (!ret)
+			break ;
+		index = 0;
+	}
 	return (arg_check(str, &(*data), &(*args)));
 }
 
@@ -154,6 +133,6 @@ int	parser(const char *str, t_data *data, va_list *args)
 		ft_putchar(str[data->skip++], &(*data));
 	else
 		if (!flag_check(str, &(*data), &(*args)))
-			return(FALSE);
+			return (FALSE);
 	return (TRUE);
 }

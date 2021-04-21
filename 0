@@ -1,0 +1,137 @@
+src/arg_alpha.c: Error!
+Error: PREPROC_GLOBAL       (line:  27, col:   1):	Preprocessors can only be used in the global scope
+Error: TOO_FEW_TAB          (line:  28, col:   1):	Missing tabs for indent level
+Error: PREPROC_GLOBAL       (line:  29, col:   1):	Preprocessors can only be used in the global scope
+Error: EMPTY_LINE_FUNCTION  (line:  30, col:   1):	Empty line in function
+Error: PREPROC_GLOBAL       (line:  49, col:   1):	Preprocessors can only be used in the global scope
+Error: TOO_FEW_TAB          (line:  50, col:   1):	Missing tabs for indent level
+Error: PREPROC_GLOBAL       (line:  51, col:   1):	Preprocessors can only be used in the global scope
+Error: EMPTY_LINE_FUNCTION  (line:  52, col:   1):	Empty line in function
+src/arg_hex.c: Error!
+Error: SPACE_AFTER_KW       (line:  25, col:  12):	Missing space after keyword
+Error: BRACE_SHOULD_EOL     (line:  65, col:   1):	Expected newline after brace
+src/arg_num.c: Error!
+Error: SPACE_REPLACE_TAB    (line:  21, col:   8):	Found space when expecting tab
+src/convert.c: Error!
+Error: SPC_AFTER_POINTER    (line:  19, col:   5):	space after pointer
+Error: MULT_IN_SINGLE_INSTR (line:  35, col:   1):	Multiple instructions in single line control structure
+Error: NL_AFTER_VAR_DECL    (line:  52, col:   1):	Variable declarations must be followed by a newline
+Error: PREPROC_GLOBAL       (line:  65, col:   1):	Preprocessors can only be used in the global scope
+Error: IMPLICIT_VAR_TYPE    (line:  71, col:   1):	Missing type in variable declaration
+Error: VAR_DECL_START_FUNC  (line:  71, col:   1):	Variable declaration not at start of function
+Error: MISALIGNED_VAR_DECL  (line:  71, col:   5):	Misaligned variable declaration
+Error: PREPROC_GLOBAL       (line:  72, col:   1):	Preprocessors can only be used in the global scope
+Error: BRACE_SHOULD_EOL     (line:  74, col:   1):	Expected newline after brace
+src/dummy.c: Error!
+Error: PREPROC_GLOBAL       (line:  27, col:   1):	Preprocessors can only be used in the global scope
+Error: IMPLICIT_VAR_TYPE    (line:  29, col:   1):	Missing type in variable declaration
+Error: VAR_DECL_START_FUNC  (line:  29, col:   1):	Variable declaration not at start of function
+Error: PREPROC_GLOBAL       (line:  30, col:   1):	Preprocessors can only be used in the global scope
+Error: PREPROC_GLOBAL       (line:  43, col:   1):	Preprocessors can only be used in the global scope
+Error: IMPLICIT_VAR_TYPE    (line:  45, col:   1):	Missing type in variable declaration
+Error: VAR_DECL_START_FUNC  (line:  45, col:   1):	Variable declaration not at start of function
+Error: PREPROC_GLOBAL       (line:  46, col:   1):	Preprocessors can only be used in the global scope
+src/flag_manager.c: Error!
+Error: PREPROC_GLOBAL       (line:  32, col:   1):	Preprocessors can only be used in the global scope
+Error: IMPLICIT_VAR_TYPE    (line:  33, col:   1):	Missing type in variable declaration
+Error: VAR_DECL_START_FUNC  (line:  33, col:   1):	Variable declaration not at start of function
+Error: PREPROC_GLOBAL       (line:  34, col:   1):	Preprocessors can only be used in the global scope
+Error: TOO_MANY_TABS_FUNC   (line:  42, col:   5):	extra tabs before function name
+Error: PREPROC_GLOBAL       (line:  55, col:   1):	Preprocessors can only be used in the global scope
+Error: IMPLICIT_VAR_TYPE    (line:  57, col:   1):	Missing type in variable declaration
+Error: VAR_DECL_START_FUNC  (line:  57, col:   1):	Variable declaration not at start of function
+Error: PREPROC_GLOBAL       (line:  58, col:   1):	Preprocessors can only be used in the global scope
+Error: LINE_TOO_LONG        (line:  62, col:   1):	line too long
+Error: TOO_MANY_TABS_FUNC   (line:  66, col:   5):	extra tabs before function name
+Error: PREPROC_GLOBAL       (line:  79, col:   1):	Preprocessors can only be used in the global scope
+Error: IMPLICIT_VAR_TYPE    (line:  81, col:   1):	Missing type in variable declaration
+Error: VAR_DECL_START_FUNC  (line:  81, col:   1):	Variable declaration not at start of function
+Error: PREPROC_GLOBAL       (line:  82, col:   1):	Preprocessors can only be used in the global scope
+Error: TOO_MANY_TABS_FUNC   (line:  90, col:   5):	extra tabs before function name
+Error: PREPROC_GLOBAL       (line:  95, col:   1):	Preprocessors can only be used in the global scope
+Error: IMPLICIT_VAR_TYPE    (line:  96, col:   1):	Missing type in variable declaration
+Error: VAR_DECL_START_FUNC  (line:  96, col:   1):	Variable declaration not at start of function
+Error: PREPROC_GLOBAL       (line:  97, col:   1):	Preprocessors can only be used in the global scope
+Error: BRACE_SHOULD_EOL     (line:  99, col:   1):	Expected newline after brace
+src/ft_printf.c: Error!
+Error: TOO_MANY_TAB         (line:  20, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  21, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  22, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  23, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  24, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  25, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  26, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  27, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  28, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  49, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  50, col:   1):	Extra tabs for indent level
+Error: PREPROC_GLOBAL       (line:  51, col:   1):	Preprocessors can only be used in the global scope
+Error: TOO_MANY_TAB         (line:  52, col:   1):	Extra tabs for indent level
+Error: PREPROC_GLOBAL       (line:  53, col:   1):	Preprocessors can only be used in the global scope
+Error: TOO_MANY_TAB         (line:  54, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  55, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  56, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  57, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  58, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  59, col:   1):	Extra tabs for indent level
+src/len_utils.c: Error!
+Error: SPACE_AFTER_KW       (line:  24, col:   5):	Missing space after keyword
+Error: SPC_BFR_PAR          (line:  24, col:   7):	Missing space before parenthesis (brace/bracket)
+src/parser.c: OK!
+src/print_alpha.c: Error!
+Error: PREPROC_GLOBAL       (line:  21, col:   1):	Preprocessors can only be used in the global scope
+Error: PREPROC_GLOBAL       (line:  23, col:   1):	Preprocessors can only be used in the global scope
+Error: CONSECUTIVE_NEWLINES (line:  37, col:   1):	Consecutive newlines
+Error: EMPTY_LINE_FUNCTION  (line:  37, col:   1):	Empty line in function
+Error: PREPROC_GLOBAL       (line:  38, col:   1):	Preprocessors can only be used in the global scope
+Error: TOO_FEW_TAB          (line:  39, col:   1):	Missing tabs for indent level
+Error: TOO_FEW_TAB          (line:  40, col:   1):	Missing tabs for indent level
+Error: IMPLICIT_VAR_TYPE    (line:  41, col:   1):	Missing type in variable declaration
+Error: MISALIGNED_VAR_DECL  (line:  41, col:   1):	Misaligned variable declaration
+Error: SPACE_REPLACE_TAB    (line:  41, col:   1):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  41, col:   1):	Missing tabs for indent level
+Error: VAR_DECL_START_FUNC  (line:  41, col:   1):	Variable declaration not at start of function
+Error: PREPROC_GLOBAL       (line:  42, col:   1):	Preprocessors can only be used in the global scope
+Error: EMPTY_LINE_FUNCTION  (line:  43, col:   1):	Empty line in function
+Error: EMPTY_LINE_FUNCTION  (line:  50, col:   1):	Empty line in function
+Error: PREPROC_GLOBAL       (line:  51, col:   1):	Preprocessors can only be used in the global scope
+Error: IMPLICIT_VAR_TYPE    (line:  54, col:   1):	Missing type in variable declaration
+Error: VAR_DECL_START_FUNC  (line:  54, col:   1):	Variable declaration not at start of function
+Error: MISALIGNED_VAR_DECL  (line:  54, col:   5):	Misaligned variable declaration
+Error: PREPROC_GLOBAL       (line:  55, col:   1):	Preprocessors can only be used in the global scope
+Error: EMPTY_LINE_FUNCTION  (line:  56, col:   1):	Empty line in function
+src/print_manager.c: OK!
+src/print_num.c: Error!
+Error: TOO_MANY_LINES       (line:  53, col:   1):	Function has more than 25 lines
+src/width.c: Error!
+Error: PREPROC_GLOBAL       (line:  21, col:   1):	Preprocessors can only be used in the global scope
+Error: IMPLICIT_VAR_TYPE    (line:  25, col:   1):	Missing type in variable declaration
+Error: VAR_DECL_START_FUNC  (line:  25, col:   1):	Variable declaration not at start of function
+Error: PREPROC_GLOBAL       (line:  26, col:   1):	Preprocessors can only be used in the global scope
+Error: EMPTY_LINE_FUNCTION  (line:  27, col:   1):	Empty line in function
+Error: EMPTY_LINE_FUNCTION  (line:  31, col:   1):	Empty line in function
+Error: PREPROC_GLOBAL       (line:  32, col:   1):	Preprocessors can only be used in the global scope
+Error: IMPLICIT_VAR_TYPE    (line:  36, col:   1):	Missing type in variable declaration
+Error: VAR_DECL_START_FUNC  (line:  36, col:   1):	Variable declaration not at start of function
+Error: PREPROC_GLOBAL       (line:  37, col:   1):	Preprocessors can only be used in the global scope
+Error: EMPTY_LINE_FUNCTION  (line:  38, col:   1):	Empty line in function
+Error: TOO_MANY_TAB         (line:  39, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  40, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  41, col:   1):	Extra tabs for indent level
+Error: EMPTY_LINE_FUNCTION  (line:  42, col:   1):	Empty line in function
+Error: SPACE_EMPTY_LINE     (line:  42, col:   1):	Space on empty line
+Error: PREPROC_GLOBAL       (line:  43, col:   1):	Preprocessors can only be used in the global scope
+Error: IMPLICIT_VAR_TYPE    (line:  45, col:   1):	Missing type in variable declaration
+Error: VAR_DECL_START_FUNC  (line:  45, col:   1):	Variable declaration not at start of function
+Error: PREPROC_GLOBAL       (line:  46, col:   1):	Preprocessors can only be used in the global scope
+Error: TOO_MANY_LINES       (line:  47, col:   1):	Function has more than 25 lines
+Error: PREPROC_GLOBAL       (line:  56, col:   1):	Preprocessors can only be used in the global scope
+Error: IMPLICIT_VAR_TYPE    (line:  61, col:   1):	Missing type in variable declaration
+Error: VAR_DECL_START_FUNC  (line:  61, col:   1):	Variable declaration not at start of function
+Error: PREPROC_GLOBAL       (line:  62, col:   1):	Preprocessors can only be used in the global scope
+Error: EMPTY_LINE_FUNCTION  (line:  63, col:   1):	Empty line in function
+Error: PREPROC_GLOBAL       (line:  67, col:   1):	Preprocessors can only be used in the global scope
+Error: IMPLICIT_VAR_TYPE    (line:  69, col:   1):	Missing type in variable declaration
+Error: VAR_DECL_START_FUNC  (line:  69, col:   1):	Variable declaration not at start of function
+Error: PREPROC_GLOBAL       (line:  70, col:   1):	Preprocessors can only be used in the global scope
+Error: BRACE_SHOULD_EOL     (line:  71, col:   1):	Expected newline after brace
