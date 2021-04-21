@@ -4,6 +4,7 @@
 |-|
 | Better error handling ( chose between `ERR` or `FALSE` )|
 | Mieux gerer les `data->skip`, eviter les appel de fonctions inutilement, privilegier les `i` des boucles )|
+| Meilleur gestion de la Output Conversion Syntax|
 
 ## Convertions
 
