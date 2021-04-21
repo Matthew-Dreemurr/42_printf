@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 18:44:39 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/21 12:01:07 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,6 +156,6 @@ int		print_uint(unsigned int nbr, t_data *data);
 
 /* ---- src/width.c ---- */
 
-void	min_width(size_t str_len, int wdt_len);
+void	min_width(size_t str_len, int wdt_len, t_data *data);
 void	zero_fill(size_t str_len, t_data *data);
 #endif
