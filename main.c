@@ -6,14 +6,14 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 13:39:13 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 15:06:58 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "include/ft_printf.h"
 
-#define ARG1 "%-7d", -14
+#define ARG1 "%u", 4294967295u
 int	main(void)
 {
 	int	ret;

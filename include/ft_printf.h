@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 13:24:28 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 15:00:24 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,9 @@ int		arg_u(const char *str, t_data *data, va_list *args);
 
 /* ---- src/convert.c ---- */
 
-int		chartoi(const char *str, t_data *data);
 char*	ulongtohex(unsigned long nbr, t_data *data);
+char*	uinttochar(unsigned int nbr);
+int		chartoi(const char *str, t_data *data);
 char	*ft_itoa(int nbr);
 
 /* ---- src/dummy.c ---- */

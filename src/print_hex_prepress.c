@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:55:34 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 12:55:55 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 14:13:17 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_arg_x(const char *str, t_data *data)
 	int		fill;
 
 	len = len_str(str);
-	if (data->dot && !data->prec && *str == '0')
+	if (data->dot && !data->prec && str[0] == '0' && str[1] == '\0')
 	{
 		width = data->fill;
 		len = 0;
@@ -33,7 +33,7 @@ void	print_arg_x(const char *str, t_data *data)
 		min_fill(len, width, &(*data));
 	if (data->fill || data->dot || data->zero)
 		zero_fill(fill, &(*data));
-	if (data->dot && !data->prec && *str == '0')
+	if (data->dot && !data->prec && str[0] == '0' && str[1] == '\0')
 		;
 	else
 		putstr_rev(str, &(*data));

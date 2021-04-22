@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 13:28:32 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 15:06:50 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,34 @@ char*	ulongtohex(unsigned long nbr, t_data *data)
 		{
 			ret[i] = index[data->x_up][nbr % 16];
 			nbr /= 16;
+			i++;
+		}
+	ret[i] = '\0';
+	return (ret);
+}
+
+/*
+**   .
+*/
+
+char*	uinttochar(unsigned int nbr)
+{
+	char			*index;
+	char			*ret;
+	int				i;
+
+	i = 0;
+	index = "0123456789";
+	ret = (char *)malloc(32);
+	if (!ret)
+		return (NULL);
+	if (!nbr)
+		ret[i++] = index[0];
+	else
+		while (nbr > 0)
+		{
+			ret[i] = index[nbr % 10];
+			nbr /= 10;
 			i++;
 		}
 	ret[i] = '\0';

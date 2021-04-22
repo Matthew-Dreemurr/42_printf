@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 12:43:26 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 13:41:58 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 14:42:18 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,31 @@ void	print_arg_d(char *str, t_data *data)
 	size_t	len;
 	int		width;
 	int		fill;
+	int		neg;
 
+	neg = 0;
 	len = len_str(str);
-	fill_num(&len, &width, &fill, &(*data));
-	
-	if (!data->minus && data->fill)
-	min_fill(len, width, &(*data));
-	if (len && fill && str[len - 1] == '-')
+	if (len && str[len - 1] == '-' && ++neg)
 	{
 		str[len - 1] = '\0';
-		ft_putchar('-', &(*data));
-		if (data->minus)
-			fill++;
+		if (data->dot && str[0] != '0')
+			len--;
 	}
+	fill_num(&len, &width, &fill, &(*data));
+	if (neg && data->prec)
+		width--;
+	if (data->dot && !data->prec)
+		width++;
+	if (!data->minus && data->fill)
+	min_fill(len, width, &(*data));
+	if (neg)
+		ft_putchar('-', &(*data));
 	if (data->fill || data->dot || data->zero)
 		zero_fill(fill, &(*data));
-	putstr_rev(str, &(*data));
+	if (data->dot && !data->prec && str[0] == '0' && str[1] == '\0')
+		;
+	else
+		putstr_rev(str, &(*data));
 	if (data->minus && data->fill)
 		min_fill(len, width, &(*data));
 }

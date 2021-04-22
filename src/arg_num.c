@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:10:49 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 13:28:44 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 14:59:49 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,19 @@ int	arg_d(const char *str, t_data *data, va_list *args)
 
 int	arg_u(const char *str, t_data *data, va_list *args)
 {
-	unsigned int	nbr;
+	unsigned int		nbr;
+	char				*s;
 
 	(void)str;
 	if (data->arg)
 		data->fill = (int)va_arg(*args, int);
 	nbr = (unsigned int)va_arg(*args, unsigned int);
-	(void)nbr;
+	s = uinttochar(nbr);
+	if (!s)
+		return (FALSE);
+	print_arg_d(s, &(*data));
+	free(s);
+	data->skip++;
 	return (TRUE);
 }
 
