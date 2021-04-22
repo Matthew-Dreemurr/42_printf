@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 13:08:58 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 13:28:32 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,29 +84,31 @@ char	*ft_itoa(int nbr)
 	int		neg;
 	long	nbr_c;
 
+	if (!nbr)
+	{
+		str = (char*)malloc(2);
+		str[0] = '0';
+		str[1] = '\0';
+		return (str);
+	}
 	neg = 0;
 	i = 0;
+	nbr_c = nbr;
 	if (nbr < 0)
 	{
 		nbr_c = nbr * -1;
 		neg++;
 	}
-	else
-		nbr_c = nbr;
 	str = malloc(len_int(nbr_c) + 1 + neg);
 	if (!str)
 		return (NULL);
 	while (nbr_c > 0)
 	{
-		str[i] = (nbr_c % 10) + '0';
+		str[i++] = (nbr_c % 10) + '0';
 		nbr_c /= 10;
-		i++;
 	}
 	if (neg)
-	{
-		str[i] = '-';
-		i++;
-	}
+		str[i++] = '-';
 	str[i] = '\0';
 	return (str);
 }
