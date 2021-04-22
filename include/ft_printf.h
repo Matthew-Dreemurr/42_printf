@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 12:31:05 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 13:09:57 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ typedef	int	(*t_func_arr)(const char *str, t_data *data, va_list *args);
 **   .
 */
 
-/* *TOREMOVE* */
+/* //TODO REMOVE */
 void	data_debug(t_data *data);
 
 
@@ -107,6 +107,7 @@ int		arg_u(const char *str, t_data *data, va_list *args);
 
 int		chartoi(const char *str, t_data *data);
 char*	ulongtohex(unsigned long nbr, t_data *data);
+char	*ft_itoa(int nbr);
 
 /* ---- src/dummy.c ---- */
 
@@ -145,19 +146,22 @@ void	putstr_rev(const char *s, t_data *data);
 
 /* ---- src/print_num.c ---- */
 
-int		print_int(int nbr, t_data *data);
 int		print_uint(unsigned int nbr, t_data *data);
 
 /* ---- src/width.c ---- */
 
 void	min_fill(size_t str_len, int wdt_len, t_data *data);
 void	zero_fill(int prec_len, t_data *data);
+void	fill_num(size_t *len, int *width, int *fill, t_data *data);
 
 /* ---- print_hex_prepress.c ---- */
 
-void	fill_arg_x(size_t *len, int *width, int *fill, t_data *data);
 void	print_arg_x(const char *str, t_data *data);
 void	print_arg_p(const char *str, t_data *data);
+
+/* ---- print_num_prepress.c ---- */
+
+void	print_arg_d(char *str, t_data *data);
 
 /* ---- print_alpha_prepress.c ---- */
 

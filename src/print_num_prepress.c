@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_num.c                                        :+:      :+:    :+:   */
+/*   print_num_prepress.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 18:12:36 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 13:07:47 by mhadad           ###   ########.fr       */
+/*   Created: 2021/04/22 12:43:26 by mhadad            #+#    #+#             */
+/*   Updated: 2021/04/22 13:17:16 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-/*
-** //XXX Malloc !
-*/
-
-int	print_uint(unsigned int nbr, t_data *data)
+void	print_arg_d(char *str, t_data *data)
 {
-	int		i;
-	char	*str;
+	size_t	len;
+	int		width;
+	int		fill;
 
-	i = 0;
-	str = malloc(len_uint(nbr) + 1);
-	if (!str)
-		return (FALSE);
-	while (nbr > 0)
+	len = len_str(str);
+	fill_num(&len, &width, &fill, &(*data));
+	min_fill(len, width, &(*data));
+	if (!data->minus && data->fill)
 	{
-		str[i] = (nbr % 10) + '0';
-		nbr /= 10;
-		i++;
+		if (len && str[len - 1] == '-')
+		{
+			str[len - 1] = '\0';
+			ft_putchar('-', &(*data));
+		}
 	}
-	str[i] = '\0';
+	if (data->fill || data->dot || data->zero)
+		zero_fill(fill, &(*data));
 	putstr_rev(str, &(*data));
-	free (str);
-	return (TRUE);
+	if (data->minus && data->fill)
+		min_fill(len, width, &(*data));
 }

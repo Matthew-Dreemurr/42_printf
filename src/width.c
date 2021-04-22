@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:02:57 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 12:26:41 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 12:55:07 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ void	min_fill(size_t str_len, int wdt_len, t_data *data)
 }
 
 /*
-**
-**
+**   .
 */
 
 void	zero_fill(int prec_len, t_data *data)
@@ -67,4 +66,29 @@ void	zero_fill(int prec_len, t_data *data)
 	data_debug(&(*data));
 	BR;
 #endif
+}
+
+/*
+**   .
+*/
+
+void	fill_num(size_t *len, int *width, int *fill, t_data *data)
+{
+	*fill = 0;
+	*width = data->fill;
+	if (data->zero)
+		if (*len < data->fill)
+			*fill = data->fill - *len;
+	if (data->dot)
+	{
+		if (*len < data->prec)
+			*fill = data->prec - *len;
+		else
+			*fill = 0;
+	}
+	if (*fill < 0)
+		*fill = 0;
+	*width -= *fill;
+	if (*width < 0)
+		*width = 0;
 }

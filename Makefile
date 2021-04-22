@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/22 12:31:21 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/22 12:52:26 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRC_DIR = src/
 SRCS = \
 src/arg_hex.c \
 src/arg_alpha.c \
+src/print_hex_prepress.c \
 src/convert.c \
 src/print_alpha.c \
 src/ft_printf.c \
@@ -47,7 +48,7 @@ src/flag_manager.c \
 src/print_num.c \
 src/arg_num.c \
 src/parser.c \
-src/print_hex_prepress.c 
+src/print_num_prepress.c
 
 SRC := $(notdir $(SRCS))
 OBJ := $(SRC:.c=.o)

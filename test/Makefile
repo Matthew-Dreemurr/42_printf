@@ -10,6 +10,7 @@ CFLAGS = -g3 -Wall -Wextra -Werror
 SRCS = \
 src/arg_hex.c \
 src/arg_alpha.c \
+src/print_hex_prepress.c \
 src/convert.c \
 src/print_alpha.c \
 src/ft_printf.c \
@@ -21,7 +22,7 @@ src/flag_manager.c \
 src/print_num.c \
 src/arg_num.c \
 src/parser.c \
-src/print_hex_prepress.c \
+src/print_num_prepress.c
 
 SRC = $(notdir $(SRCS))
 OBJ = $(SRC:c=o)

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 17:46:44 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 13:08:58 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,42 @@ int	chartoi(const char *str, t_data *data)
 	BR;
 #endif
 	return (len);
+}
+
+/*
+** //XXX Malloc !
+*/
+
+char	*ft_itoa(int nbr)
+{
+	int		i;
+	char	*str;
+	int		neg;
+	long	nbr_c;
+
+	neg = 0;
+	i = 0;
+	if (nbr < 0)
+	{
+		nbr_c = nbr * -1;
+		neg++;
+	}
+	else
+		nbr_c = nbr;
+	str = malloc(len_int(nbr_c) + 1 + neg);
+	if (!str)
+		return (NULL);
+	while (nbr_c > 0)
+	{
+		str[i] = (nbr_c % 10) + '0';
+		nbr_c /= 10;
+		i++;
+	}
+	if (neg)
+	{
+		str[i] = '-';
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

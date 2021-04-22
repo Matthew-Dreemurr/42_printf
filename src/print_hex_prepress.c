@@ -6,36 +6,11 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:55:34 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 12:30:47 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 12:55:55 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-
-/*
-**   .
-*/
-
-void	fill_arg_x(size_t *len, int *width, int *fill, t_data *data)
-{
-	*fill = 0;
-	*width = data->fill;
-	if (data->zero)
-		if (*len < data->fill)
-			*fill = data->fill - *len;
-	if (data->dot)
-	{
-		if (*len < data->prec)
-			*fill = data->prec - *len;
-		else
-			*fill = 0;
-	}
-	if (*fill < 0)
-		*fill = 0;
-	*width -= *fill;
-	if (*width < 0)
-		*width = 0;
-}
 
 /*
 **   .
@@ -53,7 +28,7 @@ void	print_arg_x(const char *str, t_data *data)
 		width = data->fill;
 		len = 0;
 	}
-	fill_arg_x(&len, &width, &fill, &(*data));
+	fill_num(&len, &width, &fill, &(*data));
 	if (!data->minus && data->fill)
 		min_fill(len, width, &(*data));
 	if (data->fill || data->dot || data->zero)

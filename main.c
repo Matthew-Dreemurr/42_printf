@@ -6,16 +6,14 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 12:30:36 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 13:13:11 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "include/ft_printf.h"
-// #include "include/debug_utils.h"
-// #include "include/wraloc.h"
 
-#define ARG1 "%-18p", (void*)0
+#define ARG1 "%12.6d", -12
 int	main(void)
 {
 	int	ret;

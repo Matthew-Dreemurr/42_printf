@@ -6,21 +6,12 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 17:59:55 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 12:37:26 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-/*
-**
-**  `%-` | `min`  | Left align the result within the given field width
-**  `%0` | `zero` | Shorter numbers are padded out with leading zeros
-**  `%.` | `dot` | How many placesshould be shown after the decimal point
-**  `%*` | `arg`  | an int width argument must precede the value that's being
-**                   formatted in the argument list, exemple 
-**                   `printf("%0*d", 5, 3); ` 00003 is output`
-*/
 
 void	data_init(t_data *data)
 {
@@ -77,13 +68,20 @@ int	arg_check(const char *str, t_data *d, va_list *args)
 /*
 **
 **   Flag `-0.*`
-**   index | flag | func
-**   ------|------|------
-**   [0]   | `-`  | flag_min
-**   [1]   | `0`  | flag_zero
-**   [2]   | `.`  | flag_dot
-**   [3]   | `*`  | flag_arg
-**   [4]   | ``   | dummy_flag
+**   index | flag  | func
+**   ------|-------|------
+**   [0]   | `-`   | flag_min
+**   [1]   | `0`   | flag_zero
+**   [2]   | `.`   | flag_dot
+**   [3]   | `*`   | flag_arg
+**   [4]   | ``    | dummy_flag
+**
+**   `%-`  | `min` | Left align the result within the given field width.
+**   `%0`  | `zero`| Shorter numbers are padded out with leading zeros.
+**   `%.`  | `dot` | How many placesshould be shown after the decimal point.
+**   `%*`  | `arg` | an int width argument must precede the value that's being
+**                   formatted in the argument list, exemple :
+**                   `printf("%0*d", 5, 3); ` 00003 is output`.
 **
 **   Return | Value
 **   -------|------
