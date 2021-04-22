@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:02:57 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 17:46:44 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 12:26:41 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	zero_fill(int prec_len, t_data *data)
 {
 #ifdef DEBUG_TRUE
 	BM("zero_fill");
-	DE(str_len);
 	DE(prec_len);
 	data_debug(&(*data));
 	BR;

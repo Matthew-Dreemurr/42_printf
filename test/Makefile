@@ -40,16 +40,16 @@ $(NAME): $(OBJ)
 
 re: fclean
 	-git clone https://github.com/gavinfielder/pft.git
-	make fclean
-	make refresh
-	make $(NAME)
-	make clean
-	make -C pft
+	@make fclean
+	@make refresh
+	@make $(NAME)
+	@make clean
+	@make -C pft
 
 fclean: clean
-	rm -rf $(NAME)
-	rm -rf a.out
-	rm -rf $(SRC)
+	@rm -rf $(NAME)
+	@rm -rf a.out
+	@rm -rf $(SRC)
 
 clean:
-	rm -rf $(OBJ)
+	@rm -rf $(OBJ)

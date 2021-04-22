@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:19:47 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 17:46:44 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 12:29:06 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	arg_p(const char *str, t_data *data, va_list *args)
 	s = ulongtohex((unsigned long)ptr, &(*data));
 	if (!s)
 		return (ERR);
+	print_arg_p(s,&(*data));
 	free(s);
 	data->skip++;
 	return (TRUE);

@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/21 13:39:12 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/22 12:21:29 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,13 +40,14 @@ src/convert.c \
 src/print_alpha.c \
 src/ft_printf.c \
 src/dummy.c \
+src/print_alpha_prepress.c \
 src/len_utils.c \
 src/width.c \
 src/flag_manager.c \
 src/print_num.c \
-src/print_manager.c \
 src/arg_num.c \
-src/parser.c 
+src/parser.c \
+src/print_hex_prepress.c \
 
 SRC := $(notdir $(SRCS))
 OBJ := $(SRC:.c=.o)
@@ -57,38 +58,37 @@ OBJS := $(addprefix $(OBJ_DIR), $(OBJ))
 all: $(NAME)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c
-	mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(DEF) -I include -c $< -o $@
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(CFLAGS) $(DEF) -I include -c $< -o $@
 
 $(NAME): $(OBJS)
-	@printf "\n\033[32;1m"
+	@printf "\033[32;1m"
 	@cat _src/compile_ok
-	@printf "\n\033[32;0m"
+	@printf "\033[32;0m"
 	ar -rcs $(NAME) $(OBJS)
-	@printf "\n\033[32;1m[================ Linked OK =================]\033[32;0m\n"
+	@printf "\033[32;1m[================ Linked OK =================]\033[32;0m"
 
 re: fclean all
 
 exe: main
-	@echo "\n"
 	$(TIMEOUT) ./a.out
 	
 main: re
-	$(CC) $(CFLAGS) $(DEF) main.c libftprintf.a
+	@$(CC) $(CFLAGS) $(DEF) main.c libftprintf.a
 
 fclean: clean
-	rm -rf $(NAME)
-	$(MAKE) fclean -C test
-	rm -rf a.out
+	@rm -rf $(NAME)
+	@$(MAKE) fclean -C test
+	@rm -rf a.out
 
 clean:
-	rm -rf $(OBJS)
+	@rm -rf $(OBJS)
 
 c:
 	@clear
 
 nrm:
-	norminette src/*.c include/ft_printf.h
+	norminette src 2>&1 | grep "Error\!"
 
 git:
 	@git pull
