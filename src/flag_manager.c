@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 17:46:44 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 15:21:17 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	flag_min(const char *str, t_data *data, va_list *args)
 	{
 		data->fill = (int)va_arg(*args, int);
 		data->skip++;
+		if ((int)data->fill < 0)
+			data->fill *= -1;
 	}
 	else
 		data->fill = 0;
@@ -91,6 +93,11 @@ int		flag_arg(const char *str, t_data *data, va_list *args)
 {
 	(void)str;
 	data->fill = (int)va_arg(*args, int);
+	if ((int)data->fill < 0)
+	{
+		data->fill *= -1;
+		data->minus++;
+	}
 	data->skip++;
 #ifdef DEBUG_TRUE
 	BR;

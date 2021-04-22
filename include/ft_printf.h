@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 15:00:24 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 15:34:00 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@
 /* --- number of function in the arrays of function pointers --- */
 
 # define FLAG_FUNC 5
-# define ARG_FUNC 9
+# define ARG_FUNC 10
 
 /* --- Null case --- */
 
@@ -91,6 +91,7 @@ void	data_debug(t_data *data);
 
 int		arg_c(const char *str, t_data *data, va_list *args);
 int		arg_s(const char *str, t_data *data, va_list *args);
+int		arg_percent(const char *str, t_data *data, va_list *args);
 
 /* ---- src/arg_hex.c ---- */
 
@@ -144,10 +145,6 @@ int		parser(const char *str, t_data *data, va_list *args);
 void	ft_putstr(const char *s, t_data *data);
 void	ft_putchar(char c, t_data *data);
 void	putstr_rev(const char *s, t_data *data);
-
-/* ---- src/print_num.c ---- */
-
-int		print_uint(unsigned int nbr, t_data *data);
 
 /* ---- src/width.c ---- */
 

@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/22 14:24:33 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/22 15:37:45 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,17 +15,17 @@
 NAME = libftprintf.a
 
 CC = gcc
-CFLAGS = -g3 -Wall -Wextra -Werror
+CFLAGS = #-g3 -Wall -Wextra -Werror
 
 SHELL=/bin/bash
 BRANCH=origin/ft_printf_V2
 
-DEF = $(SANI) $(BR) $(DEBUG) $(WRA)
+DEF = #$(SANI) $(BR) $(DEBUG) $(WRA)
 
 BR = -D BREAK_PAUSE=0
 DEBUG = -D DEBUG_UTILS_H
 WRA = -D WRALOC_H
-SANI = -fsanitize=address
+#SANI = -fsanitize=address
 TIMEOUT = timeout 0.05
 
 # ====================== FILES ====================== #
@@ -45,7 +45,6 @@ src/print_alpha_prepress.c \
 src/len_utils.c \
 src/width.c \
 src/flag_manager.c \
-src/print_num.c \
 src/arg_num.c \
 src/parser.c \
 src/print_num_prepress.c

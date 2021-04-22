@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:43:13 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 14:53:40 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 15:47:04 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	data_init(t_data *data)
 **   [5]   | `u`  | arg_u
 **   [6]   | `x`  | arg_x
 **   [7]   | `X`  | arg_x_up
-**   [8]   | `%`  | dummy_arg
+**   [8]   | `%`  | arg_percent
+**   [8]   | ``   | dummy_arg
 **
 **   Return | Value
 **   -------|------
@@ -50,7 +51,7 @@ int	arg_check(const char *str, t_data *d, va_list *args)
 {
 	static t_func_arr	f[ARG_FUNC] = {
 		arg_c, arg_s, arg_p, arg_d, arg_d,
-		arg_u, arg_x, arg_x_up, dummy_arg
+		arg_u, arg_x, arg_x_up, arg_percent, dummy_arg
 	};
 	char				*list;
 	int					index;
@@ -127,10 +128,7 @@ int	parser(const char *str, t_data *data, va_list *args)
 	if (!str[++data->skip])
 		return (FALSE);
 	data_init(&(*data));
-	if (str[data->skip] == '%')
-		ft_putchar(str[data->skip++], &(*data));
-	else
-		if (!flag_check(str, &(*data), &(*args)))
-			return (FALSE);
+	if (!flag_check(str, &(*data), &(*args)))
+		return (FALSE);
 	return (TRUE);
 }

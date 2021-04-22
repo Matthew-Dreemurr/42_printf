@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/19 18:19:37 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 15:47:15 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,18 @@ BM("arg_s");
 	}
 	print_arg_s(s, &(*data));
 	data->skip++;
+	return (TRUE);
+}
+
+/*
+**   .
+*/
+
+int	arg_percent(const char *str, t_data *data, va_list *args)
+{
+	(void)str;
+	(void)args;
+	data->skip++;
+	print_arg_c('%', &(*data));
 	return (TRUE);
 }
