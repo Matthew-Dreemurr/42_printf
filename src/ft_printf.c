@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:40:39 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 16:31:24 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 16:34:29 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	ft_printf(const char *str, ...)
 	d.skip = 0;
 	while (str && str[d.skip])
 	{
-		// printf("- -%s- -\n\n", &str[d.skip]);
 		if (str[d.skip] == '%')
 		{
 			if (!(parser(str, &d, &args)))
