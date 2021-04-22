@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 15:21:17 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/22 16:07:49 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,12 @@ int		flag_zero(const char *str, t_data *data, va_list *args)
 	else if (str[data->skip] == '*')
 	{
 		data->fill = (int)va_arg(*args, int);
+		if ((int)data->fill < 0)
+		{
+			data->fill *= -1;
+			data->minus++;
+			data->zero = 0;
+		}
 		data->skip++;
 	}
 	else

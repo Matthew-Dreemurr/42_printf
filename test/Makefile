@@ -19,7 +19,6 @@ src/print_alpha_prepress.c \
 src/len_utils.c \
 src/width.c \
 src/flag_manager.c \
-src/print_num.c \
 src/arg_num.c \
 src/parser.c \
 src/print_num_prepress.c
