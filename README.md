@@ -2,9 +2,8 @@
 # Todo, make a log for norm /w norminette src 2>&1 | grep "Error\!"
 | Todo for V2 |
 |-|
-| Better error handling ( chose between `ERR` or `FALSE` )|
-| Mieux gerer les `data->skip`, eviter les appel de fonctions inutilement, privilegier les `i` des boucles )|
 | Meilleur gestion de la Output Conversion Syntax|
+| Refaire la logique du parseur avec cette [doc](https://www.gnu.org/software/libc/manual/html_node/Output-Conversion-Syntax.html)|
 
 ## Convertions
 

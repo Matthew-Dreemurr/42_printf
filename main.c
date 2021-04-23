@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 16:14:52 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/23 16:51:02 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "include/ft_printf.h"
 #include <limits.h>
 
-#define ARG1 "%% *.5i 42 == |% *.5i| ", 4, 42
+#define ARG1 "t7 %1.50d\n", -10
 int	main(void)
 {
 	int	ret;

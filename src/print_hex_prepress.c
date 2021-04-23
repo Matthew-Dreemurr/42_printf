@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:55:34 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 14:13:17 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/23 16:56:59 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ void	print_arg_p(const char *str, t_data *data)
 	len = len_str(str) + 2;
 	if (!data->minus && data->fill)
 		min_fill(len, data->fill, &(*data));
-	ft_putstr("0x", &(*data));
+	ft_putchar('0', &(*data));
+	ft_putchar('x', &(*data));
 	putstr_rev(str, &(*data));
 	if (data->minus && data->fill)
 		min_fill(len, data->fill, &(*data));
