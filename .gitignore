@@ -57,3 +57,5 @@ dkms.conf
 .vscode/settings.json
 *test/*.c
 *test/pft
+*test/ft_printf_test
+.DS_Store
