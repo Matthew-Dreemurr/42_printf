@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:02:57 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 16:54:10 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 17:52:00 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	fill_num(size_t *len, int *width, int *fill, t_data *data)
 			*fill = data->fill - *len;
 	if (data->dot)
 	{
-		if (*len < (int)data->prec)
+		if ((int)*len < data->prec)
 			*fill = data->prec - *len;
 		else
 			*fill = 0;
