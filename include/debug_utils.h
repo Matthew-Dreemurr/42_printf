@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 18:21:34 by lorenuar          #+#    #+#             */
-/*   Updated: 2021/04/15 17:00:19 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 16:32:21 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@
 # endif
 
 # ifndef _FD
-#  define _FD 1
+#  define _FD 2
 # endif
 
 # ifndef _NO_COLORS

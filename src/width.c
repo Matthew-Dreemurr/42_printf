@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:02:57 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 12:55:07 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 16:40:10 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,9 @@ void	fill_num(size_t *len, int *width, int *fill, t_data *data)
 	*width -= *fill;
 	if (*width < 0)
 		*width = 0;
+#ifdef DEBUG_TRUE
+	BM("fill_num");
+	data_debug(&(*data));
+	BR;
+#endif
 }

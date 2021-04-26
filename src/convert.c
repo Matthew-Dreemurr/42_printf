@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 15:59:22 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 16:17:55 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	chartoi(const char *str, t_data *data)
 	D_INT(data->skip);
 	BR;
 #endif
-	return (len);
+	return ((int)len);
 }
 
 /*

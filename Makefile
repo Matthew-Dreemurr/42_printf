@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/22 15:37:45 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/26 16:34:09 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFLAGS = #-g3 -Wall -Wextra -Werror
 SHELL=/bin/bash
 BRANCH=origin/ft_printf_V2
 
-DEF = #$(SANI) $(BR) $(DEBUG) $(WRA)
+DEF = $(SANI) $(BR) $(DEBUG) $(WRA)
 
 BR = -D BREAK_PAUSE=0
 DEBUG = -D DEBUG_UTILS_H
@@ -71,7 +71,7 @@ $(NAME): $(OBJS)
 re: fclean all
 
 exe: main
-	$(TIMEOUT) ./a.out
+	$(TIMEOUT) ./a.out 2>log
 	
 main: all
 	@$(CC) $(CFLAGS) $(DEF) main.c libftprintf.a

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 15:34:00 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 16:43:12 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ typedef	struct s_data
 	size_t	dot;
 	int		arg;
 	size_t	fill;
-	size_t	prec;
+	int		prec;
 	int		x_up;
 	int		skip;
 	int		ret;
