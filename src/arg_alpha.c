@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 19:11:09 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 19:14:08 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ int	arg_percent(const char *str, t_data *data, va_list *args)
 	(void)str;
 	(void)args;
 	data->skip++;
-	print_arg_c('%', &(*data));
+	print_arg_d(1, "%", &(*data));
 	return (TRUE);
 }
