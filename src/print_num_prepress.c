@@ -6,13 +6,13 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 12:43:26 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 18:07:57 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 18:13:04 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-void	print_arg_d(char *str, t_data *data)
+void	print_arg_d(int nbr, char *str, t_data *data)
 {
 	size_t	len;
 	int		width;
@@ -30,8 +30,8 @@ void	print_arg_d(char *str, t_data *data)
 	fill_num(&len, &width, &fill, &(*data));
 	if (neg && data->prec)
 		width--;
-	// if (data->dot && !data->prec)
-	// 	width++;
+	if (data->dot && !data->prec && !nbr)
+		width++;
 	if (!data->minus && data->fill)
 	min_fill(len, width, &(*data));
 	if (neg)

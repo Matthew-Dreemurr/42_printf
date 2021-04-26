@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 18:09:24 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 18:12:33 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ void	print_arg_p(const char *str, t_data *data);
 
 /* ---- print_num_prepress.c ---- */
 
-void	print_arg_d(char *str, t_data *data);
+void	print_arg_d(int nbr, char *str, t_data *data);
 
 /* ---- print_alpha_prepress.c ---- */
 
