@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 17:59:52 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 18:28:13 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "include/ft_printf.h"
 #include <limits.h>
 
-#define ARG1 "t3 %50.0d\n", 10
+#define ARG1 "%%"
 int	main(void)
 {
 	int	ret;

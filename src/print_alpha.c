@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/21 17:46:44 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 18:29:00 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_putstr(const char *s, t_data *data)
 
 #ifdef DEBUG_TRUE
 BM("ft_pustr");
-data_debug(&(*data));
+data_debug(data);
 BR;
 #endif
 
@@ -49,7 +49,7 @@ BR;
 		write(1, &s[i++], 1);
 
 #ifdef DEBUG_TRUE
-	data_debug(&(*data));
+	data_debug(data);
 	DE(i);
 	BR;
 #endif

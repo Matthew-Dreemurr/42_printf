@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:10:49 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 18:13:33 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 18:29:00 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	arg_d(const char *str, t_data *data, va_list *args)
 	s = ft_itoa(nbr);
 	if (!s)
 		return (FALSE);
-	print_arg_d(nbr, s, &(*data));
+	print_arg_d(nbr, s, data);
 	free(s);
 	data->skip++;
 	return (TRUE);
@@ -50,7 +50,7 @@ int	arg_u(const char *str, t_data *data, va_list *args)
 	s = uinttochar(nbr);
 	if (!s)
 		return (FALSE);
-	print_arg_d(nbr, s, &(*data));
+	print_arg_d(nbr, s, data);
 	free(s);
 	data->skip++;
 	return (TRUE);

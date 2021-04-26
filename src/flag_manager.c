@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 16:42:48 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 18:29:00 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	flag_min(const char *str, t_data *data, va_list *args)
 	data->skip++;
 	data->minus++;
 	if (str[data->skip] >= '0' && str[data->skip] <= '9')
-		data->fill = chartoi(&str[data->skip], &(*data));
+		data->fill = chartoi(&str[data->skip], data);
 	else if (str[data->skip] == '*')
 	{
 		data->fill = (int)va_arg(*args, int);
@@ -46,7 +46,7 @@ int		flag_zero(const char *str, t_data *data, va_list *args)
 	data->skip++;
 	data->zero++;
 	if (str[data->skip] >= '0' && str[data->skip] <= '9')
-		data->fill = chartoi(&str[data->skip], &(*data));
+		data->fill = chartoi(&str[data->skip], data);
 	else if (str[data->skip] == '*')
 	{
 		data->fill = (int)va_arg(*args, int);
@@ -76,7 +76,7 @@ int		flag_dot(const char *str, t_data *data, va_list *args)
 	data->skip++;
 	data->dot++;
 	if (str[data->skip] >= '0' && str[data->skip] <= '9')
-		data->prec = chartoi(&str[data->skip], &(*data));
+		data->prec = chartoi(&str[data->skip], data);
 	else if (str[data->skip] == '*')
 	{
 		data->prec = (int)va_arg(*args, int);
@@ -91,7 +91,7 @@ int		flag_dot(const char *str, t_data *data, va_list *args)
 		data->prec = 0;
 #ifdef DEBUG_TRUE
 	BM("flag_dot");
-	data_debug(&(*data));
+	data_debug(data);
 	D_STR_DETAILS(&str[data->skip]);
 	BR;
 #endif

@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:02:57 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 18:00:20 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 18:29:00 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	min_fill(size_t str_len, int wdt_len, t_data *data)
 #ifdef DEBUG_TRUE
 	BM("min_fill");
 	DE(str_len);
-	data_debug(&(*data));
+	data_debug(data);
 	BR;
 #endif
 
@@ -32,7 +32,7 @@ void	min_fill(size_t str_len, int wdt_len, t_data *data)
 #ifdef DEBUG_TRUE
 	DE(str_len);
 	DE(wdt_len);
-	data_debug(&(*data));
+	data_debug(data);
 	BR;
 #endif
 
@@ -41,7 +41,7 @@ void	min_fill(size_t str_len, int wdt_len, t_data *data)
 			write(1, " ", 1);
 			
 #ifdef DEBUG_TRUE
-	data_debug(&(*data));
+	data_debug(data);
 	BR;
 #endif
 }
@@ -55,7 +55,7 @@ void	zero_fill(int prec_len, t_data *data)
 #ifdef DEBUG_TRUE
 	BM("zero_fill");
 	DE(prec_len);
-	data_debug(&(*data));
+	data_debug(data);
 	BR;
 #endif
 
@@ -63,7 +63,7 @@ void	zero_fill(int prec_len, t_data *data)
 	while (0 <= --prec_len)
 		write(1, "0", 1);
 #ifdef DEBUG_TRUE
-	data_debug(&(*data));
+	data_debug(data);
 	BR;
 #endif
 }
@@ -93,7 +93,7 @@ void	fill_num(size_t *len, int *width, int *fill, t_data *data)
 		*width = 0;
 #ifdef DEBUG_TRUE
 	BM("fill_num");
-	data_debug(&(*data));
+	data_debug(data);
 	BR;
 #endif
 }
