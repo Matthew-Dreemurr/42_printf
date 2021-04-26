@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:19:47 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 18:29:00 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/26 18:43:27 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	arg_x_up(const char *str, t_data *data, va_list *args)
 {
 	(void)str;
 	data->x_up++;
-	if (!(arg_x(NULL, data, &(*args))))
+	if (!(arg_x(NULL, data, args)))
 		return (FALSE);
 	return (TRUE);
 }
