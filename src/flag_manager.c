@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 15:57:40 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 17:16:33 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	flag_min(const char *str, t_data *data, va_list *args)
 	else if (str[data->skip] == '*')
 	{
 		data->fill = (int)va_arg(*args, int);
+BR;
+
 		data->skip++;
 		if ((int)data->fill < 0)
 			data->fill *= -1;
@@ -47,6 +49,8 @@ int		flag_zero(const char *str, t_data *data, va_list *args)
 	else if (str[data->skip] == '*')
 	{
 		data->fill = (int)va_arg(*args, int);
+BR;
+
 		if ((int)data->fill < 0)
 		{
 			data->fill = -data->fill;
@@ -73,6 +77,8 @@ int		flag_dot(const char *str, t_data *data, va_list *args)
 	else if (str[data->skip] == '*')
 	{
 		data->prec = (int)va_arg(*args, int);
+BR;
+
 		if(data->prec < 0)
 		{
 			data->dot = FALSE;
@@ -93,6 +99,8 @@ int		flag_arg(const char *str, t_data *data, va_list *args)
 {
 	(void)str;
 	data->fill = (int)va_arg(*args, int);
+BR;
+
 	if ((int)data->fill < 0)
 	{
 		data->fill *= -1;
