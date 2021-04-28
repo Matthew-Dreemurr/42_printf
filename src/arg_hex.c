@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:19:47 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 17:19:09 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 17:24:04 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	arg_x(const char *str, t_data *data, va_list *args)
 
 	(void)str;
 	nbr = (unsigned long)va_arg(*args, unsigned long);
+DED(nbr);
 BR;
 data_debug(data);
 	s = ulongtohex(nbr, data);
