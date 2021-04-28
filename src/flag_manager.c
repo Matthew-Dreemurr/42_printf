@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 17:36:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 18:21:57 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,6 @@ int		flag_arg(const char *str, t_data *data, va_list *args)
 {
 	(void)str;
 	data->fill = (int)va_arg(*args, int);
-
-
 	if ((int)data->fill < 0)
 	{
 		data->fill *= -1;
