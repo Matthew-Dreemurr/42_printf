@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:19:47 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 17:24:53 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 17:26:46 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	arg_x(const char *str, t_data *data, va_list *args)
 	char			*s;
 
 	(void)str;
+	nbr = 0;
 	nbr = (unsigned long)va_arg(*args, unsigned long);
 DE(nbr);
 BR;
