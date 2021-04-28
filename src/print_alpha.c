@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:22:24 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 18:29:00 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 15:58:05 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 
 void	ft_putchar(char c, t_data *data)
 {
-#ifdef DEBUG_TRUE
-	D_INT(c);
-#endif
 	write(1, &c, 1);
 	data->ret++;
 }
@@ -34,26 +31,12 @@ void	ft_putstr(const char *s, t_data *data)
 	size_t	i;
 	size_t	max;
 
-
-#ifdef DEBUG_TRUE
-BM("ft_pustr");
-data_debug(data);
-BR;
-#endif
-
 	max = data->prec;
 	i = 0;
 	if (!data->dot)
 		max = len_str(s);
 	while (s && s[i] && max--)
 		write(1, &s[i++], 1);
-
-#ifdef DEBUG_TRUE
-	data_debug(data);
-	DE(i);
-	BR;
-#endif
-
 	data->ret += i;
 }
 

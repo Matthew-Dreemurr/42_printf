@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 16:20:01 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 18:29:00 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 15:57:40 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ int	flag_min(const char *str, t_data *data, va_list *args)
 	}
 	else
 		data->fill = 0;
-#ifdef DEBUG_TRUE
-	BR;
-#endif
 	return (TRUE);
 }
 
@@ -60,10 +57,6 @@ int		flag_zero(const char *str, t_data *data, va_list *args)
 	}
 	else
 		data->fill = 0;
-#ifdef DEBUG_TRUE
-	BM("flag_zero");
-	BR;
-#endif
 	return (TRUE);
 }
 
@@ -89,12 +82,6 @@ int		flag_dot(const char *str, t_data *data, va_list *args)
 	}
 	else
 		data->prec = 0;
-#ifdef DEBUG_TRUE
-	BM("flag_dot");
-	data_debug(data);
-	D_STR_DETAILS(&str[data->skip]);
-	BR;
-#endif
 	return (TRUE);
 }
 
@@ -112,8 +99,5 @@ int		flag_arg(const char *str, t_data *data, va_list *args)
 		data->minus++;
 	}
 	data->skip++;
-#ifdef DEBUG_TRUE
-	BR;
-#endif
 	return (TRUE);
 }
