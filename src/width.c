@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:02:57 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 15:58:51 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 17:10:16 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	min_fill(size_t str_len, int wdt_len, t_data *data)
 	wdt_len -= str_len;
 	if (wdt_len < 0)
 		wdt_len = 0;
-		data->ret += wdt_len;
-		while (0 <= --wdt_len)
-			write(1, " ", 1);
+	data->ret += wdt_len;
+	while (0 <= --wdt_len)
+		write(1, " ", 1);
 }
 
 /*

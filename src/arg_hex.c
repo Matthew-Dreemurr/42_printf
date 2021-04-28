@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_hex.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenuar <lorenuar@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:19:47 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 16:20:52 by lorenuar         ###   ########.fr       */
+/*   Updated: 2021/04/28 17:09:09 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,8 @@ int	arg_x(const char *str, t_data *data, va_list *args)
 
 	(void)str;
 	nbr = (unsigned long)va_arg(*args, unsigned long);
-DE(args);
-DM(INPUT,nbr);
 
 	s = ulongtohex(nbr, data);
-	data_debug(data);
-	D_STR_DETAILS(s);
 	if (!s)
 		return (ERR);
 	print_arg_x(s, data);
@@ -65,7 +61,6 @@ int	arg_x_up(const char *str, t_data *data, va_list *args)
 {
 	(void)str;
 	data->x_up++;
-DE(args);
 	if (!(arg_x(NULL, data, args)))
 		return (FALSE);
 	return (TRUE);

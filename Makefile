@@ -6,7 +6,7 @@
 #    By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 17:20:07 by mhadad            #+#    #+#              #
-#    Updated: 2021/04/28 16:11:40 by mhadad           ###   ########.fr        #
+#    Updated: 2021/04/28 17:11:15 by mhadad           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ $(NAME): $(OBJS)
 re: fclean all
 
 exe: main
-	$(TIMEOUT) ./a.out 2>result.log
+	./a.out
 	
 main: all
 	@$(CC) $(CFLAGS) $(DEF) main.c libftprintf.a
