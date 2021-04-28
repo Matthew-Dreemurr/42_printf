@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:10:49 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 17:36:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 18:07:53 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,8 @@ int	arg_d(const char *str, t_data *data, va_list *args)
 
 	(void)str;
 	if (data->arg)
-	{
 		data->fill = (int)va_arg(*args, int);
-		
-	}
 	nbr = (int)va_arg(*args, int);
-
-
 	s = ft_itoa(nbr);
 	if (!s)
 		return (FALSE);

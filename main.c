@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 18:02:53 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 18:08:17 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "include/ft_printf.h"
 #include <limits.h>
 
-#define ARG1 "%20.d", -1024
+#define ARG1 "%1.p", NULL
 int	main(void)
 {
 	int	ret;
