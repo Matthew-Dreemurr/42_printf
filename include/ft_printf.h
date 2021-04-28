@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 14:30:53 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 15:49:02 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 /* ======  //TODO REMOVE  ======= */
 
-// # include "../include/wraloc.h"
-// # include "../include/debug_utils.h"
+# include "../include/wraloc.h"
+# include "../include/debug_utils.h"
 # include <stdio.h>
 
 /* ======  Include  ======= */
@@ -131,7 +131,7 @@ int		ft_printf(const char *str, ...);
 
 size_t	len_str(const char *str);
 int		len_int(int nbr);
-int		len_uint(unsigned int nbr);
+int		len_ulong(unsigned long nbr, int base);
 
 /* ---- src/parser.c ---- */
 

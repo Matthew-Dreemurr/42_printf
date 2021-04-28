@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 17:52:59 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/22 12:59:46 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 15:48:48 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	len_int(int nbr)
 **   .
 */
 
-int	len_uint(unsigned int nbr)
+int	len_ulong(unsigned long nbr, int base)
 {
 	int		len;
 
@@ -68,7 +68,7 @@ int	len_uint(unsigned int nbr)
 		return (0);
 	while (nbr > 0)
 	{
-		nbr /= 10;
+		nbr /= base;
 		len ++;
 	}
 	return (len);

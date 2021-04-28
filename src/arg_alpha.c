@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 14:19:26 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 15:56:13 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,6 @@
 int	arg_c(const char *str, t_data *data, va_list *args)
 {
 	char	c;
-
-#ifdef DEBUG_TRUE
-BM("arg_c");
-#endif
 
 	(void)str;
 	c = (char)va_arg(*args, int);
@@ -45,10 +41,6 @@ BM("arg_c");
 int	arg_s(const char *str, t_data *data, va_list *args)
 {
 	const char	*s;
-
-#ifdef DEBUG_TRUE
-BM("arg_s");
-#endif
 
 	(void)str;
 	s = (const char *)va_arg(*args, const char *);

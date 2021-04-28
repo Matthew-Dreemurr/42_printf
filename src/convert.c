@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:16:18 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 16:17:55 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 15:54:57 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,18 @@ char*	ulongtohex(unsigned long nbr, t_data *data)
 	char			*index[2];
 	char			*ret;
 	int				i;
+	size_t			len;
 
 	i = 0;
+	len = 1 + len_ulong(nbr, 16);
 	index[0] = "0123456789abcdef";
 	index[1] = "0123456789ABCDEF";
-	ret = (char *)malloc(32);
+	ret = (char *)malloc(len);
+	D_STR_DETAILS(ret);
 	if (!ret)
 		return (NULL);
+	while (len)
+		ret[len--] = '\0';
 	if (!nbr)
 		ret[i++] = index[data->x_up][0];
 	else
