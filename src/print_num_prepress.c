@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 12:43:26 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 13:41:48 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 13:43:50 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	print_arg_d(int nbr, char *str, t_data *data)
 	if (len && str[len - 1] == '-' && ++neg)
 	{
 		str[len - 1] = '\0';
-		if (data->dot && len != 1)
+		if (data->dot && (len != 1  || str[0] == '0'))
 		{
 			len--;
 			// DE(len);
