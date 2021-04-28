@@ -40,12 +40,10 @@ $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
 re: fclean
-	-git clone https://github.com/gavinfielder/pft.git
 	@make fclean
 	@make refresh
 	@make $(NAME)
 	@make clean
-	@make -C pft
 
 fclean: clean
 	@rm -rf $(NAME)

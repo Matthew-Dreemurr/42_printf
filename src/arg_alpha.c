@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 19:14:08 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 14:19:26 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ BM("arg_c");
 
 	(void)str;
 	c = (char)va_arg(*args, int);
-	print_arg_c(c, &(*data));
+	print_arg_c(c, data);
 	data->skip++;
 	return (TRUE);
 }
@@ -54,11 +54,11 @@ BM("arg_s");
 	s = (const char *)va_arg(*args, const char *);
 	if (!s)
 	{
-		print_arg_s(STR_NULL, &(*data));
+		print_arg_s(STR_NULL, data);
 		data->skip++;
 		return (TRUE);
 	}
-	print_arg_s(s, &(*data));
+	print_arg_s(s, data);
 	data->skip++;
 	return (TRUE);
 }
@@ -72,6 +72,6 @@ int	arg_percent(const char *str, t_data *data, va_list *args)
 	(void)str;
 	(void)args;
 	data->skip++;
-	print_arg_d(1, "%", &(*data));
+	print_arg_perc("%", data);
 	return (TRUE);
 }

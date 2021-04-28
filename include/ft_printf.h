@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:35:54 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 13:41:25 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 14:30:53 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,5 +165,6 @@ void	print_arg_d(int nbr, char *str, t_data *data);
 
 void	print_arg_s(const char *str, t_data *data);
 void	print_arg_c(const char c, t_data *data);
+void	print_arg_perc(const char *str, t_data *data);
 
 #endif
