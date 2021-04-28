@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:10:37 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 17:14:57 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 17:36:25 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	arg_c(const char *str, t_data *data, va_list *args)
 
 	(void)str;
 	c = (char)va_arg(*args, int);
-BR;
+
 
 	print_arg_c(c, data);
 	data->skip++;
@@ -46,7 +46,7 @@ int	arg_s(const char *str, t_data *data, va_list *args)
 
 	(void)str;
 	s = (const char *)va_arg(*args, const char *);
-BR;
+
 
 	if (!s)
 	{
