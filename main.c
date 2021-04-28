@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 17:14:09 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 17:36:10 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 17:58:18 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "include/ft_printf.h"
 #include <limits.h>
 
-#define ARG1 "ultimate4 %*.*x %*.*x %*.*x %*.*x\n", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+#define ARG1 "%x, %x", 0, UINT_MAX
 int	main(void)
 {
 	int	ret;
