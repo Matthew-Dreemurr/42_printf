@@ -21,17 +21,28 @@ char*	ulongtohex(unsigned long nbr, t_data *data)
 	char			*index[2];
 	char			*ret;
 	int				i;
-	size_t			len;
+	ssize_t			len;
+	ssize_t			len_cpy;
 
 	i = 0;
 	len = 1 + len_ulong(nbr, 16);
+	len_cpy = len;
+
 	index[0] = "0123456789abcdef";
 	index[1] = "0123456789ABCDEF";
 	ret = (char *)malloc(len);
 	if (!ret)
 		return (NULL);
-	while (len)
+	DE(nbr);
+	BM(MALLOCED);
+	D_STR_DETAILS_LEN(ret, len);
+
+
+	while (len >= 0)
 		ret[len--] = '\0';
+
+	BM(MEMSETTED);
+	D_STR_DETAILS_LEN(ret, len_cpy);
 	if (!nbr)
 		ret[i++] = index[data->x_up][0];
 	else
@@ -42,6 +53,8 @@ char*	ulongtohex(unsigned long nbr, t_data *data)
 			i++;
 		}
 	ret[i] = '\0';
+	BM("RETURN");
+	D_STR_DETAILS_LEN(ret, len_cpy);
 	return (ret);
 }
 

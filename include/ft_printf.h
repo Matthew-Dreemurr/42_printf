@@ -131,7 +131,7 @@ int		ft_printf(const char *str, ...);
 
 size_t	len_str(const char *str);
 int		len_int(int nbr);
-int		len_ulong(unsigned long nbr, int base);
+size_t	len_ulong(unsigned long nbr, int base);
 
 /* ---- src/parser.c ---- */
 

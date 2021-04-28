@@ -48,6 +48,8 @@
 #  define _FD 2
 # endif
 
+# define _NO_COLORS
+
 # ifndef _NO_COLORS
 #  define _CL_BR_FADE "\033[37;2m"
 #  define _CL_BR "\033[38;1m"
@@ -98,7 +100,10 @@
 # define D_STR(var) _print( "< %s:%d in %s() > " #var " : \"%s\"" _DE_NL, __FILE__, __LINE__, __FUNCTION__, var);
 # define D_PTR(var) _print( "< %s:%d in %s() > " #var " : <%p>" _DE_NL, __FILE__, __LINE__, __FUNCTION__, var);
 
-# define D_STR_DETAILS(str) print_str_details(len_str(str), str, #str);
+# define D_STR_DETAILS(str) _BR(0); print_str_details(len_str(str), str, #str);
+
+
+# define D_STR_DETAILS_LEN(str, len) _BR(0); print_str_details(len, str, #str);
 
 static inline void	print_str_details(size_t len, char *str, const char *name)
 {

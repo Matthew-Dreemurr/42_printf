@@ -55,6 +55,7 @@ int	arg_check(const char *str, t_data *d, va_list *args)
 	};
 	char				*list;
 	int					index;
+DE(args);
 
 	index = 0;
 	list = "cspdiuxX%";
@@ -99,6 +100,8 @@ int	flag_check(const char *str, t_data *data, va_list *args)
 	static t_func_arr	f[FLAG_FUNC] = {
 		flag_min, flag_zero, flag_dot, flag_arg, dummy_flag};
 
+DE(args);
+
 	index = 0;
 	ret = 0;
 	list = "-0.*";
@@ -128,6 +131,7 @@ int	parser(const char *str, t_data *data, va_list *args)
 	if (!str[++data->skip])
 		return (FALSE);
 	data_init(data);
+DE(args);
 	if (!flag_check(str, data, args))
 		return (FALSE);
 	return (TRUE);

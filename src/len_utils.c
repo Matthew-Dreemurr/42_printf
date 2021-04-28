@@ -59,9 +59,9 @@ int	len_int(int nbr)
 **   .
 */
 
-int	len_ulong(unsigned long nbr, int base)
+size_t	len_ulong(unsigned long nbr, int base)
 {
-	int		len;
+	size_t	len;
 
 	len = 0;
 	if (nbr == 0)

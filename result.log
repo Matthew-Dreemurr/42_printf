@@ -1,0 +1,53 @@
+< src/parser.c:134 in parser() > args = 0x7ffee967f610
+< src/parser.c:103 in flag_check() > args = 0x7ffee967f610
+< src/parser.c:58 in arg_check() > args = 0x7ffee967f610
+< src/arg_hex.c:46 in arg_x() > args = 0x7ffee967f610
+< src/arg_hex.c:47 in arg_x() > {INPUT} nbr = 5000
+< src/convert.c:36 in ulongtohex() > nbr = 5000
+{MALLOCED} < src/convert.c:37 in ulongtohex() >
+< src/convert.c:38 in ulongtohex() > =*= START DETAILS[ret][0x7fcc3a4059c0](len 6): 
+[\0|\0|\0|\0|\0|\0] END_DETAILS =*=
+{MEMSETTED} < src/convert.c:44 in ulongtohex() >
+< src/convert.c:45 in ulongtohex() > =*= START DETAILS[ret][0x7fcc3a4059c0](len 6): 
+[\0|\0|\0|\0|\0|\0] END_DETAILS =*=
+{"RETURN"} < src/convert.c:56 in ulongtohex() >
+< src/convert.c:57 in ulongtohex() > =*= START DETAILS[ret][0x7fcc3a4059c0](len 6): 
+[8|8|3|1|\0|\0] END_DETAILS =*=
+< src/ft_printf.c:20 in data_debug() > data->minus =  0
+< src/ft_printf.c:21 in data_debug() > data->zero =  0
+< src/ft_printf.c:22 in data_debug() > data->dot =  1
+< src/ft_printf.c:23 in data_debug() > data->prec = 50
+< src/ft_printf.c:24 in data_debug() > data->fill =  1
+< src/ft_printf.c:25 in data_debug() > data->arg =  0
+< src/ft_printf.c:26 in data_debug() > data->skip = 14
+< src/ft_printf.c:27 in data_debug() > data->ret = 10
+< src/ft_printf.c:28 in data_debug() > data->x_up =  0
+< src/arg_hex.c:51 in arg_x() > =*= START DETAILS[s][0x7fcc3a4059c0](len 5): 
+[8|8|3|1|\0] END_DETAILS =*=
+< src/parser.c:134 in parser() > args = 0x7ffee967f610
+< src/parser.c:103 in flag_check() > args = 0x7ffee967f610
+< src/parser.c:58 in arg_check() > args = 0x7ffee967f610
+< src/arg_hex.c:68 in arg_x_up() > args = 0x7ffee967f610
+< src/arg_hex.c:46 in arg_x() > args = 0x7ffee967f610
+< src/arg_hex.c:47 in arg_x() > {INPUT} nbr = 4294967320
+< src/convert.c:36 in ulongtohex() > nbr = 4294967320
+{MALLOCED} < src/convert.c:37 in ulongtohex() >
+< src/convert.c:38 in ulongtohex() > =*= START DETAILS[ret][0x7fcc3a504080](len 11): 
+[\0|\0|\0|\0|\0|\0|\0|\0|\0|\0|\0] END_DETAILS =*=
+{MEMSETTED} < src/convert.c:44 in ulongtohex() >
+< src/convert.c:45 in ulongtohex() > =*= START DETAILS[ret][0x7fcc3a504080](len 11): 
+[\0|\0|\0|\0|\0|\0|\0|\0|\0|\0|\0] END_DETAILS =*=
+{"RETURN"} < src/convert.c:56 in ulongtohex() >
+< src/convert.c:57 in ulongtohex() > =*= START DETAILS[ret][0x7fcc3a504080](len 11): 
+[8|1|0|0|0|0|0|0|1|\0|\0] END_DETAILS =*=
+< src/ft_printf.c:20 in data_debug() > data->minus =  0
+< src/ft_printf.c:21 in data_debug() > data->zero =  0
+< src/ft_printf.c:22 in data_debug() > data->dot =  1
+< src/ft_printf.c:23 in data_debug() > data->prec =  0
+< src/ft_printf.c:24 in data_debug() > data->fill =  1
+< src/ft_printf.c:25 in data_debug() > data->arg =  0
+< src/ft_printf.c:26 in data_debug() > data->skip = 20
+< src/ft_printf.c:27 in data_debug() > data->ret = 61
+< src/ft_printf.c:28 in data_debug() > data->x_up =  1
+< src/arg_hex.c:51 in arg_x() > =*= START DETAILS[s][0x7fcc3a504080](len 10): 
+[8|1|0|0|0|0|0|0|1|\0] END_DETAILS =*=
