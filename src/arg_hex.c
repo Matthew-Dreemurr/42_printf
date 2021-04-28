@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:19:47 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 17:47:11 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 17:48:51 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ int	arg_p(const char *str, t_data *data, va_list *args)
 
 int	arg_x(const char *str, t_data *data, va_list *args)
 {
-	long	nbr;
+	long			nbr;
 	char			*s;
 
 	(void)str;
 	// printf("\n[%lu]\n\n", nbr);
 	nbr = 0;
 	// printf("\n|%lu|\n\n", nbr);
-	nbr = (long)va_arg(*args, long);
+	nbr = (unsigned long)va_arg(*args, long);
 	// printf("\n{%lu}\n\n", nbr);
 // data_debug(data);
 	s = ulongtohex(nbr, data);
