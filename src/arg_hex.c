@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:19:47 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 17:48:51 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 17:49:34 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	arg_p(const char *str, t_data *data, va_list *args)
 
 int	arg_x(const char *str, t_data *data, va_list *args)
 {
-	long			nbr;
+	unsigned long	nbr;
 	char			*s;
 
 	(void)str;
