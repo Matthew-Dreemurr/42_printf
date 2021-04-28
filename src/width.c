@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:02:57 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 18:29:00 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 13:33:35 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,11 @@ void	zero_fill(int prec_len, t_data *data)
 
 void	fill_num(size_t *len, int *width, int *fill, t_data *data)
 {
+#ifdef DEBUG_TRUE
+	BM("fill_num");
+	data_debug(data);
+	BR;
+#endif
 	*fill = 0;
 	*width = data->fill;
 	if (data->zero)
@@ -92,7 +97,6 @@ void	fill_num(size_t *len, int *width, int *fill, t_data *data)
 	if (*width < 0)
 		*width = 0;
 #ifdef DEBUG_TRUE
-	BM("fill_num");
 	data_debug(data);
 	BR;
 #endif

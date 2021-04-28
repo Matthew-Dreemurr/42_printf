@@ -4,7 +4,10 @@
 		"wraloc.h": "c",
 		"sstream": "cpp",
 		"random": "c",
-		"debug_utils.h": "c"
+		"debug_utils.h": "c",
+		"array": "c",
+		"string": "c",
+		"string_view": "c"
 	},
 	"autoHide.autoHidePanel": false
 }
