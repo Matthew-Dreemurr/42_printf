@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:19:47 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/28 18:08:49 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 18:14:06 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,13 @@ int	arg_p(const char *str, t_data *data, va_list *args)
 	ptr = (void*)va_arg(*args, void *);
 	if (!ptr)
 	{
-		data->prec = 0;
-		data->dot = 0;
+		if (data->dot && !data->prec)
+			data->prec = 2;
+		else
+		{
+			data->prec = 0;
+			data->dot = 0;
+		}
 		print_arg_s(ADDR_NULL, data);
 		data->skip++;
 		return (TRUE);
