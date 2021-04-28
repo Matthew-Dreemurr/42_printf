@@ -6,7 +6,7 @@
 /*   By: mhadad <mhadad@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 12:43:26 by mhadad            #+#    #+#             */
-/*   Updated: 2021/04/26 18:29:00 by mhadad           ###   ########.fr       */
+/*   Updated: 2021/04/28 13:25:35 by mhadad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	print_arg_d(int nbr, char *str, t_data *data)
 			len--;
 	}
 	fill_num(&len, &width, &fill, data);
-	if (neg && data->prec)
-		width--;
+	// if (neg && data->prec)
+	// 	width--;
 	if (data->dot && !data->prec && !nbr)
 		width++;
 	if (!data->minus && data->fill)
-	min_fill(len, width, data);
+		min_fill(len, width, data);
 	if (neg)
 		ft_putchar('-', data);
 	if (data->fill || data->dot || data->zero)
